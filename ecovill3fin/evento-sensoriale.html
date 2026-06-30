@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I Suoni del Bosco – Evento sensoriale nel Parco del Partenio. Guarda foto e video dell'immersione sensoriale tra sound bath, barefoot walk e meditazione.">
+    <link rel="icon" type="image/png" href="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png">
+    <link rel="apple-touch-icon" href="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png">
+    <link rel="mask-icon" href="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png" color="#356f33">
+    <meta name="msapplication-TileImage" content="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png">
+    <title>I Suoni del Bosco – Evento Sensoriale | Ecovillaggio Partenio 🌲</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'natura': {
+                            50: '#f0f7f0',
+                            100: '#d9ecd8',
+                            200: '#b5d9b3',
+                            300: '#89bf86',
+                            400: '#5fa35c',
+                            500: '#468a43',
+                            600: '#356f33',
+                            700: '#2b582a',
+                            800: '#244723',
+                            900: '#1d3b1d',
+                            950: '#0e210f',
+                        },
+                        'terra': {
+                            50: '#fdf8f0',
+                            100: '#f9eddb',
+                            200: '#f2d9b6',
+                            300: '#e8bf87',
+                            400: '#dd9f57',
+                            500: '#d48837',
+                            600: '#c5712c',
+                            700: '#a45925',
+                            800: '#844824',
+                            900: '#6b3d20',
+                            950: '#3a1e0f',
+                        },
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Georgia', 'Times New Roman', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img, .lightbox video {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 12px;
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            z-index: 10000;
+            transition: color 0.2s;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+        .lightbox-close:hover { color: #d48837; }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            z-index: 10000;
+        }
+        .lightbox-nav:hover { background: rgba(255,255,255,0.25); }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+        .lightbox-counter {
+            position: absolute;
+            bottom: 30px;
+            color: white;
+            font-size: 14px;
+            background: rgba(0,0,0,0.5);
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+
+        /* Gallery hover */
+        .gallery-item {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            aspect-ratio: 4/3;
+        }
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img, .gallery-item:hover video {
+            transform: scale(1.05);
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        .gallery-item .overlay span {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Play button for videos */
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 56px;
+            height: 56px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover .play-icon {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        .play-icon::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 18px solid #d48837;
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+            margin-left: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-nav { width: 40px; height: 40px; font-size: 24px; }
+            .lightbox-prev { left: 10px; }
+            .lightbox-next { right: 10px; }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-natura-50 min-h-screen">
+
+    <!-- ===== HEADER ===== -->
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50" role="banner">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16" aria-label="Navigazione">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png" alt="Ecovillaggio Partenio Logo" class="h-10 w-10 rounded-full object-cover group-hover:opacity-90 transition-opacity">
+                <span class="font-display font-bold text-lg text-natura-800 hidden sm:block">
+                    Ecovillaggio <span class="text-terra-600">Partenio</span>
+                </span>
+            </a>
+            <a href="index.html#attivita" class="flex items-center gap-1.5 text-natura-700 hover:text-natura-900 font-medium transition-colors text-sm">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                Torna alle Attività
+            </a>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main role="main">
+
+        <!-- Hero Banner -->
+        <section class="relative bg-gradient-to-br from-amber-600 via-orange-500 to-rose-500 overflow-hidden" aria-labelledby="evento-heading">
+            <div class="absolute inset-0 opacity-20">
+                <img src="http://static.photos/nature/1200x630/88" alt="" class="w-full h-full object-cover" aria-hidden="true">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-natura-950/70"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-center text-white">
+                <div class="animate-fade-in-up space-y-6 max-w-4xl mx-auto">
+                    <span class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wide border border-white/30">
+                        🌲 15 Ottobre 2024 – Parco Regionale del Partenio
+                    </span>
+                    <h1 id="evento-heading" class="text-4xl sm:text-5xl md:text-6xl font-display font-bold leading-tight">
+                        I Suoni del Bosco
+                        <span class="block text-2xl sm:text-3xl md:text-4xl font-normal mt-2 text-white/90">Immersione Sensoriale nella Natura</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                        Un viaggio attraverso i cinque sensi tra i sentieri secolari del Partenio. Sound bath tra gli alberi, 
+                        camminata a piedi nudi sul muschio, degustazione di erbe selvatiche e meditazione guidata al tramonto.
+                    </p>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-natura-50 to-transparent"></div>
+        </section>
+
+        <!-- Dettagli Evento -->
+        <section class="py-16 lg:py-20 bg-white" aria-labelledby="dettagli-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-3 gap-10">
+                    <!-- Info principali -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <h2 id="dettagli-heading" class="text-3xl sm:text-4xl font-display font-bold text-natura-900">Il Racconto dell'Evento</h2>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            Il 15 ottobre 2024, trenta partecipanti si sono immersi in un'esperienza unica nel cuore del Parco Regionale del Partenio. 
+                            Guidati da esperti di ecopsicologia e guide naturalistiche, i partecipanti hanno vissuto un percorso sensoriale 
+                            progettato per risvegliare i sensi e riconnettersi profondamente con la natura.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            La giornata è iniziata all'alba con una sessione di <strong>sound bath</strong> nel bosco, dove campane tibetane, 
+                            gong e suoni della natura si sono fusi in un'unica sinfonia. I partecipanti, sdraiati su tappeti di foglie, 
+                            hanno lasciato che le vibrazioni sonore li avvolgessero completamente.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            A seguire, la <strong>camminata a piedi nudi</strong> (barefoot walk) sul sentiero del muschio: un'esperienza tattile 
+                            che ha permesso di sentire ogni texture del terreno, dalle foglie croccanti al muschio vellutato, 
+                            fino ai sassolini levigati del ruscello.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Il momento della <strong>degustazione di erbe selvatiche</strong> ha deliziato il palato con infusi di melissa, 
+                            tarassaco e menta di montagna, accompagnati da miele millefiori locale e pane di segale artigianale.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            La giornata si è conclusa con una <strong>meditazione guidata al tramonto</strong> presso il punto panoramico 
+                            di Acqua Fidia, mentre il sole tingeva di arancio le cime del Partenio e il silenzio della montagna 
+                            avvolgeva ogni partecipante in un abbraccio di pace.
+                        </p>
+
+                        <!-- Cosa hanno detto i partecipanti -->
+                        <div class="bg-amber-50 rounded-2xl p-6 sm:p-8 border border-amber-200 mt-8">
+                            <h3 class="text-xl font-bold text-natura-900 mb-4 flex items-center gap-2">
+                                <i data-lucide="message-circle-heart" class="w-6 h-6 text-rose-500"></i>
+                                Le Voci dei Partecipanti
+                            </h3>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="bg-white rounded-xl p-5 shadow-sm">
+                                    <p class="text-gray-600 italic text-sm leading-relaxed mb-3">"Un'esperienza che mi ha fatto riscoprire la bellezza del silenzio. Non dimenticherò mai il suono del vento tra i faggi durante il sound bath."</p>
+                                    <p class="text-xs font-semibold text-natura-700">— Maria R., Avellino</p>
+                                </div>
+                                <div class="bg-white rounded-xl p-5 shadow-sm">
+                                    <p class="text-gray-600 italic text-sm leading-relaxed mb-3">"Camminare a piedi nudi sul muschio è stato come tornare bambini. Ogni passo era una scoperta. Grazie di cuore!"</p>
+                                    <p class="text-xs font-semibold text-natura-700">— Luca e Giulia, Napoli</p>
+                                </div>
+                                <div class="bg-white rounded-xl p-5 shadow-sm">
+                                    <p class="text-gray-600 italic text-sm leading-relaxed mb-3">"La meditazione al tramonto è stata la chiusura perfetta. Ho pianto di gioia. Tornerò sicuramente."</p>
+                                    <p class="text-xs font-semibold text-natura-700">— Alessandra T., Salerno</p>
+                                </div>
+                                <div class="bg-white rounded-xl p-5 shadow-sm">
+                                    <p class="text-gray-600 italic text-sm leading-relaxed mb-3">"Il tè di melissa raccolta sul momento... che sapore! E che profumo. Un ricordo che porto nel cuore."</p>
+                                    <p class="text-xs font-semibold text-natura-700">— Davide M., Roma</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="space-y-6">
+                        <div class="bg-natura-50 rounded-2xl p-6 border border-natura-200 sticky top-24">
+                            <h3 class="font-bold text-natura-900 mb-4 text-lg">📋 Dettagli Evento</h3>
+                            <ul class="space-y-3 text-sm text-gray-600">
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="calendar-days" class="w-5 h-5 text-amber-600 flex-shrink-0"></i>
+                                    <span><strong>Data:</strong> 15 Ottobre 2024</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="clock" class="w-5 h-5 text-amber-600 flex-shrink-0"></i>
+                                    <span><strong>Durata:</strong> 6 ore (9:00 – 15:00)</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-amber-600 flex-shrink-0"></i>
+                                    <span><strong>Luogo:</strong> Acqua Fidia, Parco del Partenio</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="users" class="w-5 h-5 text-amber-600 flex-shrink-0"></i>
+                                    <span><strong>Partecipanti:</strong> 30 persone</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="user-check" class="w-5 h-5 text-amber-600 flex-shrink-0"></i>
+                                    <span><strong>Guide:</strong> Gioacchino Acierno + ecopsicologa</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="thermometer" class="w-5 h-5 text-amber-600 flex-shrink-0"></i>
+                                    <span><strong>Meteo:</strong> ☀️ Sereno, 18°C</span>
+                                </li>
+                            </ul>
+                            <hr class="my-5 border-natura-200">
+                            <h4 class="font-bold text-natura-900 mb-3">🌟 Attività Svolte</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                    Sound Bath nel bosco
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                    Barefoot Walk sensoriale
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                    Degustazione erbe selvatiche
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                    Meditazione guidata al tramonto
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                    Ristoro con prodotti locali
+                                </li>
+                            </ul>
+                            <a href="index.html#contatti" class="mt-6 w-full inline-flex items-center justify-center gap-2 py-3 bg-terra-500 hover:bg-terra-600 text-white font-semibold rounded-xl transition-all text-sm">
+                                Partecipa ai Prossimi Eventi
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Foto e Video -->
+        <section class="py-16 lg:py-20 bg-natura-50" aria-labelledby="gallery-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 space-y-4">
+                    <span class="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold tracking-wide">
+                        Gallery
+                    </span>
+                    <h2 id="gallery-heading" class="text-3xl sm:text-4xl font-display font-bold text-natura-900">
+                        Foto e Video dell'Evento
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Rivivi i momenti più belli dell'immersione sensoriale nel Partenio. Clicca sulle immagini per ingrandirle.</p>
+                </div>
+
+                <!-- Tab: Foto / Video -->
+                <div class="flex justify-center gap-2 mb-10" role="tablist">
+                    <button id="tab-foto" class="tab-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all bg-amber-500 text-white shadow-md" role="tab" aria-selected="true">
+                        📸 Foto
+                    </button>
+                    <button id="tab-video" class="tab-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all bg-white text-gray-600 hover:bg-gray-100 shadow-sm" role="tab" aria-selected="false">
+                        🎥 Video
+                    </button>
+                </div>
+
+                <!-- Foto Grid -->
+                <div id="gallery-foto" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/nature/640x360/91" data-caption="Sound bath all'alba tra i faggi">
+                        <img src="http://static.photos/nature/640x360/91" alt="Sound bath nel bosco" loading="lazy">
+                        <div class="overlay"><span>Sound bath all'alba tra i faggi</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/nature/640x360/45" data-caption="Camminata a piedi nudi sul sentiero">
+                        <img src="http://static.photos/nature/640x360/45" alt="Barefoot walk" loading="lazy">
+                        <div class="overlay"><span>Barefoot walk sul muschio</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/nature/640x360/67" data-caption="Degustazione di erbe selvatiche">
+                        <img src="http://static.photos/nature/640x360/67" alt="Degustazione erbe" loading="lazy">
+                        <div class="overlay"><span>Degustazione erbe selvatiche</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/nature/640x360/23" data-caption="Meditazione al tramonto">
+                        <img src="http://static.photos/nature/640x360/23" alt="Meditazione tramonto" loading="lazy">
+                        <div class="overlay"><span>Meditazione al tramonto</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/people/640x360/12" data-caption="Gruppo in ascolto dei suoni della natura">
+                        <img src="http://static.photos/people/640x360/12" alt="Gruppo partecipanti" loading="lazy">
+                        <div class="overlay"><span>Partecipanti in ascolto</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/nature/640x360/78" data-caption="Dettaglio delle campane tibetane">
+                        <img src="http://static.photos/nature/640x360/78" alt="Campane tibetane" loading="lazy">
+                        <div class="overlay"><span>Campane tibetane nel bosco</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/food/640x360/34" data-caption="Infusi di erbe e miele locale">
+                        <img src="http://static.photos/food/640x360/34" alt="Infusi e miele" loading="lazy">
+                        <div class="overlay"><span>Infusi e miele millefiori</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/nature/640x360/99" data-caption="Il sentiero del muschio all'alba">
+                        <img src="http://static.photos/nature/640x360/99" alt="Sentiero muschio" loading="lazy">
+                        <div class="overlay"><span>Il sentiero del muschio</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/people/640x360/45" data-caption="Momento di condivisione finale">
+                        <img src="http://static.photos/people/640x360/45" alt="Condivisione" loading="lazy">
+                        <div class="overlay"><span>Cerchio di condivisione</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/nature/640x360/55" data-caption="Panorama dal punto Acqua Fidia">
+                        <img src="http://static.photos/nature/640x360/55" alt="Panorama Partenio" loading="lazy">
+                        <div class="overlay"><span>Vista da Acqua Fidia</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/nature/640x360/33" data-caption="Raggio di sole tra gli alberi">
+                        <img src="http://static.photos/nature/640x360/33" alt="Luce nel bosco" loading="lazy">
+                        <div class="overlay"><span>Luce tra i faggi</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="foto" data-src="http://static.photos/nature/640x360/82" data-caption="Foglie autunnali sul sentiero">
+                        <img src="http://static.photos/nature/640x360/82" alt="Foglie autunnali" loading="lazy">
+                        <div class="overlay"><span>Colori d'autunno</span></div>
+                    </div>
+                </div>
+
+                <!-- Video Grid (nascosto di default) -->
+                <div id="gallery-video" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 hidden">
+                    <div class="gallery-item" data-type="video" data-src="https://www.w3schools.com/html/mov_bbb.mp4" data-caption="Video: Sound bath nel bosco (3 min)">
+                        <img src="http://static.photos/nature/640x360/91" alt="Video sound bath" loading="lazy">
+                        <div class="play-icon"></div>
+                        <div class="overlay"><span>🎥 Sound bath nel bosco</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="video" data-src="https://www.w3schools.com/html/mov_bbb.mp4" data-caption="Video: Barefoot walk (2 min)">
+                        <img src="http://static.photos/nature/640x360/45" alt="Video barefoot walk" loading="lazy">
+                        <div class="play-icon"></div>
+                        <div class="overlay"><span>🎥 Barefoot walk</span></div>
+                    </div>
+                    <div class="gallery-item" data-type="video" data-src="https://www.w3schools.com/html/mov_bbb.mp4" data-caption="Video: Meditazione al tramonto (4 min)">
+                        <img src="http://static.photos/nature/640x360/23" alt="Video meditazione" loading="lazy">
+                        <div class="play-icon"></div>
+                        <div class="overlay"><span>🎥 Meditazione al tramonto</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Prossimi Eventi -->
+        <section class="py-16 lg:py-20 bg-gradient-to-r from-amber-500 to-terra-500" aria-labelledby="cta-eventi-heading">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+                <h2 id="cta-eventi-heading" class="text-3xl sm:text-4xl font-display font-bold mb-4">Vuoi Vivere la Prossima Esperienza?</h2>
+                <p class="text-white/90 text-lg mb-8">Iscriviti alla newsletter per ricevere in anteprima le date dei prossimi eventi sensoriali nel Parco del Partenio.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+                    <input type="email" placeholder="La tua email" class="px-5 py-3 rounded-full text-gray-800 w-full sm:flex-1 outline-none focus:ring-4 focus:ring-white/30" aria-label="Indirizzo email per newsletter">
+                    <button class="px-6 py-3 bg-natura-900 hover:bg-natura-950 text-white font-semibold rounded-full transition-all shadow-lg whitespace-nowrap">
+                        Iscriviti 🎉
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-natura-950 text-white py-12" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png" alt="Ecovillaggio Partenio Logo" class="h-10 w-10 rounded-full object-cover">
+                <span class="font-display font-bold text-xl text-white">Ecovillaggio Partenio</span>
+            </div>
+            <p class="text-white/50 text-sm mb-4">&copy; 2025 Ecovillaggio Partenio – Partenio Adventure Dreams S.r.l. Tutti i diritti riservati.</p>
+            <a href="index.html" class="text-white/60 hover:text-white text-sm transition-colors flex items-center justify-center gap-1">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Torna al sito principale
+            </a>
+        </div>
+    </footer>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Visualizzatore media">
+        <button class="lightbox-close" aria-label="Chiudi" id="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Precedente" id="lightbox-prev">‹</button>
+        <button class="lightbox-nav lightbox-next" aria-label="Successiva" id="lightbox-next">›</button>
+        <div id="lightbox-content"></div>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+
+        // ===== TAB SWITCHER =====
+        const tabFoto = document.getElementById('tab-foto');
+        const tabVideo = document.getElementById('tab-video');
+        const galleryFoto = document.getElementById('gallery-foto');
+        const galleryVideo = document.getElementById('gallery-video');
+
+        tabFoto.addEventListener('click', () => {
+            tabFoto.className = 'tab-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all bg-amber-500 text-white shadow-md';
+            tabVideo.className = 'tab-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all bg-white text-gray-600 hover:bg-gray-100 shadow-sm';
+            tabFoto.setAttribute('aria-selected', 'true');
+            tabVideo.setAttribute('aria-selected', 'false');
+            galleryFoto.classList.remove('hidden');
+            galleryVideo.classList.add('hidden');
+        });
+
+        tabVideo.addEventListener('click', () => {
+            tabVideo.className = 'tab-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all bg-amber-500 text-white shadow-md';
+            tabFoto.className = 'tab-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all bg-white text-gray-600 hover:bg-gray-100 shadow-sm';
+            tabVideo.setAttribute('aria-selected', 'true');
+            tabFoto.setAttribute('aria-selected', 'false');
+            galleryVideo.classList.remove('hidden');
+            galleryFoto.classList.add('hidden');
+        });
+
+        // ===== LIGHTBOX =====
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+
+        let currentGalleryItems = [];
+        let currentIndex = 0;
+
+        function openLightbox(items, index) {
+            currentGalleryItems = items;
+            currentIndex = index;
+            showMedia(currentIndex);
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            updateCounter();
+            updateNavButtons();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightboxContent.innerHTML = '';
+            document.body.style.overflow = '';
+            currentGalleryItems = [];
+            currentIndex = 0;
+        }
+
+        function showMedia(index) {
+            const item = currentGalleryItems[index];
+            const type = item.getAttribute('data-type');
+            const src = item.getAttribute('data-src');
+            const caption = item.getAttribute('data-caption');
+
+            lightboxContent.innerHTML = '';
+
+            if (type === 'video') {
+                const video = document.createElement('video');
+                video.src = src;
+                video.controls = true;
+                video.autoplay = true;
+                video.style.maxWidth = '90vw';
+                video.style.maxHeight = '85vh';
+                video.style.borderRadius = '12px';
+                lightboxContent.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = caption;
+                lightboxContent.appendChild(img);
+            }
+        }
+
+        function updateCounter() {
+            lightboxCounter.textContent = `${currentIndex + 1} / ${currentGalleryItems.length}`;
+        }
+
+        function updateNavButtons() {
+            lightboxPrev.style.display = currentIndex > 0 ? 'flex' : 'none';
+            lightboxNext.style.display = currentIndex < currentGalleryItems.length - 1 ? 'flex' : 'none';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= currentGalleryItems.length) currentIndex = currentGalleryItems.length - 1;
+            showMedia(currentIndex);
+            updateCounter();
+            updateNavButtons();
+        }
+
+        // Attach click handlers to gallery items
+        function attachGalleryListeners(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const items = container.querySelectorAll('.gallery-item');
+            items.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    const allItems = Array.from(container.querySelectorAll('.gallery-item'));
+                    openLightbox(allItems, index);
+                });
+            });
+        }
+
+        attachGalleryListeners('gallery-foto');
+        attachGalleryListeners('gallery-video');
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+        lightboxNext.addEventListener('click', () => navigateLightbox(1));
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Click outside to close
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+    </script>
+</body>
+</html>

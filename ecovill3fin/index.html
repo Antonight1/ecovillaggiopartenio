@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ecovillaggio Partenio - Bubble Rooms con tinozza finlandese nel Parco Regionale del Partenio. Glamping di lusso, colazione picnic, escursioni e natura a Mercogliano (AV).">
+    <meta name="keywords" content="ecovillaggio, partenio, turismo sostenibile, montagna, natura, glamping, escursioni, educazione ambientale">
+    <meta name="author" content="Ecovillaggio Partenio">
+    <meta property="og:title" content="Ecovillaggio Partenio – Bubble Rooms con Tinozza Finlandese nel Parco del Partenio">
+    <meta property="og:description" content="Glamping di lusso a Mercogliano (AV): 4 Bubble Rooms esclusive con tinozza finlandese privata, colazione picnic, escursioni e natura.">
+    <meta property="og:image" content="http://static.photos/nature/1200x630/42">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png">
+    <link rel="apple-touch-icon" href="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png">
+    <link rel="mask-icon" href="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png" color="#356f33">
+    <meta name="msapplication-TileImage" content="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png">
+    <title>Ecovillaggio Partenio – Un Paradiso Sostenibile nelle Montagne 🌿</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'natura': {
+                            50: '#f0f7f0',
+                            100: '#d9ecd8',
+                            200: '#b5d9b3',
+                            300: '#89bf86',
+                            400: '#5fa35c',
+                            500: '#468a43',
+                            600: '#356f33',
+                            700: '#2b582a',
+                            800: '#244723',
+                            900: '#1d3b1d',
+                            950: '#0e210f',
+                        },
+                        'terra': {
+                            50: '#fdf8f0',
+                            100: '#f9eddb',
+                            200: '#f2d9b6',
+                            300: '#e8bf87',
+                            400: '#dd9f57',
+                            500: '#d48837',
+                            600: '#c5712c',
+                            700: '#a45925',
+                            800: '#844824',
+                            900: '#6b3d20',
+                            950: '#3a1e0f',
+                        },
+                        'cielo': {
+                            50: '#f0f7fb',
+                            100: '#dcedf5',
+                            200: '#bfdfed',
+                            300: '#93cbe0',
+                            400: '#60b0cf',
+                            500: '#3d96bb',
+                            600: '#2c7a9e',
+                            700: '#256380',
+                            800: '#23536a',
+                            900: '#214659',
+                        },
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Georgia', 'Times New Roman', 'serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/panorama%20campo%20magg.jpeg')",
+                        'mountain-pattern': "url('https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/campo%20maggiore.jpeg')",
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans text-gray-800 bg-natura-50 min-h-screen">
+
+    <!-- ========== BACK TO TOP BUTTON ========== -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-natura-600 hover:bg-natura-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 invisible translate-y-4" aria-label="Torna in cima">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- ========== HEADER / NAVIGATION ========== -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-natura-100 shadow-sm" role="banner">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Navigazione principale">
+            <div class="flex justify-between items-center h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center gap-2 group" aria-label="Ecovillaggio Partenio - Home">
+                    <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png" alt="Ecovillaggio Partenio Logo" class="h-10 w-10 rounded-full object-cover group-hover:opacity-90 transition-opacity">
+                    <span class="font-display font-bold text-lg lg:text-xl text-natura-800 hidden sm:block">
+                        Ecovillaggio <span class="text-terra-600">Partenio</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden lg:flex items-center gap-1 text-sm font-medium" role="menubar">
+                    <li role="none"><a href="#hero" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Home</a></li>
+                    <li role="none"><a href="#chi-siamo" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Chi Siamo</a></li>
+                    <li role="none"><a href="alloggi.html" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Alloggi</a></li>
+                    <li role="none"><a href="#attivita" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Attività</a></li>
+                    <li role="none"><a href="#educazione" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Educazione</a></li>
+                    <li role="none"><a href="#ecomuseo" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Ecomuseo</a></li>
+                    <li role="none"><a href="#accoglienza" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Accoglienza</a></li>
+                    <li role="none"><a href="#eventi" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Eventi</a></li>
+                    <li role="none"><a href="#sostenibilita" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Sostenibilità</a></li>
+                    <li role="none"><a href="#contatti" role="menuitem" class="nav-link px-4 py-2 rounded-lg bg-natura-600 text-white hover:bg-natura-700 transition-colors ml-2">Contatti</a></li>
+                </ul>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-natura-100 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Apri menu di navigazione">
+                    <i data-lucide="menu" class="w-6 h-6 text-natura-700"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="lg:hidden hidden pb-4 border-t border-natura-100 mt-2 pt-4" role="navigation" aria-label="Menu mobile">
+                <ul class="flex flex-col gap-1 text-sm font-medium">
+                    <li><a href="#hero" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Home</a></li>
+                    <li><a href="#chi-siamo" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Chi Siamo</a></li>
+                    <li><a href="alloggi.html" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Alloggi</a></li>
+                    <li><a href="#attivita" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Attività</a></li>
+                    <li><a href="#educazione" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Educazione</a></li>
+                    <li><a href="#ecomuseo" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Ecomuseo</a></li>
+                    <li><a href="#accoglienza" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Accoglienza</a></li>
+                    <li><a href="#eventi" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Eventi</a></li>
+                    <li><a href="#sostenibilita" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Sostenibilità</a></li>
+                    <li><a href="#contatti" class="mobile-nav-link block px-4 py-3 rounded-lg bg-natura-600 text-white hover:bg-natura-700 transition-colors text-center mt-2">Contatti</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>    <!-- ========== MAIN CONTENT ========== -->
+    <main id="main-content" role="main">
+
+        <!-- ===== HERO SECTION ===== -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 lg:pt-20" aria-labelledby="hero-heading">
+            <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat" role="img" aria-label="Panorama montano del Partenio con vegetazione lussureggiante"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-natura-950/70 via-natura-950/50 to-natura-950/80"></div>
+            <div class="absolute inset-0 bg-natura-900/20"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-20">
+                <div class="animate-fade-in-up space-y-6 max-w-4xl mx-auto">
+                    <span class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wide border border-white/30">
+                        🌿 Benvenuti nel cuore del Partenio
+                    </span>
+                    <h1 id="hero-heading" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight">
+                        Ecovillaggio
+                        <span class="block text-terra-300">Partenio</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                        Un progetto di turismo sostenibile nel Parco Regionale del Partenio: glamping, educazione ambientale, ecomuseo diffuso e molto altro. Scopri le nostre esclusive Bubble Rooms con tinozza finlandese privata.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                        <a href="#contatti" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-terra-500 hover:bg-terra-600 text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg shadow-terra-500/30 text-lg">
+                            Richiedi Informazioni
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#chi-siamo" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold rounded-full transition-all border border-white/40 text-lg">
+                            Scopri di Più
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+                <a href="#chi-siamo" aria-label="Scorri per scoprire di più" class="text-white/70 hover:text-white transition-colors">
+                    <i data-lucide="chevron-down" class="w-8 h-8"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== AREA PIC-NIC & TARIFFE PARCO DEL PARTENIO ===== -->
+        <section id="area-picnic" class="py-20 lg:py-28 bg-white" aria-labelledby="picnic-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Intestazione -->
+                <div class="text-center mb-16 space-y-4">
+                    <span class="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold tracking-wide">
+                        🧺 Area Attrezzata
+                    </span>
+                    <h2 id="picnic-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
+                        Area Pic-Nic & Barbecue
+                    </h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Goditi una giornata all'aria aperta con i nostri tavoli picnic, barbecue e servizi immersi nella natura del Parco del Partenio. 
+                        Prenota il tuo posto e rispetta le regole dell'area protetta.
+                    </p>
+                </div>
+
+                <!-- Immagine Area Picnic -->
+                <div class="relative rounded-2xl overflow-hidden shadow-xl mb-16 aspect-[21/9]">
+                    <img src="http://static.photos/nature/1200x630/73" alt="Area picnic attrezzata nel Parco del Partenio con tavoli in legno e barbecue" class="w-full h-full object-cover" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-natura-950/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <span class="px-3 py-1.5 bg-amber-500/90 backdrop-blur-sm rounded-full text-sm font-semibold">📍 Località Acqua Fidia</span>
+                    </div>
+                </div>
+
+                <!-- Tariffe Grid -->
+                <div class="mb-16">
+                    <h3 class="text-2xl sm:text-3xl font-display font-bold text-natura-900 text-center mb-8">💶 Tariffario Ufficiale</h3>
+                    
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        <!-- Autovettura -->
+                        <div class="bg-natura-50 rounded-2xl p-6 border border-natura-100 hover:shadow-lg transition-all">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="car" class="w-6 h-6 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-natura-900">Sosta Autovettura</h4>
+                                    <p class="text-3xl font-display font-bold text-terra-600">€ 5,00</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-500">Tariffa giornaliera</p>
+                        </div>
+
+                        <!-- Camper -->
+                        <div class="bg-natura-50 rounded-2xl p-6 border border-natura-100 hover:shadow-lg transition-all">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="bus" class="w-6 h-6 text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-natura-900">Sosta Camper/Minibus</h4>
+                                    <p class="text-3xl font-display font-bold text-terra-600">€ 15,00</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-500">Tariffa per 24 ore</p>
+                        </div>
+
+                        <!-- Tavolo Picnic -->
+                        <div class="bg-natura-50 rounded-2xl p-6 border border-natura-100 hover:shadow-lg transition-all">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="utensils-crossed" class="w-6 h-6 text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-natura-900">Affitto Tavolo Picnic</h4>
+                                    <p class="text-3xl font-display font-bold text-terra-600">€ 15,00</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-500">Max 8 persone – Tariffa giornaliera</p>
+                        </div>
+
+                        <!-- Barbecue -->
+                        <div class="bg-natura-50 rounded-2xl p-6 border border-natura-100 hover:shadow-lg transition-all">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="flame" class="w-6 h-6 text-red-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-natura-900">Uso Barbecue</h4>
+                                    <p class="text-3xl font-display font-bold text-terra-600">€ 7,00</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-500">Incluso legna/carbone</p>
+                        </div>
+
+                        <!-- Family Day -->
+                        <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 border-2 border-amber-300 hover:shadow-xl transition-all relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-amber-500 text-white px-3 py-1 text-xs font-bold rounded-bl-xl">TOP</div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-amber-200 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="heart" class="w-6 h-6 text-amber-700"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-natura-900">Pacchetto "Family Day"</h4>
+                                    <p class="text-3xl font-display font-bold text-terra-600">€ 18,00</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600">1 Auto + 1 Tavolo – Risparmio 10%</p>
+                        </div>
+
+                        <!-- Disabili -->
+                        <div class="bg-green-50 rounded-2xl p-6 border border-green-200 hover:shadow-lg transition-all">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-green-200 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="accessibility" class="w-6 h-6 text-green-700"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-natura-900">Accesso Disabili</h4>
+                                    <p class="text-2xl font-display font-bold text-green-600">Gratuito</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600">Accesso pedonale gratuito per tutti</p>
+                        </div>
+                    </div>
+
+                    <!-- Agevolazioni Residenti -->
+                    <div class="bg-gradient-to-r from-natura-50 to-green-50 rounded-2xl p-6 sm:p-8 border border-natura-200">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                <i data-lucide="badge-percent" class="w-5 h-5 text-green-700"></i>
+                            </div>
+                            <h4 class="font-bold text-natura-900 text-lg">Agevolazioni Residenti 🏠</h4>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Previa esibizione documento d'identità</p>
+                        <div class="grid sm:grid-cols-3 gap-4">
+                            <div class="bg-white rounded-xl p-4 shadow-sm text-center">
+                                <p class="text-xs text-gray-500 mb-1">Sosta Auto Residenti</p>
+                                <p class="text-2xl font-bold text-green-600">€ 3,00</p>
+                                <p class="text-xs text-gray-400">-40%</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 shadow-sm text-center">
+                                <p class="text-xs text-gray-500 mb-1">Affitto Tavolo Residenti</p>
+                                <p class="text-2xl font-bold text-green-600">€ 10,00</p>
+                                <p class="text-xs text-gray-400">-33%</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 shadow-sm text-center">
+                                <p class="text-xs text-gray-500 mb-1">Accesso Pedonale</p>
+                                <p class="text-2xl font-bold text-green-600">Gratuito</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gruppi e Scuole -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 bg-white rounded-2xl p-5 border border-natura-100 shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-natura-900">Gruppi e Scuole 🎓</h4>
+                            <p class="text-sm text-gray-600">Scolaresche e Centri Estivi: <strong>€ 3,00/part.</strong> (incluso educazione ambientale)<br>
+                            Associazioni Volontariato e Disabili: <strong>Gratuito</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decalogo Comportamentale -->
+                <div class="mb-16">
+                    <div class="text-center mb-10">
+                        <h3 class="text-2xl sm:text-3xl font-display font-bold text-natura-900">📜 Decalogo Comportamentale</h3>
+                        <p class="text-gray-600 mt-2">Regole da rispettare nelle Aree Protette del Parco del Partenio</p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-rose-50 rounded-2xl p-5 border-l-4 border-rose-500 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-3">
+                                <span class="w-8 h-8 bg-rose-500 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+                                <div>
+                                    <h4 class="font-bold text-natura-900 text-sm mb-1">Motocross e Fuoristrada</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">Vietato circolare con veicoli a motore fuori dalle strade carrabili. Distrugge il suolo e altera la fauna. Evitare gare di mountain bike in primavera.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50 rounded-2xl p-5 border-l-4 border-amber-500 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-3">
+                                <span class="w-8 h-8 bg-amber-500 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+                                <div>
+                                    <h4 class="font-bold text-natura-900 text-sm mb-1">Ingresso Cani Liberi</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">Obbligo di tenere i cani al guinzaglio corto. Gli animali liberi spaventano o predano la fauna (es. nidi di Fratino). Sanzioni ex art. 727 c.p.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 rounded-2xl p-5 border-l-4 border-green-500 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-3">
+                                <span class="w-8 h-8 bg-green-500 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
+                                <div>
+                                    <h4 class="font-bold text-natura-900 text-sm mb-1">Abbandono Rifiuti e Raccolta Flora/Funghi</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">Vietata la raccolta di fiori spontanei. I funghi non vanno mai trasportati in buste di plastica per consentire la corretta diffusione delle spore.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 rounded-2xl p-5 border-l-4 border-red-500 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-3">
+                                <span class="w-8 h-8 bg-red-500 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">4</span>
+                                <div>
+                                    <h4 class="font-bold text-natura-900 text-sm mb-1">Liberazione Animali Esotici</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">Vietato immettere specie aliene (es. testuggini o scoiattoli nordamericani). Provoca alterazioni eco-sistemiche e trasmette gravi patologie.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-sky-50 rounded-2xl p-5 border-l-4 border-sky-500 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-3">
+                                <span class="w-8 h-8 bg-sky-500 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">5</span>
+                                <div>
+                                    <h4 class="font-bold text-natura-900 text-sm mb-1">Sorvolo Aereo e Droni</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">Vietato il sorvolo di droni non autorizzati. Causa stress e involo forzato dell'avifauna o reazioni di difesa dei rapaci presso i nidi.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-orange-50 rounded-2xl p-5 border-l-4 border-orange-500 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-3">
+                                <span class="w-8 h-8 bg-orange-500 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">6</span>
+                                <div>
+                                    <h4 class="font-bold text-natura-900 text-sm mb-1">Parapendio e Arrampicata</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">Sospese o regolamentate nei periodi di nidificazione di grandi rapaci (Aquila reale, Falco pellegrino) per evitare l'abbandono delle uova.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 rounded-2xl p-5 border-l-4 border-purple-500 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-3">
+                                <span class="w-8 h-8 bg-purple-500 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">7</span>
+                                <div>
+                                    <h4 class="font-bold text-natura-900 text-sm mb-1">Fonti Sonore ed Eccessi Acustici</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">Vietati schiamazzi, musica ad alto volume, botti e attività di softair. Il silenzio è un patrimonio tutelato per la fauna e per i visitatori.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 rounded-2xl p-5 border-l-4 border-indigo-500 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-3">
+                                <span class="w-8 h-8 bg-indigo-500 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">8</span>
+                                <div>
+                                    <h4 class="font-bold text-natura-900 text-sm mb-1">Illuminazione Notturna</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">Sorgenti luminose artificiali intense disorientano l'avifauna migratoria (rischio impatto) e alterano le abitudini dei pipistrelli.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 rounded-2xl p-5 border-l-4 border-red-600 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-3">
+                                <span class="w-8 h-8 bg-red-600 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">9</span>
+                                <div>
+                                    <h4 class="font-bold text-natura-900 text-sm mb-1">Accensione di Fuochi</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">Vietato accendere fuochi all'aperto (Legge 394/91) per l'altissimo rischio di incendi. Utilizzare esclusivamente i barbecue dell'area attrezzata.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-emerald-50 rounded-2xl p-5 border-l-4 border-emerald-500 hover:shadow-md transition-all">
+                            <div class="flex items-start gap-3">
+                                <span class="w-8 h-8 bg-emerald-500 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">10</span>
+                                <div>
+                                    <h4 class="font-bold text-natura-900 text-sm mb-1">Incontri Ravvicinati con la Fauna</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">Mantenere le distanze. Vietato l'uso del flash, fare foto ai nidi, inseguire gli animali o somministrare loro cibo artificiale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regole Cruciali Rifiuti & Info -->
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Regola Rifiuti -->
+                    <div class="bg-red-50 rounded-2xl p-6 sm:p-8 border-2 border-red-300">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="trash-2" class="w-6 h-6 text-red-600"></i>
+                            <h4 class="font-bold text-natura-900 text-lg">Regole Cruciali Rifiuti 🚯</h4>
+                        </div>
+                        <p class="text-sm text-gray-700 mb-4 leading-relaxed">
+                            <strong>Cauzione Rifiuti Obbligatoria: € 5,00</strong><br>
+                            Vige il divieto assoluto di abbandono residui. Si applica la regola ferrea: 
+                            <strong>"Porta a valle i tuoi scarti"</strong>. Custodisci l'ambiente.
+                        </p>
+                        <div class="bg-white rounded-xl p-4 text-center">
+                            <p class="text-xs text-gray-500">Area protetta vigilata dai</p>
+                            <p class="font-bold text-natura-900">Carabinieri Forestali</p>
+                        </div>
+                    </div>
+
+                    <!-- Info e Contatti -->
+                    <div class="bg-natura-50 rounded-2xl p-6 sm:p-8 border border-natura-200">
+                        <h4 class="font-bold text-natura-900 text-lg mb-4 flex items-center gap-2">
+                            <i data-lucide="info" class="w-5 h-5 text-natura-600"></i>
+                            Informazioni Utili
+                        </h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="map" class="w-4 h-4 text-terra-600 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Mappa Sentieri & QR Code:</strong> Inquadra sul posto per visualizzare la cartografia ufficiale CAI e il Sentiero 210 per Campo Maggiore.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="globe" class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Sito & Social:</strong> Partenio Adventure Dreams</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="phone-call" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Gestione e Info:</strong> Contatti sul posto per prenotazioni tavoli e barbecue</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="alert-triangle" class="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Emergenza Ambientale:</strong> 112 (Numero Unico)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="shield" class="w-4 h-4 text-natura-700 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Enti:</strong> A.S.O.I.M. – Studi Ornitologici – Ministero Ambiente – Carabinieri Forestali</span>
+                            </li>
+                        </ul>
+                        <a href="#contatti" class="mt-6 w-full inline-flex items-center justify-center gap-2 py-3 bg-terra-500 hover:bg-terra-600 text-white font-semibold rounded-xl transition-all text-sm">
+                            Prenota il tuo Tavolo
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== CHI SIAMO / MISSIONE ===== -->
+        <section id="chi-siamo" class="py-20 lg:py-28 bg-white" aria-labelledby="chi-siamo-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="space-y-6">
+                        <span class="inline-block px-4 py-1.5 bg-natura-100 text-natura-700 rounded-full text-sm font-semibold tracking-wide">
+                            La Nostra Missione
+                        </span>
+                        <h2 id="chi-siamo-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900 leading-tight">
+                            Il nostro <span class="text-terra-600">sogno</span>
+                        </h2>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            L'Ecovillaggio Partenio è un glamping immerso nel verde del Parco Regionale del Partenio, a Località Vallefonda, Mercogliano (AV). Offriamo alloggi immersi nella natura in forme diverse—bubble houses, hobbit houses, log cabins e tree houses—affinché tu possa soggiornare e usufruire dei servizi del progetto. Non abbiamo solo bubble rooms!
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            La nostra missione è creare un turismo che rispetti l'ambiente, valorizzi le tradizioni irpine e sostenga la comunità locale. Dalle colazioni picnic con prodotti tipici alle escursioni guidate, ogni dettaglio è pensato per un'esperienza autentica e sostenibile.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <div class="flex items-center gap-2 text-natura-700">
+                                <i data-lucide="leaf" class="w-5 h-5 text-natura-600"></i>
+                                <span class="font-medium">Bubble Rooms Eco-Friendly</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-natura-700">
+                                <i data-lucide="users" class="w-5 h-5 text-natura-600"></i>
+                                <span class="font-medium">Accessibile a Disabili</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-natura-700">
+                                <i data-lucide="heart" class="w-5 h-5 text-natura-600"></i>
+                                <span class="font-medium">Tinozza Finlandese</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+                            <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/campo%20maggiore.jpeg" alt="Vista panoramica dell'Ecovillaggio Partenio immerso nella natura montana" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-terra-500 text-white p-4 rounded-xl shadow-lg hidden sm:block">
+                            <p class="text-2xl font-bold">10+</p>
+                            <p class="text-sm">Anni di esperienza</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== AREE DELL'ECOVILLAGGIO ===== -->
+        <section id="aree" class="py-20 lg:py-28 bg-natura-50" aria-labelledby="aree-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="inline-block px-4 py-1.5 bg-natura-100 text-natura-700 rounded-full text-sm font-semibold tracking-wide">
+                        Esplora
+                    </span>
+                    <h2 id="aree-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
+                        Le Aree dell'Ecovillaggio
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Scopri tutto ciò che il nostro ecovillaggio ha da offrire per un'esperienza indimenticabile.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <!-- Card: Alloggio -->
+                    <a href="#alloggi" class="area-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-natura-200">
+                        <div class="w-14 h-14 bg-natura-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-natura-600 transition-colors">
+                            <i data-lucide="home" class="w-7 h-7 text-natura-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-natura-900 mb-3">Alloggio Sostenibile</h3>
+                        <p class="text-gray-600">Cabine ecologiche, tende glamping e rifugi tradizionali immersi nella natura.</p>
+                    </a>
+                    <!-- Card: Attività Outdoor -->
+                    <a href="#attivita" class="area-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-natura-200">
+                        <div class="w-14 h-14 bg-natura-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-natura-600 transition-colors">
+                            <i data-lucide="mountain" class="w-7 h-7 text-natura-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-natura-900 mb-3">Attività Outdoor</h3>
+                        <p class="text-gray-600">Escursioni, mountain bike, arrampicata e sport all'aria aperta per tutti i livelli.</p>
+                    </a>
+                    <!-- Card: Educazione Ambientale -->
+                    <a href="#educazione" class="area-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-natura-200">
+                        <div class="w-14 h-14 bg-natura-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-natura-600 transition-colors">
+                            <i data-lucide="book-open" class="w-7 h-7 text-natura-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-natura-900 mb-3">Educazione Ambientale</h3>
+                        <p class="text-gray-600">Centro interpretativo, programmi per scuole e workshop sulla sostenibilità.</p>
+                    </a>
+                    <!-- Card: Ecomuseo Diffuso -->
+                    <a href="#ecomuseo" class="area-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-natura-200">
+                        <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-amber-500 transition-colors">
+                            <i data-lucide="landmark" class="w-7 h-7 text-amber-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-natura-900 mb-3">Ecomuseo Diffuso</h3>
+                        <p class="text-gray-600">Museo naturalistico e storico-antropologico distribuito nei rifugi del Parco del Partenio.</p>
+                    </a>
+                    <!-- Card: Accoglienza -->
+                    <a href="#accoglienza" class="area-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-natura-200">
+                        <div class="w-14 h-14 bg-natura-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-natura-600 transition-colors">
+                            <i data-lucide="coffee" class="w-7 h-7 text-natura-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-natura-900 mb-3">Accoglienza Turistica</h3>
+                        <p class="text-gray-600">Ristorante, caffetteria, negozio di prodotti locali e guide esperte.</p>
+                    </a>
+                    <!-- Card: Eventi -->
+                    <a href="#eventi" class="area-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-natura-200">
+                        <div class="w-14 h-14 bg-natura-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-natura-600 transition-colors">
+                            <i data-lucide="calendar-days" class="w-7 h-7 text-natura-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-natura-900 mb-3">Eventi & Intrattenimento</h3>
+                        <p class="text-gray-600">Festival stagionali, concerti sotto le stelle e mercati dell'artigianato.</p>
+                    </a>
+                    <!-- Card: Sostenibilità -->
+                    <a href="#sostenibilita" class="area-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-natura-200">
+                        <div class="w-14 h-14 bg-natura-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-natura-600 transition-colors">
+                            <i data-lucide="sun" class="w-7 h-7 text-natura-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-natura-900 mb-3">Sostenibilità Ambientale</h3>
+                        <p class="text-gray-600">Energia solare, raccolta acqua piovana, agricoltura biologica e riciclo.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ALLOGGI SOSTENIBILI ===== -->
+        <section id="alloggi" class="py-20 lg:py-28 bg-white" aria-labelledby="alloggi-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="inline-block px-4 py-1.5 bg-natura-100 text-natura-700 rounded-full text-sm font-semibold tracking-wide">
+                        Dove Dormire
+                    </span>
+                    <h2 id="alloggi-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
+                        Alloggi Sostenibili
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Scegli la sistemazione perfetta per il tuo soggiorno nella natura, tra comfort e rispetto per l'ambiente.</p>
+                </div>
+                
+                <!-- Tipologie di alloggi -->
+ <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                    <!-- Bubble Rooms -->
+                    <div class="group bg-white rounded-2xl shadow-lg overflow-hidden border border-natura-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/bubble%20room%20.jpeg" alt="Bubble Room trasparente con vista panoramica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute top-4 left-4 bg-sky-500 text-white px-3 py-1 rounded-full text-sm font-medium">4 unità</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="circle-dot" class="w-5 h-5 text-sky-500"></i>
+                                <h3 class="text-xl font-bold text-natura-900">Bubble Rooms</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4 flex-grow text-sm">Strutture in policarbonato con pannelli a specchio unidirezionali: vista 360° e totale privacy.</p>
+                            <ul class="space-y-1.5 mb-5 text-xs text-gray-700">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Tinozza finlandese privata</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Stufa a legna</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Bagno privato</li>
+                            </ul>
+                            <a href="alloggi.html?tipo=bubble" class="inline-flex items-center justify-center gap-2 w-full py-3 bg-natura-600 hover:bg-natura-700 text-white font-medium rounded-xl transition-colors text-sm">
+                                Scopri le Bubble <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tree Houses -->
+                    <div class="group bg-white rounded-2xl shadow-lg overflow-hidden border border-natura-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img src="http://static.photos/nature/640x360/77" alt="Tree House sospesa tra gli alberi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">2 unità</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="tree-pine" class="w-5 h-5 text-green-600"></i>
+                                <h3 class="text-xl font-bold text-natura-900">Tree Houses</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4 flex-grow text-sm">Case sull'albero di charme, sospese tra i faggi secolari del Partenio, per un soggiorno da sogno.</p>
+                            <ul class="space-y-1.5 mb-5 text-xs text-gray-700">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Terrazza panoramica</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Letto a baldacchino</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Bagno privato</li>
+                            </ul>
+                            <a href="alloggi.html?tipo=tree" class="inline-flex items-center justify-center gap-2 w-full py-3 bg-natura-600 hover:bg-natura-700 text-white font-medium rounded-xl transition-colors text-sm">
+                                Scopri le Tree Houses <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Log Cabins -->
+                    <div class="group bg-white rounded-2xl shadow-lg overflow-hidden border border-natura-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img src="http://static.photos/nature/640x360/56" alt="Log Cabin in legno massiccio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute top-4 left-4 bg-amber-700 text-white px-3 py-1 rounded-full text-sm font-medium">3 unità</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="home" class="w-5 h-5 text-amber-700"></i>
+                                <h3 class="text-xl font-bold text-natura-900">Log Cabins</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4 flex-grow text-sm">Rustiche e accoglienti baite in legno con veranda privata e vista sulle montagne.</p>
+                            <ul class="space-y-1.5 mb-5 text-xs text-gray-700">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Angolo cottura</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Camino a legna</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Veranda privata</li>
+                            </ul>
+                            <a href="alloggi.html?tipo=cabin" class="inline-flex items-center justify-center gap-2 w-full py-3 bg-natura-600 hover:bg-natura-700 text-white font-medium rounded-xl transition-colors text-sm">
+                                Scopri le Cabins <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Hobbit Houses -->
+                    <div class="group bg-white rounded-2xl shadow-lg overflow-hidden border border-natura-100 hover:shadow-2xl transition-all duration-300 flex flex-col">
+                        <div class="relative overflow-hidden aspect-[4/3]">
+                            <img src="http://static.photos/nature/640x360/34" alt="Hobbit House scavata nella collina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute top-4 left-4 bg-terra-600 text-white px-3 py-1 rounded-full text-sm font-medium">2 unità</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="door-open" class="w-5 h-5 text-terra-600"></i>
+                                <h3 class="text-xl font-bold text-natura-900">Hobbit Houses</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4 flex-grow text-sm">Case scavate nella collina con porte rotonde e tetti erbosi: un rifugio fiabesco.</p>
+                            <ul class="space-y-1.5 mb-5 text-xs text-gray-700">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Tetto erboso</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Porta rotonda</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> Bagno privato</li>
+                            </ul>
+                            <a href="alloggi.html?tipo=hobbit" class="inline-flex items-center justify-center gap-2 w-full py-3 bg-natura-600 hover:bg-natura-700 text-white font-medium rounded-xl transition-colors text-sm">
+                                Scopri le Hobbit <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA per pagina completa -->
+                <div class="text-center">
+                    <a href="alloggi.html" class="inline-flex items-center gap-2 px-8 py-4 bg-terra-500 hover:bg-terra-600 text-white font-bold rounded-full transition-all transform hover:scale-105 shadow-lg shadow-terra-500/30 text-lg">
+                        <i data-lucide="grid" class="w-5 h-5"></i>
+                        Sfoglia Tutti gli Alloggi
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- ===== ATTIVITÀ ALL'APERTO ===== -->
+        <section id="attivita" class="py-20 lg:py-28 bg-natura-50" aria-labelledby="attivita-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="inline-block px-4 py-1.5 bg-natura-100 text-natura-700 rounded-full text-sm font-semibold tracking-wide">
+                        Avventura
+                    </span>
+                    <h2 id="attivita-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
+                        Attività all'Aperto
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Dalle escursioni guidate agli sport più emozionanti, vivi la montagna in tutte le sue sfumature.</p>
+                </div>
+
+                <!-- Main Activities Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <!-- Escursioni Guidate -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                        <div class="relative overflow-hidden aspect-[16/10]">
+                            <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Attivita%20esperienzali%20.jpeg" alt="Escursioni guidate nel Parco del Partenio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-xs font-medium text-white bg-natura-600/80 backdrop-blur-sm px-3 py-1 rounded-full">Tutti i livelli</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-natura-900 mb-2 text-lg">Escursioni Guidate</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Percorsi naturalistici con guida esperta alla scoperta del Parco Regionale del Partenio, adatti a tutti i livelli.</p>
+                        </div>
+                    </div>
+                    <!-- Mountain Bike -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                        <div class="relative overflow-hidden aspect-[16/10]">
+                            <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/att%20esp%203.jpeg" alt="Mountain bike sui sentieri del Partenio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-xs font-medium text-white bg-terra-600/80 backdrop-blur-sm px-3 py-1 rounded-full">Percorsi guidati</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-natura-900 mb-2 text-lg">Mountain Bike</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Percorsi per mountain bike tra i sentieri del Parco, con diversi livelli di difficoltà e noleggio disponibile.</p>
+                        </div>
+                    </div>
+                    <!-- Primo Approccio a Cavallo -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                        <div class="relative overflow-hidden aspect-[16/10]">
+                            <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Gioacchino%20Acierno%20che%20parla%20alla%20scolaresca.jpeg" alt="Primo approccio a cavallo nella natura" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-xs font-medium text-white bg-amber-600/80 backdrop-blur-sm px-3 py-1 rounded-full">Principianti</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-natura-900 mb-2 text-lg">Primo Approccio a Cavallo</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Esperienza guidata da istruttore equestre qualificato per avvicinarsi al mondo dell'equitazione nella natura.</p>
+                        </div>
+                    </div>
+                    <!-- Passeggiate nella Natura -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                        <div class="relative overflow-hidden aspect-[16/10]">
+                            <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Salamandra%20insieme%20ai%20bambini.jpeg" alt="Passeggiate nella natura e aree picnic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-xs font-medium text-white bg-green-600/80 backdrop-blur-sm px-3 py-1 rounded-full">Per tutti</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-natura-900 mb-2 text-lg">Passeggiate nella Natura</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Sentieri panoramici, aree picnic e barbecue immersi nel verde per momenti di puro relax in famiglia.</p>
+                        </div>
+                    </div>
+                    <!-- Laboratori di Caseificazione -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                        <div class="relative overflow-hidden aspect-[16/10]">
+                            <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Scolaresca%20evento%20scolastico%20educazione%20.jpeg" alt="Laboratorio di caseificazione tradizionale" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-xs font-medium text-white bg-blue-600/80 backdrop-blur-sm px-3 py-1 rounded-full">Workshop</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-natura-900 mb-2 text-lg">Laboratori di Caseificazione</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Scopri i segreti della produzione casearia tradizionale irpina con degustazione dei prodotti locali.</p>
+                        </div>
+                    </div>
+                    <!-- Turismo Esperienziale -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                        <div class="relative overflow-hidden aspect-[16/10]">
+                            <img src="http://static.photos/travel/640x360/67" alt="Turismo esperienziale nel Partenio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-xs font-medium text-white bg-purple-600/80 backdrop-blur-sm px-3 py-1 rounded-full">Personalizzato</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-natura-900 mb-2 text-lg">Turismo Esperienziale</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Esperienze su misura con guide locali e partner selezionati per scoprire il territorio in modo autentico.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cartolina Evento Sensoriale -->
+                <div class="mt-12">
+                    <a href="evento-sensoriale.html" class="group block bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-amber-200 hover:border-amber-300 transform hover:-translate-y-1">
+                        <div class="grid md:grid-cols-5">
+                            <!-- Immagine -->
+                            <div class="md:col-span-2 relative overflow-hidden aspect-[4/3] md:aspect-auto">
+                                <img src="http://static.photos/nature/640x360/88" alt="Evento sensoriale nel bosco del Partenio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-amber-50/30 md:to-amber-50/80"></div>
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-amber-700 px-3 py-1.5 rounded-full text-xs font-bold shadow-md flex items-center gap-1.5">
+                                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                                    Evento Passato
+                                </div>
+                            </div>
+                            <!-- Contenuto -->
+                            <div class="md:col-span-3 p-6 sm:p-8 flex flex-col justify-center">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">🌲 Esperienza Sensoriale</span>
+                                    <span class="px-3 py-1 bg-rose-100 text-rose-600 rounded-full text-xs font-semibold">📅 15 Ottobre 2024</span>
+                                </div>
+                                <h3 class="text-2xl sm:text-3xl font-display font-bold text-natura-900 mb-3 group-hover:text-terra-700 transition-colors">
+                                    "I Suoni del Bosco" – Immersione Sensoriale nel Partenio
+                                </h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Un viaggio sensoriale unico tra i sentieri del Parco: ascolto dei suoni della natura, 
+                                    camminata a piedi nudi, degustazione di erbe selvatiche e meditazione guidata al tramonto. 
+                                    Un'esperienza che ha coinvolto tutti i sensi in un abbraccio con la natura.
+                                </p>
+                                <div class="flex flex-wrap gap-3 mb-5">
+                                    <div class="flex items-center gap-1.5 text-sm text-gray-500 bg-white/70 rounded-full px-3 py-1.5 shadow-sm">
+                                        <i data-lucide="ear" class="w-4 h-4 text-amber-600"></i>
+                                        <span>Sound Bath</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 text-sm text-gray-500 bg-white/70 rounded-full px-3 py-1.5 shadow-sm">
+                                        <i data-lucide="footprints" class="w-4 h-4 text-green-600"></i>
+                                        <span>Barefoot Walk</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 text-sm text-gray-500 bg-white/70 rounded-full px-3 py-1.5 shadow-sm">
+                                        <i data-lucide="leaf" class="w-4 h-4 text-emerald-600"></i>
+                                        <span>Erbe Selvatiche</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 text-sm text-gray-500 bg-white/70 rounded-full px-3 py-1.5 shadow-sm">
+                                        <i data-lucide="sunset" class="w-4 h-4 text-orange-500"></i>
+                                        <span>Meditazione</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-full transition-all group-hover:shadow-lg group-hover:shadow-amber-500/30 text-sm">
+                                        Vedi Foto e Video dell'Evento
+                                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    </span>
+                                    <span class="text-xs text-gray-400 flex items-center gap-1">
+                                        <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                                        30 partecipanti
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                
+            </div>
+        </section>
+
+        <!-- ===== EDUCAZIONE AMBIENTALE ===== -->
+        <section id="educazione" class="py-20 lg:py-28 bg-white" aria-labelledby="educazione-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="inline-block px-4 py-1.5 bg-natura-100 text-natura-700 rounded-full text-sm font-semibold tracking-wide">
+                        Imparare
+                    </span>
+                    <h2 id="educazione-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
+                        Educazione Ambientale
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Un centro dedicato alla conoscenza e alla tutela dell'ambiente, per grandi e piccoli.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-natura-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-natura-200 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <i data-lucide="landmark" class="w-8 h-8 text-natura-700"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-natura-900 mb-3">Centro di Interpretazione Ambientale</h3>
+                        <p class="text-gray-600 text-sm">Mostre interattive, video immersivi e materiali didattici per comprendere l'ecosistema del Partenio e l'importanza della sua conservazione.</p>
+                    </div>
+                    <div class="bg-natura-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-natura-200 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-natura-700"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-natura-900 mb-3">Programmi Educativi</h3>
+                        <p class="text-gray-600 text-sm">Percorsi didattici per scuole di ogni ordine e grado, seminari universitari e attività formative per gruppi organizzati.</p>
+                    </div>
+                    <div class="bg-natura-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 bg-natura-200 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <i data-lucide="hammer" class="w-8 h-8 text-natura-700"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-natura-900 mb-3">Workshop Periodici</h3>
+                        <p class="text-gray-600 text-sm">Laboratori pratici su agricoltura biologica, tecniche di conservazione, sostenibilità domestica e molto altro ancora.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ECOMUSEO DIFFUSO ===== -->
+        <section id="ecomuseo" class="py-20 lg:py-28 bg-white" aria-labelledby="ecomuseo-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold tracking-wide">
+                        Museo Diffuso
+                    </span>
+                    <h2 id="ecomuseo-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
+                        Ecomuseo Diffuso del Partenio
+                    </h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Un museo naturalistico e storico-antropologico distribuito su tutta l'area del Parco del Partenio: 
+                        un archivio immateriale fatto di ricerca, piattaforme web e prodotti multimediali, 
+                        affiancato da exhibit, manufatti e percorsi divulgativi collocati nei rifugi e nei luoghi più suggestivi del Parco.
+                    </p>
+                </div>
+
+                <!-- Le 3 Aree dell'Ecomuseo -->
+ <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <!-- Area Scientifico-Naturalistica -->
+                    <div class="bg-natura-50 rounded-2xl p-8 hover:shadow-lg transition-all border-t-4 border-green-500">
+                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="microscope" class="w-7 h-7 text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-natura-900 mb-4">Area Scientifico-Naturalistica</h3>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Botanica, Zoologia, Geologia, Vulcanologia e Sismologia</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Meteorologia, Astronomia e Cartografia</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Biblioteca scientifica analogica e digitale</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Peculiarità del Parco del Partenio</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Grandi foreste italiane ed europee – collegamenti di rete</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Area Storico-Antropologica -->
+                    <div class="bg-natura-50 rounded-2xl p-8 hover:shadow-lg transition-all border-t-4 border-terra-500">
+                        <div class="w-14 h-14 bg-terra-100 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="scroll" class="w-7 h-7 text-terra-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-natura-900 mb-4">Area Storico-Antropologica</h3>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-terra-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Elementi storico-antropologici del Partenio</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-terra-600 mt-0.5 flex-shrink-0"></i>
+                                <span>L'Abbazia di Montevergine e i paesi del Parco</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-terra-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Tradizioni, credenze e prodotti del territorio</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-terra-600 mt-0.5 flex-shrink-0"></i>
+                                <span>La cultura della montagna in Italia ed Europa</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-terra-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Storia dell'escursionismo e biblioteca storica</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Area Narrativa -->
+                    <div class="bg-natura-50 rounded-2xl p-8 hover:shadow-lg transition-all border-t-4 border-purple-500">
+                        <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="book-heart" class="w-7 h-7 text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-natura-900 mb-4">Area Narrativa</h3>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Biblioteca narrativa della Natura</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Mediateca della Natura (archivio multimediale)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Museologia Sperimentale – exhibit divulgativi esterni</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Rassegne, festival musicali e teatrali</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Mostre temporanee e installazioni di Land Art</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                                <!-- CTA per l'Ecomuseo -->
+                <div class="mt-12 text-center bg-amber-50 rounded-2xl p-8 border border-amber-200">
+                    <h3 class="text-2xl font-display font-bold text-natura-900 mb-3">Scopri l'Ecomuseo</h3>
+                    <p class="text-gray-600 mb-6 max-w-2xl mx-auto">Un viaggio tra natura, storia e innovazione. Esplora la galleria fotografica, i video, le mappe e i paesaggi sonori del nostro Ecomuseo Diffuso.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="ecomuseo.html" class="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-full transition-all shadow-lg shadow-amber-500/20">
+                            <i data-lucide="images" class="w-5 h-5"></i>
+                            Esplora l'Ecomuseo
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#contatti" class="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-natura-50 text-natura-700 font-semibold rounded-full transition-all shadow-md border border-natura-200">
+                            Richiedi Informazioni
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ACCOGLIENZA TURISTICA ===== -->
+        <section id="accoglienza" class="py-20 lg:py-28 bg-terra-50" aria-labelledby="accoglienza-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="inline-block px-4 py-1.5 bg-terra-100 text-terra-700 rounded-full text-sm font-semibold tracking-wide">
+                        Ospitalità
+                    </span>
+                    <h2 id="accoglienza-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
+                        Accoglienza Turistica
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Sapori autentici, prodotti locali e l'ospitalità calorosa della montagna.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all">
+                        <div class="aspect-[3/2] overflow-hidden">
+                            <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/camp%20m%203.jpeg" alt="Centro di accoglienza turistica con ristorazione e prodotti locali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-natura-900 mb-2">Centro Accoglienza Turistica</h3>
+                            <p class="text-gray-600 text-sm">Il nostro punto informazioni per scoprire tutti i servizi e le attività disponibili: escursioni, bike, cavallo e laboratori.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all">
+                        <div class="aspect-[3/2] overflow-hidden">
+                            <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/cestino%20vimini%20.jpeg" alt="Cesto picnic con prodotti tipici irpini" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-natura-900 mb-2">Colazione Picnic</h3>
+                            <p class="text-gray-600 text-sm">Cesto in vimini con prodotti tipici irpini a km zero: salumi, formaggi, frutta e dolci artigianali ogni mattina.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all">
+                        <div class="aspect-[3/2] overflow-hidden">
+                            <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Gioacchino%20parla.jpeg" alt="Guide turistiche locali esperte del territorio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-natura-900 mb-2">Guide ed Esperienze</h3>
+                            <p class="text-gray-600 text-sm">Accompagnatori qualificati: guida equestre, escursionistica, esperto del territorio e accompagnatore per disabilità.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EVENTI E INTRATTENIMENTO ===== -->
+        <section id="eventi" class="py-20 lg:py-28 bg-natura-900 text-white" aria-labelledby="eventi-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="inline-block px-4 py-1.5 bg-white/20 text-white rounded-full text-sm font-semibold tracking-wide backdrop-blur-sm">
+                        Calendario
+                    </span>
+                    <h2 id="eventi-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
+                        Eventi & Intrattenimento
+                    </h2>
+                    <p class="text-white/80 max-w-2xl mx-auto">Un calendario ricco di appuntamenti per tutte le stagioni, tra musica, cultura e tradizione.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all text-center">
+                        <div class="w-16 h-16 bg-terra-500 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <i data-lucide="music" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Festival Stagionali</h3>
+                        <p class="text-white/70 text-sm">Celebrazioni che seguono il ritmo delle stagioni: festa della primavera, solstizio d'estate, raccolto autunnale e magia dell'inverno.</p>
+                        <span class="inline-block mt-4 text-xs font-medium bg-white/20 px-3 py-1 rounded-full">Prossimo: Giugno 2025</span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all text-center">
+                        <div class="w-16 h-16 bg-cielo-500 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <i data-lucide="star" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Concerti Sotto le Stelle</h3>
+                        <p class="text-white/70 text-sm">Spettacoli musicali in un anfiteatro naturale, con artisti locali e internazionali che si esibiscono sotto il cielo stellato.</p>
+                        <span class="inline-block mt-4 text-xs font-medium bg-white/20 px-3 py-1 rounded-full">Ogni sabato sera</span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all text-center">
+                        <div class="w-16 h-16 bg-natura-500 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <i data-lucide="shopping-bag" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Mercati dell'Artigianato</h3>
+                        <p class="text-white/70 text-sm">Esposizione e vendita di prodotti artigianali locali, con dimostrazioni dal vivo e laboratori creativi per tutte le età.</p>
+                        <span class="inline-block mt-4 text-xs font-medium bg-white/20 px-3 py-1 rounded-full">Prima domenica del mese</span>
+                    </div>
+                </div>
+                <!-- Calendario Interattivo -->
+                <div class="mt-12" id="calendario-container">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-2xl font-display font-bold text-white flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-6 h-6 text-terra-400"></i>
+ Calendario Eventi
+                            </h3>
+                            <div class="flex items-center gap-2">
+                                <button id="cal-prev" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center" aria-label="Mese precedente">
+                                    <i data-lucide="chevron-left" class="w-5 h-5 text-white"></i>
+                                </button>
+                                <span id="cal-month-year" class="text-white font-semibold min-w-[160px] text-center">Luglio 2025</span>
+                                <button id="cal-next" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center" aria-label="Mese successivo">
+                                    <i data-lucide="chevron-right" class="w-5 h-5 text-white"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Giorni della settimana -->
+                        <div class="grid grid-cols-7 gap-2 mb-3">
+                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Lun</span>
+                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Mar</span>
+                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Mer</span>
+                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Gio</span>
+                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Ven</span>
+                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Sab</span>
+                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Dom</span>
+                        </div>
+                        <!-- Griglia giorni -->
+                        <div id="cal-grid" class="grid grid-cols-7 gap-2">
+                            <!-- Popolato da JS -->
+                        </div>
+                        <!-- Legenda -->
+                        <div class="flex flex-wrap gap-4 mt-6 pt-4 border-t border-white/10">
+                            <div class="flex items-center gap-2 text-xs text-white/70">
+                                <span class="w-4 h-4 rounded-full bg-terra-500"></span> Festival
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-white/70">
+                                <span class="w-4 h-4 rounded-full bg-cielo-500"></span> Concerti
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-white/70">
+                                <span class="w-4 h-4 rounded-full bg-purple-500"></span> Mercati
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-white/70">
+                                <span class="w-4 h-4 rounded-full bg-green-400"></span> Altri Eventi
+                            </div>
+                        </div>
+                        <!-- Tooltip per eventi del giorno -->
+                        <div id="cal-tooltip" class="hidden mt-4 bg-white/15 backdrop-blur-md rounded-xl p-4 border border-white/20 text-white text-sm space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span id="cal-tooltip-date" class="font-bold text-white"></span>
+                                <button id="cal-tooltip-close" class="w-6 h-6 rounded-lg hover:bg-white/10 flex items-center justify-center">
+                                    <i data-lucide="x" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                            <div id="cal-tooltip-events" class="space-y-2"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Link Evento Sensoriale (innestato) -->
+                <div class="mt-10 text-center">
+                    <a href="evento-sensoriale.html" class="group inline-flex items-center gap-3 bg-white/10 hover:bg-white/15 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all hover:border-amber-400/50">
+                        <div class="w-12 h-12 bg-amber-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-amber-300"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-bold text-white text-sm">🌲 Evento Sensoriale – "I Suoni del Bosco"</p>
+                            <p class="text-white/60 text-xs">Guarda foto e video dell'immersione sensoriale nel Partenio →</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Eventi extra -->
+                <div class="mt-12 grid sm:grid-cols-2 gap-6">
+                    <div class="bg-white/5 rounded-2xl p-6 border border-white/10 flex items-start gap-4">
+                        <div class="w-12 h-12 bg-purple-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="palette" class="w-6 h-6 text-purple-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">Centro Culturale</h3>
+                            <p class="text-white/70 text-sm">Mostre d'arte, lezioni di cultura locale, proiezioni e incontri con autori in uno spazio dedicato alla creatività.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 rounded-2xl p-6 border border-white/10 flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="moon" class="w-6 h-6 text-blue-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">Avventura Notturna</h3>
+                            <p class="text-white/70 text-sm">Osservazione astronomica con telescopi, escursioni al chiaro di luna e scoperta della fauna notturna del Parco.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BENEFICI AGGIUNTIVI ===== -->
+    <section id="benefici" class="py-20 lg:py-28 bg-natura-50" aria-labelledby="benefici-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <span class="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold tracking-wide">
+ Esperienze Extra
+                </span>
+                <h2 id="benefici-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
+                    Benefici Aggiuntivi
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Servizi esclusivi per arricchire il tuo soggiorno all'insegna del benessere e della cultura.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Centro Benessere -->
+                <div class="bg-white rounded-2xl p-7 text-center hover:shadow-lg transition-all group border border-natura-100">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-green-200 transition-colors">
+                        <i data-lucide="flower2" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="font-bold text-natura-900 mb-3">Centro Benessere Naturale</h3>
+                    <p class="text-gray-600 text-sm">Massaggi, yoga e terapie naturali immersi nella quiete del bosco per rigenerare corpo e mente.</p>
+                </div>
+                <!-- Centro Culturale -->
+                <div class="bg-white rounded-2xl p-7 text-center hover:shadow-lg transition-all group border border-natura-100">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-amber-200 transition-colors">
+                        <i data-lucide="art-gallery" class="w-8 h-8 text-amber-600"></i>
+                    </div>
+                    <h3 class="font-bold text-natura-900 mb-3">Centro Culturale</h3>
+                    <p class="text-gray-600 text-sm">Spazio per mostre d'arte, eventi culturali e lezioni sulla cultura e le tradizioni locali.</p>
+                </div>
+                <!-- Avventura Notturna -->
+ <div class="bg-white rounded-2-xl p-7 text-center hover:shadow-lg transition-all group border border-natura-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-blue-200 transition-colors">
+                        <i data-lucide="moon" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-bold text-natura-900 mb-3">Avventura Notturna</h3>
+                    <p class="text-gray-600 text-sm">Escursioni notturne per osservare la fauna selvatica e sessioni di astronomia sotto le stelle.</p>
+                </div>
+                <!-- Agriturismo -->
+                <div class="bg-white rounded-2xl p-7 text-center hover:shadow-lg transition-all group border border-natura-100">
+                    <div class="w-16 h-16 bg-terra-100 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-terra-200 transition-colors">
+                        <i data-lucide="tractor" class="w-8 h-8 text-terra-600"></i>
+                    </div>
+                    <h3 class="font-bold text-natura-900 mb-3">Agriturismo</h3>
+                    <p class="text-gray-600 text-sm">Esperienze agricole interattive con gli agricoltori locali: raccolta, caseificazione e vita di fattoria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOSTENIBILITÀ AMBIENTALE ===== -->
+        <section id="sostenibilita" class="py-20 lg:py-28 bg-white" aria-labelledby="sostenibilita-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="inline-block px-4 py-1.5 bg-green-100 text-green-700 rounded-full text-sm font-semibold tracking-wide">
+                        Il Nostro Impegno
+                    </span>
+                    <h2 id="sostenibilita-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
+                        Sostenibilità Ambientale
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Ogni aspetto dell'ecovillaggio è progettato per minimizzare l'impatto e valorizzare le risorse naturali.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-natura-50 rounded-2xl p-7 text-center hover:shadow-lg transition-all group">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-yellow-200 transition-colors">
+                            <i data-lucide="sun" class="w-8 h-8 text-yellow-600"></i>
+                        </div>
+                        <h3 class="font-bold text-natura-900 mb-3">Energia Rinnovabile</h3>
+                        <p class="text-gray-600 text-sm">Pannelli solari e mini-impianti idroelettrici forniscono energia pulita a tutto il villaggio.</p>
+                    </div>
+                    <div class="bg-natura-50 rounded-2xl p-7 text-center hover:shadow-lg transition-all group">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-blue-200 transition-colors">
+                            <i data-lucide="droplets" class="w-8 h-8 text-blue-600"></i>
+                        </div>
+                        <h3 class="font-bold text-natura-900 mb-3">Raccolta Acqua Piovana</h3>
+                        <p class="text-gray-600 text-sm">Sistemi di raccolta e filtraggio per irrigazione e usi non potabili, riducendo il consumo idrico.</p>
+                    </div>
+                    <div class="bg-natura-50 rounded-2xl p-7 text-center hover:shadow-lg transition-all group">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-green-200 transition-colors">
+                            <i data-lucide="sprout" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <h3 class="font-bold text-natura-900 mb-3">Agricoltura Biologica</h3>
+                        <p class="text-gray-600 text-sm">Orto e frutteto biologici forniscono prodotti freschi per il ristorante, senza pesticidi né chimica.</p>
+                    </div>
+                    <div class="bg-natura-50 rounded-2xl p-7 text-center hover:shadow-lg transition-all group">
+                        <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-amber-200 transition-colors">
+                            <i data-lucide="recycle" class="w-8 h-8 text-amber-600"></i>
+                        </div>
+                        <h3 class="font-bold text-natura-900 mb-3">Riciclo & Compostaggio</h3>
+                        <p class="text-gray-600 text-sm">Raccolta differenziata spinta e compostaggio dei rifiuti organici per nutrire i nostri terreni.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA SECTION ===== -->
+        <section class="py-16 lg:py-20 bg-terra-500" aria-labelledby="cta-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 id="cta-heading" class="text-3xl sm:text-4xl font-display font-bold text-white mb-4">Pronto a vivere l'esperienza?</h2>
+                <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">Contattaci per informazioni, prenotazioni o semplicemente per saperne di più sull'Ecovillaggio Partenio.</p>
+                <a href="#contatti" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-terra-600 font-bold rounded-full hover:bg-natura-50 transition-all transform hover:scale-105 shadow-xl text-lg">
+                    Richiedi Informazioni
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== CONTATTI / PRENOTAZIONI ===== -->
+        <section id="contatti" class="py-20 lg:py-28 bg-natura-50" aria-labelledby="contatti-heading">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                    <!-- Info -->
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <span class="inline-block px-4 py-1.5 bg-natura-100 text-natura-700 rounded-full text-sm font-semibold tracking-wide">
+                                Contattaci
+                            </span>
+                            <h2 id="contatti-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
+ Siamo qui per te
+                            </h2>
+                            <p class="text-gray-600 leading-relaxed">Compila il modulo e ti risponderemo entro 24 ore. Saremo felici di aiutarti a pianificare la tua esperienza sostenibile nel cuore del Partenio.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-natura-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-6 h-6 text-natura-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-natura-900">Indirizzo</p>
+                                    <p class="text-gray-600 text-sm">Località Vallefonda – 83013 Mercogliano (AV), Italia</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-natura-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="phone" class="w-6 h-6 text-natura-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-natura-900">Telefono</p>
+                                    <p class="text-gray-600 text-sm">328 116 3148 – 380 587 8191</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-natura-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="mail" class="w-6 h-6 text-natura-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-natura-900">Email</p>
+                                    <p class="text-gray-600 text-sm">partenioadventuredreams@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Form -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-10" id="form-container">
+                        <h3 class="text-2xl font-display font-bold text-natura-900 mb-6">Richiedi Informazioni</h3>
+                        <form id="contact-form" class="space-y-5" novalidate aria-label="Modulo di richiesta informazioni" action="https://formsubmit.co/partenioadventuredreams@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="Nuova richiesta da Ecovillaggio Partenio">
+                            <input type="hidden" name="_autoresponse" value="Grazie per la tua richiesta! Ti risponderemo entro 24 ore.">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="thank-you.html">
+                            <input type="hidden" name="_captcha" value="false">
+                            <div>
+                                <label for="nome" class="block text-sm font-semibold text-natura-800 mb-1.5">Nome e Cognome *</label>
+                                <input type="text" id="nome" name="nome" required autocomplete="name"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none transition-all text-gray-800 placeholder-gray-400"
+                                    placeholder="Mario Rossi">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="nome-error">Inserisci il tuo nome.</p>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-natura-800 mb-1.5">Email *</label>
+                                <input type="email" id="email" name="email" required autocomplete="email"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none transition-all text-gray-800 placeholder-gray-400"
+                                    placeholder="mario@esempio.it">
+                                <p class="text-red-500 text-xs mt-1 hidden" id="email-error">Inserisci un'email valida.</p>
+                            </div>
+                            <div>
+                                <label for="telefono" class="block text-sm font-semibold text-natura-800 mb-1.5">Numero di Telefono <span class="text-gray-400 font-normal">(opzionale)</span></label>
+                                <input type="tel" id="telefono" name="telefono" autocomplete="tel"
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none transition-all text-gray-800 placeholder-gray-400"
+                                    placeholder="+39 333 1234567">
+                            </div>
+                            <div>
+                                <label for="tipologia" class="block text-sm font-semibold text-natura-800 mb-1.5">Tipologia Richiesta *</label>
+                                <select id="tipologia" name="tipologia" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none transition-all text-gray-800 bg-white">
+                                    <option value="">Seleziona una tipologia...</option>
+                                    <option value="informazioni">Informazioni generali</option>
+                                    <option value="prenotazione-alloggio">Prenotazione alloggio</option>
+                                    <option value="prenotazione-picnic">Prenotazione Area Pic-Nic 🧺</option>
+                                    <option value="attivita">Attività outdoor</option>
+                                    <option value="educazione">Educazione ambientale / Scuole</option>
+                                    <option value="eventi">Eventi</option>
+                                    <option value="altro">Altro</option>
+                                </select>
+                                <p class="text-red-500 text-xs mt-1 hidden" id="tipologia-error">Seleziona una tipologia.</p>
+                            </div>
+                            <div>
+                                <label for="messaggio" class="block text-sm font-semibold text-natura-800 mb-1.5">Messaggio *</label>
+                                <textarea id="messaggio" name="messaggio" rows="4" required
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none transition-all text-gray-800 placeholder-gray-400 resize-none"
+                                    placeholder="Raccontaci come possiamo aiutarti..."></textarea>
+                                <p class="text-red-500 text-xs mt-1 hidden" id="messaggio-error">Scrivi un messaggio.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="consenso" name="consenso" required
+                                    class="mt-1 w-5 h-5 rounded border-gray-300 text-natura-600 focus:ring-natura-500 flex-shrink-0">
+                                <label for="consenso" class="text-sm text-gray-600">Acconsento al trattamento dei miei dati personali secondo la normativa sulla privacy. *</label>
+                            </div>
+                            <p class="text-red-500 text-xs hidden" id="consenso-error">Devi acconsentire al trattamento dei dati.</p>
+                            <button type="submit"
+                                class="w-full py-4 bg-natura-600 hover:bg-natura-700 text-white font-bold rounded-xl transition-all transform hover:scale-[1.02] shadow-lg shadow-natura-600/20 text-lg flex items-center justify-center gap-2"
+                                id="submit-btn">
+                                <span>Invia Richiesta</span>
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                            </button>
+                        </form>
+                        <!-- Success Message -->
+                        <div id="success-message" class="hidden text-center py-8 space-y-4">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                                <i data-lucide="check" class="w-10 h-10 text-green-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold text-natura-900">Grazie! 🎉</h3>
+                            <p class="text-gray-600">La tua richiesta è stata inviata con successo. Ti risponderemo entro 24 ore.</p>
+                            <button id="reset-form-btn" class="mt-4 px-6 py-2 bg-natura-100 hover:bg-natura-200 text-natura-700 font-medium rounded-xl transition-colors">
+                                Invia un'altra richiesta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-natura-950 text-white py-16" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png" alt="Ecovillaggio Partenio Logo" class="h-12 w-12 rounded-full object-cover">
+                        <span class="font-display font-bold text-xl text-white">Ecovillaggio Partenio</span>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">Un progetto di turismo sostenibile nel Parco Regionale del Partenio: glamping, educazione ambientale, ecomuseo diffuso e molto altro. Scopri le nostre esclusive Bubble Rooms con tinozza finlandese privata.</p>
+                    <p class="text-white/40 text-xs">www.ecovillaggiopartenio.com</p>
+                </div>
+                <!-- Link Rapidi -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Link Rapidi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#chi-siamo" class="text-white/60 hover:text-white transition-colors">Chi Siamo</a></li>
+                        <li><a href="#alloggi" class="text-white/60 hover:text-white transition-colors">Alloggi</a></li>
+                        <li><a href="#attivita" class="text-white/60 hover:text-white transition-colors">Attività</a></li>
+                        <li><a href="#educazione" class="text-white/60 hover:text-white transition-colors">Educazione</a></li>
+                        <li><a href="#eventi" class="text-white/60 hover:text-white transition-colors">Eventi</a></li>
+                    </ul>
+                </div>
+                <!-- Altre Sezioni -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Scopri</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#accoglienza" class="text-white/60 hover:text-white transition-colors">Accoglienza</a></li>
+                        <li><a href="#sostenibilita" class="text-white/60 hover:text-white transition-colors">Sostenibilità</a></li>
+                        <li><a href="#benefici" class="text-white/60 hover:text-white transition-colors">Benefici Aggiuntivi</a></li>
+                        <li><a href="#contatti" class="text-white/60 hover:text-white transition-colors">Contatti</a></li>
+                    </ul>
+                </div>
+                <!-- Contatti Footer -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contatti & Società</h4>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0 text-white/40"></i>
+                            Località Vallefonda – Mercogliano (AV)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 flex-shrink-0 text-white/40"></i>
+                            328 116 3148 – 380 587 8191
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4 flex-shrink-0 text-white/40"></i>
+                            partenioadventuredreams@gmail.com
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-white/10">
+                        <p class="text-xs text-white/40 font-semibold mb-2">Partenio Adventure Dreams S.r.l.</p>
+                        <p class="text-xs text-white/40">Via Giacomo Matteotti, 18<br>83013 Mercogliano (AV)</p>
+                        <p class="text-xs text-white/40 mt-2">P.IVA 03179980648</p>
+                        <p class="text-xs text-white/40">PEC: partenioadventuredreams@pec.it</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/40">
+                <p>&copy; 2025 Ecovillaggio Partenio – Partenio Adventure Dreams S.r.l. Tutti i diritti riservati. – Realizzato con 🌿 per un futuro sostenibile.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+ <script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
