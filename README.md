@@ -1,2 +1,13 @@
-# ecovillaggiopartenio
-Site for ecovillagepartenio an ecovillage in the mountains of Avellino, NA. We are trying to bring new life to this place, with sustainable and eco-friendly practices.
+---
+title: Ecovillaggio Partenio
+colorFrom: green
+colorTo: gray
+sdk: static
+emoji: ✨
+tags:
+  - deepsite-v4
+---
+
+# DeepSite Project
+
+This project has been created with [DeepSite](https://deepsite.hf.co) AI Vibe Coding.
