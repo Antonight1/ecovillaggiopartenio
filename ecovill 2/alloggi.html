@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alloggi Ecovillaggio Partenio – Bubble Rooms, Tree Houses, Log Cabins e Hobbit Houses. Verifica disponibilità e prenota il tuo soggiorno eco-sostenibile nel Parco del Partenio.">
+    <title>Alloggi – Ecovillaggio Partenio 🏡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'natura': {
+                            50: '#f0f7f0', 100: '#d9ecd8', 200: '#b5d9b3', 300: '#89bf86',
+                            400: '#5fa35c', 500: '#468a43', 600: '#356f33', 700: '#2b582a',
+                            800: '#244723', 900: '#1d3b1d', 950: '#0e210f',
+                        },
+                        'terra': {
+                            50: '#fdf8f0', 100: '#f9eddb', 200: '#f2d9b6', 300: '#e8bf87',
+                            400: '#dd9f57', 500: '#d48837', 600: '#c5712c', 700: '#a45925',
+                            800: '#844824', 900: '#6b3d20', 950: '#3a1e0f',
+                        },
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Georgia', 'Times New Roman', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .alloggio-card {
+            transition: all 0.3s ease;
+        }
+        .alloggio-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .filter-btn.active {
+            background-color: #356f33;
+            color: white;
+        }
+        
+        .cal-day-btn {
+            transition: all 0.15s ease;
+        }
+        .cal-day-btn:hover:not(:disabled) {
+            background-color: #d9ecd8;
+        }
+        .cal-day-btn.selected {
+            background-color: #d48837;
+            color: white;
+        }
+        .cal-day-btn.unavailable {
+            background-color: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+        .cal-day-btn.available {
+            background-color: #f0f7f0;
+            cursor: pointer;
+        }
+        .cal-day-btn.available:hover {
+            background-color: #d9ecd8;
+        }
+        
+        @media (max-width: 640px) {
+            .cal-day-btn {
+                font-size: 0.7rem;
+                padding: 4px 2px;
+            }
+        }
+        
+        /* Admin toast */
+        .admin-toast {
+            animation: slideInRight 0.4s ease-out;
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-natura-50 min-h-screen">
+
+    <!-- ===== HEADER ===== -->
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50" role="banner">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16" aria-label="Navigazione">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png" alt="Ecovillaggio Partenio Logo" class="h-10 w-10 rounded-full object-cover group-hover:opacity-90 transition-opacity">
+                <span class="font-display font-bold text-lg text-natura-800 hidden sm:block">
+                    Ecovillaggio <span class="text-terra-600">Partenio</span>
+                </span>
+            </a>
+            <div class="flex items-center gap-3">
+                <button id="admin-login-btn" class="flex items-center gap-1.5 text-gray-400 hover:text-natura-700 font-medium transition-colors text-xs px-3 py-1.5 rounded-lg hover:bg-natura-100" title="Accesso Admin">
+                    <i data-lucide="shield" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Admin</span>
+                </button>
+                <a href="index.html" class="flex items-center gap-1.5 text-natura-700 hover:text-natura-900 font-medium transition-colors text-sm">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Torna all'Ecovillaggio
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== MODAL LOGIN ADMIN ===== -->
+    <div id="admin-login-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] hidden flex items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="admin-login-title">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 animate-fade-in-up">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-natura-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-natura-600"></i>
+                </div>
+                <h2 id="admin-login-title" class="text-2xl font-display font-bold text-natura-900">Accesso Amministratore</h2>
+                <p class="text-gray-500 text-sm mt-1">Inserisci la password per gestire le disponibilità</p>
+            </div>
+            <form id="admin-login-form" class="space-y-4">
+                <div>
+                    <label for="admin-password" class="block text-sm font-semibold text-natura-800 mb-1.5">Password Admin</label>
+                    <div class="relative">
+                        <input type="password" id="admin-password" name="password" required
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none transition-all text-gray-800 pr-12"
+                            placeholder="••••••••">
+                        <button type="button" id="toggle-password-visibility" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                            <i data-lucide="eye" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <p id="admin-login-error" class="text-red-500 text-xs mt-2 hidden">Password errata. Riprova.</p>
+                </div>
+                <button type="submit" 
+                    class="w-full py-3.5 bg-natura-600 hover:bg-natura-700 text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                    <i data-lucide="log-in" class="w-5 h-5"></i>
+                    Accedi come Admin
+                </button>
+                <button type="button" id="cancel-admin-login" 
+                    class="w-full py-2.5 text-gray-500 hover:text-gray-700 font-medium text-sm transition-colors">
+                    Annulla
+                </button>
+            </form>
+            <p class="text-xs text-gray-400 text-center mt-4">🔑 Password predefinita: <code class="bg-gray-100 px-2 py-0.5 rounded text-natura-700 font-mono">admin2024</code></p>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main role="main">
+
+        <!-- Hero Banner -->
+        <section class="relative bg-gradient-to-br from-natura-700 via-natura-600 to-terra-600 overflow-hidden" aria-labelledby="alloggi-hero-heading">
+            <div class="absolute inset-0 opacity-20">
+                <img src="http://static.photos/nature/1200x630/42" alt="" class="w-full h-full object-cover" aria-hidden="true">
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 text-center text-white">
+                <div class="animate-fade-in-up space-y-4 max-w-3xl mx-auto">
+                    <span class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wide border border-white/30">
+                        🏡 I Nostri Alloggi
+                    </span>
+                    <h1 id="alloggi-hero-heading" class="text-3xl sm:text-4xl md:text-5xl font-display font-bold leading-tight">
+                        Scegli il Tuo Rifugio nella Natura
+                    </h1>
+                    <p class="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+                        Bubble Rooms trasparenti, Tree Houses sospese, Log Cabins in legno e Hobbit Houses fiabesche. 
+                        Ogni alloggio è un'esperienza unica nel cuore del Parco del Partenio.
+                    </p>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-natura-50 to-transparent"></div>
+        </section>
+
+        <!-- Admin Bar (visibile solo dopo login) -->
+        <div id="admin-bar" class="hidden bg-amber-50 border-b border-amber-200 py-3 sticky top-16 z-40 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500 text-white rounded-full text-xs font-bold shadow-sm">
+                        <i data-lucide="shield" class="w-3.5 h-3.5"></i> MODALITÀ ADMIN
+                    </span>
+                    <span class="text-sm text-amber-700 font-medium">Gestione disponibilità e prenotazioni</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="admin-save-all" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-xl transition-all flex items-center gap-1.5 shadow-sm">
+                        <i data-lucide="save" class="w-3.5 h-3.5"></i> Salva Modifiche
+                    </button>
+                    <button id="admin-logout-btn" class="px-3 py-2 bg-white hover:bg-gray-100 text-red-600 text-sm font-semibold rounded-xl transition-all flex items-center gap-1.5 border border-red-200 shadow-sm">
+                        <i data-lucide="log-out" class="w-3.5 h-3.5"></i> Esci
+                    </button>
+                    <button id="admin-reset-dates" class="px-3 py-2 bg-white hover:bg-gray-100 text-gray-600 text-sm font-semibold rounded-xl transition-all flex items-center gap-1.5 border border-gray-200 shadow-sm" title="Ripristina date predefinite">
+                        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reset Date
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtri e Ricerca -->
+        <section class="py-8 bg-white border-b border-natura-100 sticky top-16 z-40 shadow-sm" aria-labelledby="filtri-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+                    <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filtra per tipologia">
+                        <!-- Se admin, il filtro si sposta sotto la barra admin -->
+                        <button class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold transition-all bg-natura-600 text-white" data-filter="tutti" role="tab" aria-selected="true">
+                            🏡 Tutti
+                        </button>
+                        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-natura-100 text-natura-700 hover:bg-natura-200" data-filter="bubble" role="tab" aria-selected="false">
+                            🔵 Bubble
+                        </button>
+                        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-natura-100 text-natura-700 hover:bg-natura-200" data-filter="tree" role="tab" aria-selected="false">
+                            🌲 Tree House
+                        </button>
+                        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-natura-100 text-natura-700 hover:bg-natura-200" data-filter="cabin" role="tab" aria-selected="false">
+                            🪵 Cabin
+                        </button>
+                        <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-natura-100 text-natura-700 hover:bg-natura-200" data-filter="hobbit" role="tab" aria-selected="false">
+                            🍄 Hobbit
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <label for="search-alloggi" class="sr-only">Cerca alloggio</label>
+                        <div class="relative">
+                            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                            <input type="text" id="search-alloggi" placeholder="Cerca per nome..." 
+                                class="pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none text-sm w-48 transition-all">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendario Disponibilità -->
+        <section class="py-10 bg-natura-50" aria-labelledby="calendario-heading" id="sezione-calendario">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-2xl shadow-md p-6 sm:p-8 border border-natura-100">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+                        <div>
+                            <h2 id="calendario-heading" class="text-xl font-bold text-natura-900 flex items-center gap-2">
+                                <i data-lucide="calendar-search" class="w-6 h-6 text-terra-500"></i>
+                                Verifica Disponibilità
+                            </h2>
+                            <p class="text-gray-500 text-sm mt-1">Seleziona una data per vedere quali alloggi sono disponibili</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button id="cal-prev-month" class="w-10 h-10 rounded-xl bg-natura-100 hover:bg-natura-200 transition-colors flex items-center justify-center" aria-label="Mese precedente">
+                                <i data-lucide="chevron-left" class="w-5 h-5 text-natura-700"></i>
+                            </button>
+                            <span id="cal-current-month" class="text-natura-900 font-semibold min-w-[160px] text-center">Luglio 2025</span>
+                            <button id="cal-next-month" class="w-10 h-10 rounded-xl bg-natura-100 hover:bg-natura-200 transition-colors flex items-center justify-center" aria-label="Mese successivo">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-natura-700"></i>
+                            </button>
+                            <button id="cal-reset" class="ml-2 px-3 py-2 text-sm text-terra-600 hover:text-terra-700 font-medium transition-colors flex items-center gap-1">
+                                <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Giorni della settimana -->
+                    <div class="grid grid-cols-7 gap-1 mb-2">
+                        <span class="text-center text-gray-400 text-xs font-semibold uppercase py-2">Lun</span>
+                        <span class="text-center text-gray-400 text-xs font-semibold uppercase py-2">Mar</span>
+                        <span class="text-center text-gray-400 text-xs font-semibold uppercase py-2">Mer</span>
+                        <span class="text-center text-gray-400 text-xs font-semibold uppercase py-2">Gio</span>
+                        <span class="text-center text-gray-400 text-xs font-semibold uppercase py-2">Ven</span>
+                        <span class="text-center text-gray-400 text-xs font-semibold uppercase py-2">Sab</span>
+                        <span class="text-center text-gray-400 text-xs font-semibold uppercase py-2">Dom</span>
+                    </div>
+                    
+                    <!-- Griglia giorni -->
+                    <div id="cal-grid" class="grid grid-cols-7 gap-1 mb-4">
+                        <!-- Popolato da JS -->
+                    </div>
+                    
+                    <!-- Legenda -->
+                    <div class="flex flex-wrap gap-4 text-xs" id="cal-legenda">
+                        <div class="flex items-center gap-1.5">
+                            <div class="w-4 h-4 rounded bg-green-100 border border-green-300"></div>
+                            <span class="text-gray-600">Disponibile</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <div class="w-4 h-4 rounded bg-gray-100 border border-gray-300"></div>
+                            <span class="text-gray-600">Non disponibile</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <div class="w-4 h-4 rounded bg-terra-500"></div>
+                            <span class="text-gray-600">Data selezionata</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <div class="w-4 h-4 rounded bg-white border-2 border-terra-500"></div>
+                            <span class="text-gray-600">Oggi</span>
+                        </div>
+                        <div id="admin-toggle-legenda" class="hidden flex items-center gap-1.5">
+                            <div class="w-4 h-4 rounded bg-white border-2 border-red-400 cursor-pointer"></div>
+                            <span class="text-gray-600">Clicca per cambiare stato</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Data selezionata info -->
+                    <div id="data-selezionata-info" class="mt-4 hidden bg-natura-50 rounded-xl p-4 border border-natura-200">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="info" class="w-5 h-5 text-natura-600"></i>
+                            <div>
+                                <p class="font-semibold text-natura-900">Data selezionata: <span id="data-selezionata-testo"></span></p>
+                                <p class="text-sm text-gray-600" id="data-selezionata-riepilogo"></p>
+                            </div>
+                            <button id="cancella-data" class="ml-auto text-red-500 hover:text-red-600 text-sm font-medium flex items-center gap-1">
+                                <i data-lucide="x" class="w-3.5 h-3.5"></i> Cancella
+                            </button>
+                        </div>
+                        <!-- Admin: toggle disponibilità giorno selezionato -->
+                        <div id="admin-toggle-data" class="hidden mt-3 pt-3 border-t border-natura-200 flex items-center justify-between">
+                            <span class="text-sm text-gray-600">Admin: cambia stato di questa data</span>
+                            <button id="admin-toggle-day-btn" class="px-4 py-2 rounded-xl text-sm font-semibold transition-all">
+                                <span id="admin-toggle-day-text">Rendi NON disponibile</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Griglia Alloggi -->
+        <section class="py-12 lg:py-16 bg-white" aria-labelledby="griglia-alloggi-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 id="griglia-alloggi-heading" class="sr-only">Elenco alloggi disponibili</h2>
+                
+                <!-- Contatore risultati -->
+                <div class="mb-6 flex items-center justify-between">
+                    <p class="text-sm text-gray-500" id="risultati-count">11 alloggi trovati</p>
+                    <p id="nessun-risultato" class="text-sm text-gray-400 hidden">Nessun alloggio corrisponde ai filtri selezionati.</p>
+                </div>
+                
+                <div id="griglia-alloggi" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Popolato da JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-16 lg:py-20 bg-gradient-to-r from-amber-500 to-terra-500" aria-labelledby="cta-alloggi-heading">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+                <h2 id="cta-alloggi-heading" class="text-3xl sm:text-4xl font-display font-bold mb-4">Pronto a Prenotare?</h2>
+                <p class="text-white/90 text-lg mb-8">Hai trovato l'alloggio che fa per te? Contattaci per verificare la disponibilità e bloccare la tua data preferita.</p>
+                <a href="index.html#contatti" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-terra-600 font-bold rounded-full hover:bg-natura-50 transition-all transform hover:scale-105 shadow-xl text-lg">
+                    Richiedi Prenotazione
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-natura-950 text-white py-12" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png" alt="Ecovillaggio Partenio Logo" class="h-10 w-10 rounded-full object-cover">
+                <span class="font-display font-bold text-xl text-white">Ecovillaggio Partenio</span>
+            </div>
+            <p class="text-white/50 text-sm mb-4">&copy; 2025 Ecovillaggio Partenio – Partenio Adventure Dreams S.r.l. Tutti i diritti riservati.</p>
+            <a href="index.html" class="text-white/60 hover:text-white text-sm transition-colors flex items-center justify-center gap-1">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Torna al sito principale
+            </a>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+
+        // ===== DATI ALLOGGI =====
+        const alloggi = [
+            {
+                id: 1,
+                nome: 'Bubble Room Vista Montagna',
+                tipo: 'bubble',
+                prezzo: '€180/notte',
+                capacita: '2 ospiti',
+                descrizione: 'Struttura in policarbonato con pannelli a specchio unidirezionali: vista 360° esterna e totale privacy interna.',
+                servizi: ['Tinozza finlandese privata', 'Stufa a legna', 'Bagno privato con doccia', 'Letto matrimoniale'],
+                img: 'https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/bubble%20room%20.jpeg',
+                colore: 'sky'
+            },
+            {
+                id: 2,
+                nome: 'Bubble Room Bosco',
+                tipo: 'bubble',
+                prezzo: '€170/notte',
+                capacita: '2 ospiti',
+                descrizione: 'Immersa tra gli alberi, perfetta per un soggiorno romantico con tutti i comfort eco-sostenibili.',
+                servizi: ['Tinozza finlandese privata', 'Stufa a legna', 'Arredamento esterno e BBQ', 'Letto matrimoniale'],
+                img: 'https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/bubb%202.jpeg',
+                colore: 'terra'
+            },
+            {
+                id: 3,
+                nome: 'Bubble Room Cielo',
+                tipo: 'bubble',
+                prezzo: '€190/notte',
+                capacita: '2 ospiti',
+                descrizione: 'Perfetta per ammirare le stelle dal letto, con oblò per il ricircolo d\'aria e illuminazione LED.',
+                servizi: ['Tinozza finlandese privata', 'Prodotti bio in omaggio', 'Wi-Fi FREE (nella hall)', 'Letto matrimoniale'],
+                img: 'https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/bubb%203.jpeg',
+                colore: 'cielo'
+            },
+            {
+                id: 4,
+                nome: 'Bubble Room Accessibile',
+                tipo: 'bubble',
+                prezzo: '€200/notte',
+                capacita: '2 ospiti',
+                descrizione: 'Completamente accessibile a persone con disabilità, con percorsi dedicati e bagno attrezzato.',
+                servizi: ['Tinozza finlandese privata', 'Accesso facilitato', 'Minibar incluso', 'Letto matrimoniale'],
+                img: 'https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/buub%204.jpeg',
+                colore: 'purple'
+            },
+            {
+                id: 5,
+                nome: 'Tree House del Faggio',
+                tipo: 'tree',
+                prezzo: '€210/notte',
+                capacita: '2-3 ospiti',
+                descrizione: 'Sospesa tra i faggi secolari a 4 metri di altezza, con terrazza panoramica e vista sulle valli.',
+                servizi: ['Terrazza panoramica', 'Letto a baldacchino', 'Bagno privato', 'Scala in legno'],
+                img: 'http://static.photos/nature/640x360/77',
+                colore: 'green'
+            },
+            {
+                id: 6,
+                nome: 'Tree House del Bosco',
+                tipo: 'tree',
+                prezzo: '€220/notte',
+                capacita: '2 ospiti',
+                descrizione: 'La più romantica delle nostre case sull\'albero, con amaca e illuminazione a lanterne.',
+                servizi: ['Amaca privata', 'Illuminazione a lanterne', 'Bagno privato', 'Colazione in terrazza'],
+                img: 'http://static.photos/nature/640x360/88',
+                colore: 'emerald'
+            },
+            {
+                id: 7,
+                nome: 'Log Cabin Montana',
+                tipo: 'cabin',
+                prezzo: '€160/notte',
+                capacita: '4 ospiti',
+                descrizione: 'Spaziosa baita in legno massiccio con veranda coperta, camino a legna e angolo cottura attrezzato.',
+                servizi: ['Angolo cottura', 'Camino a legna', 'Veranda privata', 'Due camere da letto'],
+                img: 'http://static.photos/nature/640x360/56',
+                colore: 'amber'
+            },
+            {
+                id: 8,
+                nome: 'Log Cabin Panoramica',
+                tipo: 'cabin',
+                prezzo: '€175/notte',
+                capacita: '3 ospiti',
+                descrizione: 'Vista mozzafiato sulla valle, questa cabin unisce rusticità e comfort in un design alpino moderno.',
+                servizi: ['Angolo cottura', 'Camino a legna', 'Vista panoramica', 'Camera soppalcata'],
+                img: 'http://static.photos/nature/640x360/99',
+                colore: 'orange'
+            },
+            {
+                id: 9,
+                nome: 'Log Cabin Familiare',
+                tipo: 'cabin',
+                prezzo: '€150/notte',
+                capacita: '5 ospiti',
+                descrizione: 'La scelta ideale per famiglie: ampio soggiorno, due camere e giardino privato con barbecue.',
+                servizi: ['2 camere', 'Giardino con BBQ', 'Angolo cottura', 'Camino a legna'],
+                img: 'http://static.photos/nature/640x360/23',
+                colore: 'yellow'
+            },
+            {
+                id: 10,
+                nome: 'Hobbit House del Prato',
+                tipo: 'hobbit',
+                prezzo: '€195/notte',
+                capacita: '2 ospiti',
+                descrizione: 'Una casa scavata nella collina con porta rotonda e tetto erboso, proprio come nei racconti fantasy.',
+                servizi: ['Tetto erboso', 'Porta rotonda', 'Bagno privato', 'Letto rotondo'],
+                img: 'http://static.photos/nature/640x360/34',
+                colore: 'terra'
+            },
+            {
+                id: 11,
+                nome: 'Hobbit House del Ruscello',
+                tipo: 'hobbit',
+                prezzo: '€205/notte',
+                capacita: '2-3 ospiti',
+                descrizione: 'Vicina al torrente, questa hobbit house offre un\'atmosfera magica con camino in pietra e arredi artigianali.',
+                servizi: ['Camino in pietra', 'Vista ruscello', 'Bagno privato', 'Arredi artigianali'],
+                img: 'http://static.photos/nature/640x360/17',
+                colore: 'stone'
+            }
+        ];
+
+        // ===== GESTIONE DISPONIBILITÀ =====
+        // Simulazione: alcune date hanno disponibilità ridotta
+        let dateNonDispSet = new Set();
+        
+        // Aggiungiamo alcune date non disponibili per simulazione (es. weekend pieni, alcune date casuali)
+        const oggi = new Date();
+        oggi.setHours(0, 0, 0, 0);
+        
+        function generaDateNonDisponibili() {
+            const nonDisp = new Set();
+            dateNonDispSet.clear();
+            // Alcuni weekend del mese corrente e successivo
+            for (let m = 0; m < 3; m++) {
+                const base = new Date(oggi.getFullYear(), oggi.getMonth() + m, 1);
+                const giorniNelMese = new Date(base.getFullYear(), base.getMonth() + 1, 0).getDate();
+                for (let d = 1; d <= giorniNelMese; d++) {
+                    const date = new Date(base.getFullYear(), base.getMonth(), d);
+                    const giornoSettimana = date.getDay();
+                    // Alcuni sabati e domeniche non disponibili
+                    if ((giornoSettimana === 0 || giornoSettimana === 6) && Math.random() > 0.6) {
+                        nonDisp.add(date.toDateString());
+                    }
+                    // Alcuni giorni feriali casuali non disponibili
+                    if (Math.random() > 0.85) {
+                        nonDisp.add(date.toDateString());
+                    }
+                }
+            }
+            // Almeno 10 date non disponibili
+            while (nonDisp.size < 10) {
+                const randomDay = new Date(oggi);
+                randomDay.setDate(randomDay.getDate() + Math.floor(Math.random() * 60));
+                nonDisp.add(randomDay.toDateString());
+            }
+            dateNonDispSet = nonDisp;
+            return nonDisp;
+        }
+        
+        // Inizializza con le date generate
+        generaDateNonDisponibili();
+        
+        function isDataDisponibile(data) {
+            const oggiData = new Date();
+            oggiData.setHours(0, 0, 0, 0);
+            if (data < oggiData) return false;
+            return !dateNonDispSet.has(data.toDateString());
+        }
+
+        // ===== CALENDARIO =====
+        let currentCalMonth = new Date(oggi.getFullYear(), oggi.getMonth(), 1);
+        let selectedDate = null;
+
+        const calGrid = document.getElementById('cal-grid');
+        const calCurrentMonth = document.getElementById('cal-current-month');
+        const calPrevMonth = document.getElementById('cal-prev-month');
+        const calNextMonth = document.getElementById('cal-next-month');
+        const calReset = document.getElementById('cal-reset');
+        const dataSelezionataInfo = document.getElementById('data-selezionata-info');
+        const dataSelezionataTesto = document.getElementById('data-selezionata-testo');
+        const dataSelezionataRiepilogo = document.getElementById('data-selezionata-riepilogo');
+        const cancellaDataBtn = document.getElementById('cancella-data');
+
+        function renderCalendario() {
+            const year = currentCalMonth.getFullYear();
+            const month = currentCalMonth.getMonth();
+            const firstDay = new Date(year, month, 1);
+            let startDay = firstDay.getDay() - 1;
+            if (startDay < 0) startDay = 6;
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            calCurrentMonth.textContent = new Date(year, month).toLocaleString('it-IT', { month: 'long', year: 'numeric' }).replace(/^\w/, c => c.toUpperCase());
+
+            let html = '';
+            for (let i = 0; i < startDay; i++) {
+                html += '<div></div>';
+            }
+            for (let d = 1; d <= daysInMonth; d++) {
+                const cellDate = new Date(year, month, d);
+                const isToday = cellDate.toDateString() === oggi.toDateString();
+                const disponibile = isDataDisponibile(cellDate);
+                const isSelected = selectedDate && cellDate.toDateString() === selectedDate.toDateString();
+                
+                let btnClass = 'cal-day-btn w-full aspect-square rounded-lg flex flex-col items-center justify-center text-sm font-medium transition-all border ';
+                
+                if (isSelected) {
+                    btnClass += 'selected bg-terra-500 text-white border-terra-500 shadow-md';
+                } else if (!disponibile && cellDate >= oggi) {
+                    btnClass += 'unavailable bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed';
+                } else if (cellDate < oggi) {
+                    btnClass += 'unavailable bg-gray-50 text-gray-300 border-gray-100 cursor-not-allowed';
+                } else {
+                    btnClass += 'available bg-green-50 text-green-800 border-green-200 hover:bg-green-100 hover:border-green-300';
+                }
+                
+                if (isToday && !isSelected) {
+                    btnClass += ' ring-2 ring-terra-400';
+                }
+                
+                const disabledAttr = (!disponibile || cellDate < oggi) ? 'disabled' : '';
+                
+                html += `
+                    <button 
+                        class="${btnClass}"
+                        data-date="${cellDate.toISOString()}"
+                        ${disabledAttr}
+                        aria-label="${d} ${new Date(year, month).toLocaleString('it-IT', { month: 'long' })} - ${disponibile && cellDate >= oggi ? 'Disponibile' : 'Non disponibile'}"
+                    >
+                        <span>${d}</span>
+                        ${disponibile && cellDate >= oggi ? '<span class="text-[8px] leading-tight text-green-600 font-normal">disp.</span>' : ''}
+                    </button>`;
+            }
+            calGrid.innerHTML = html;
+
+            // Event listeners
+            calGrid.querySelectorAll('.cal-day-btn:not([disabled])').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const dateStr = btn.getAttribute('data-date');
+                    selectedDate = new Date(dateStr);
+                    renderCalendario();
+                    updateDataSelezionataInfo();
+                    filtraAlloggi();
+                });
+            });
+        }
+
+        function updateDataSelezionataInfo() {
+            if (selectedDate) {
+                dataSelezionataInfo.classList.remove('hidden');
+                dataSelezionataTesto.textContent = selectedDate.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+                
+                const alloggiDisponibili = alloggi.filter(a => isDataDisponibile(selectedDate));
+                dataSelezionataRiepilogo.textContent = `${alloggiDisponibili.length} su ${alloggi.length} alloggi disponibili in questa data.`;
+                
+                // Scroll to risultati
+                document.getElementById('griglia-alloggi').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Mostra/nascondi toggle admin se loggato
+                if (isAdminLoggedIn) {
+                    document.getElementById('admin-toggle-data').classList.remove('hidden');
+                    const isCurrentlyDisponibile = !dateNonDispSet.has(selectedDate.toDateString());
+                    const toggleBtn = document.getElementById('admin-toggle-day-btn');
+                    const toggleText = document.getElementById('admin-toggle-day-text');
+                    if (isCurrentlyDisponibile) {
+                        toggleBtn.className = 'px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-red-100 text-red-700 hover:bg-red-200';
+                        toggleText.textContent = 'Rendi NON disponibile';
+                    } else {
+                        toggleBtn.className = 'px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-green-100 text-green-700 hover:bg-green-200';
+                        toggleText.textContent = 'Rendi disponibile';
+                    }
+                }
+            } else {
+                dataSelezionataInfo.classList.add('hidden');
+                document.getElementById('admin-toggle-data').classList.add('hidden');
+            }
+            lucide.createIcons();
+        }
+
+        calPrevMonth.addEventListener('click', () => {
+            currentCalMonth.setMonth(currentCalMonth.getMonth() - 1);
+            renderCalendario();
+        });
+
+        calNextMonth.addEventListener('click', () => {
+            currentCalMonth.setMonth(currentCalMonth.getMonth() + 1);
+            renderCalendario();
+        });
+
+        calReset.addEventListener('click', () => {
+            selectedDate = null;
+            currentCalMonth = new Date(oggi.getFullYear(), oggi.getMonth(), 1);
+            renderCalendario();
+            updateDataSelezionataInfo();
+            filtraAlloggi();
+        });
+
+        cancellaDataBtn.addEventListener('click', () => {
+            selectedDate = null;
+            renderCalendario();
+            updateDataSelezionataInfo();
+            filtraAlloggi();
+        });
+
+        // Toggle admin per la data selezionata
+        const adminToggleDayBtn = document.getElementById('admin-toggle-day-btn');
+        if (adminToggleDayBtn) {
+            adminToggleDayBtn.addEventListener('click', () => {
+                if (!selectedDate || !isAdminLoggedIn) return;
+                const dateStr = selectedDate.toDateString();
+                if (dateNonDispSet.has(dateStr)) {
+                    // Rimuovi dalla lista non disponibili
+                    dateNonDispSet.delete(dateStr);
+                } else {
+                    // Aggiungi alla lista non disponibili
+                    dateNonDispSet.add(dateStr);
+                }
+                renderCalendario();
+                updateDataSelezionataInfo();
+                filtraAlloggi();
+                // Notifica salvataggio
+                showAdminToast(`Data ${selectedDate.toLocaleDateString('it-IT')} aggiornata! 💾`);
+            });
+        }
+
+        // ===== FILTRI ALLOGGI =====
+        let filtroAttivo = 'tutti';
+        let termineRicerca = '';
+
+        const grigliaAlloggi = document.getElementById('griglia-alloggi');
+        const risultatiCount = document.getElementById('risultati-count');
+        const nessunRisultato = document.getElementById('nessun-risultato');
+        const searchInput = document.getElementById('search-alloggi');
+
+        function getIconaTipo(tipo) {
+            const icone = {
+                'bubble': '<i data-lucide="circle-dot" class="w-4 h-4 text-sky-500"></i>',
+                'tree': '<i data-lucide="tree-pine" class="w-4 h-4 text-green-600"></i>',
+                'cabin': '<i data-lucide="home" class="w-4 h-4 text-amber-700"></i>',
+                'hobbit': '<i data-lucide="door-open" class="w-4 h-4 text-terra-600"></i>',
+            };
+            return icone[tipo] || '';
+        }
+
+        function getBadgeColore(tipo) {
+            const colori = {
+                'bubble': 'bg-sky-100 text-sky-700',
+                'tree': 'bg-green-100 text-green-700',
+                'cabin': 'bg-amber-100 text-amber-700',
+                'hobbit': 'bg-terra-100 text-terra-700',
+            };
+            return colori[tipo] || 'bg-gray-100 text-gray-700';
+        }
+
+        function getNomeTipo(tipo) {
+            const nomi = {
+                'bubble': 'Bubble Room',
+                'tree': 'Tree House',
+                'cabin': 'Log Cabin',
+                'hobbit': 'Hobbit House',
+            };
+            return nomi[tipo] || tipo;
+        }
+
+        function filtraAlloggi() {
+            let filtrati = alloggi;
+            
+            // Filtro per tipo
+            if (filtroAttivo !== 'tutti') {
+                filtrati = filtrati.filter(a => a.tipo === filtroAttivo);
+            }
+            
+            // Filtro per data selezionata
+            if (selectedDate) {
+                const dataDisponibile = isDataDisponibile(selectedDate);
+                if (!dataDisponibile) {
+                    // Se la data non è disponibile, mostriamo tutti ma segnaliamo
+                }
+            }
+            
+            // Filtro per ricerca
+            if (termineRicerca.trim()) {
+                const term = termineRicerca.trim().toLowerCase();
+                filtrati = filtrati.filter(a => 
+                    a.nome.toLowerCase().includes(term) || 
+                    a.tipo.toLowerCase().includes(term) ||
+                    a.descrizione.toLowerCase().includes(term)
+                );
+            }
+            
+            renderAlloggi(filtrati);
+        }
+
+        function renderAlloggi(lista) {
+            grigliaAlloggi.innerHTML = '';
+            
+            if (lista.length === 0) {
+                nessunRisultato.classList.remove('hidden');
+                risultatiCount.classList.add('hidden');
+                grigliaAlloggi.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500">
+                        <i data-lucide="search-x" class="w-12 h-12 mx-auto mb-3 text-gray-300"></i>
+                        <p class="text-lg">Nessun alloggio trovato</p>
+                        <p class="text-sm">Prova a modificare i filtri o la data selezionata.</p>
+                    </div>`;
+                lucide.createIcons();
+                return;
+            }
+            
+            nessunRisultato.classList.add('hidden');
+            risultatiCount.classList.remove('hidden');
+            
+            let countDisponibili = 0;
+            let countNonDisponibili = 0;
+            
+            if (selectedDate) {
+                lista.forEach(a => {
+                    if (isDataDisponibile(selectedDate)) countDisponibili++;
+                    else countNonDisponibili++;
+                });
+                risultatiCount.textContent = `${lista.length} alloggi trovati${selectedDate ? ' — ' + countDisponibili + ' disponibili, ' + countNonDisponibili + ' non disponibili' : ''}`;
+            } else {
+                risultatiCount.textContent = `${lista.length} alloggi trovati`;
+            }
+            
+            lista.forEach(alloggio => {
+                const isDisponibile = selectedDate ? isDataDisponibile(selectedDate) : true;
+                
+                const card = document.createElement('div');
+                card.className = `alloggio-card bg-white rounded-2xl shadow-lg overflow-hidden border flex flex-col transition-all ${!isDisponibile && selectedDate ? 'opacity-60 border-red-200' : 'border-natura-100 hover:shadow-xl'}`;
+                
+                card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="${alloggio.img}" alt="${alloggio.nome}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full text-sm font-medium ${getBadgeColore(alloggio.tipo)}">
+                                ${getNomeTipo(alloggio.tipo)}
+                            </span>
+                        </div>
+                        ${!isDisponibile && selectedDate ? `
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                            Non disponibile
+                        </div>` : selectedDate ? `
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                            Disponibile
+                        </div>` : ''}
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-natura-900 px-3 py-1.5 rounded-full text-sm font-bold shadow-md">
+                            ${alloggio.prezzo}
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-2">
+                            ${getIconaTipo(alloggio.tipo)}
+                            <h3 class="text-lg font-bold text-natura-900">${alloggio.nome}</h3>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-1 flex items-center gap-1">
+                            <i data-lucide="users" class="w-3.5 h-3.5"></i> ${alloggio.capacita}
+                        </p>
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">${alloggio.descrizione}</p>
+                        <ul class="space-y-1.5 mb-5 text-xs text-gray-700">
+                            ${alloggio.servizi.map(s => `
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600 flex-shrink-0"></i> ${s}
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <a href="index.html#contatti" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-natura-600 hover:bg-natura-700 text-white font-medium rounded-xl transition-colors text-sm ${!isDisponibile && selectedDate ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}">
+                            ${isDisponibile || !selectedDate ? 'Prenota ora' : 'Non disponibile'} <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                `;
+                grigliaAlloggi.appendChild(card);
+            });
+            
+            // Re-inizializza icone Lucide
+            lucide.createIcons();
+        }
+
+        // ===== FILTRI BUTTONS =====
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active', 'bg-natura-600', 'text-white');
+                    b.classList.add('bg-natura-100', 'text-natura-700');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active', 'bg-natura-600', 'text-white');
+                btn.classList.remove('bg-natura-100', 'text-natura-700');
+                btn.setAttribute('aria-selected', 'true');
+                
+                filtroAttivo = btn.getAttribute('data-filter');
+                filtraAlloggi();
+            });
+        });
+
+        // ===== RICERCA =====
+        searchInput.addEventListener('input', (e) => {
+            termineRicerca = e.target.value;
+            filtraAlloggi();
+        });
+
+        // ===== GESTIONE URL PARAMETERS =====
+        const urlParams = new URLSearchParams(window.location.search);
+        const tipoDaUrl = urlParams.get('tipo');
+        if (tipoDaUrl && ['bubble', 'tree', 'cabin', 'hobbit'].includes(tipoDaUrl)) {
+            filtroAttivo = tipoDaUrl;
+            // Aggiorna i bottoni filtro
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('active', 'bg-natura-600', 'text-white');
+                b.classList.add('bg-natura-100', 'text-natura-700');
+                b.setAttribute('aria-selected', 'false');
+            });
+            const targetBtn = document.querySelector(`.filter-btn[data-filter="${tipoDaUrl}"]`);
+            if (targetBtn) {
+                targetBtn.classList.add('active', 'bg-natura-600', 'text-white');
+                targetBtn.classList.remove('bg-natura-100', 'text-natura-700');
+                targetBtn.setAttribute('aria-selected', 'true');
+            }
+        }
+
+        // ===== ADMIN LOGIN =====
+        const ADMIN_PASSWORD = 'admin2024';
+        let isAdminLoggedIn = false;
+        
+        const adminLoginBtn = document.getElementById('admin-login-btn');
+        const adminLoginModal = document.getElementById('admin-login-modal');
+        const adminLoginForm = document.getElementById('admin-login-form');
+        const adminLoginError = document.getElementById('admin-login-error');
+        const cancelAdminLogin = document.getElementById('cancel-admin-login');
+        const adminBar = document.getElementById('admin-bar');
+        const adminLogoutBtn = document.getElementById('admin-logout-btn');
+        const adminSaveAllBtn = document.getElementById('admin-save-all');
+        const togglePasswordBtn = document.getElementById('toggle-password-visibility');
+        
+        // Mostra/nascondi password
+        togglePasswordBtn.addEventListener('click', () => {
+            const passwordInput = document.getElementById('admin-password');
+            const icon = togglePasswordBtn.querySelector('i');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.setAttribute('data-lucide', 'eye-off');
+            } else {
+                passwordInput.type = 'password';
+                icon.setAttribute('data-lucide', 'eye');
+            }
+            lucide.createIcons();
+        });
+        
+        // Apri modal login
+        adminLoginBtn.addEventListener('click', () => {
+            adminLoginModal.classList.remove('hidden');
+            document.getElementById('admin-password').focus();
+        });
+        
+        // Chiudi modal
+        cancelAdminLogin.addEventListener('click', () => {
+            adminLoginModal.classList.add('hidden');
+            document.getElementById('admin-password').value = '';
+            adminLoginError.classList.add('hidden');
+        });
+        
+        // Login submit
+        adminLoginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const password = document.getElementById('admin-password').value.trim();
+            if (password === ADMIN_PASSWORD) {
+                isAdminLoggedIn = true;
+                adminLoginModal.classList.add('hidden');
+                adminBar.classList.remove('hidden');
+                adminLoginBtn.classList.add('hidden');
+                // Mostra elementi admin
+                document.getElementById('admin-toggle-legenda').classList.remove('hidden');
+                document.getElementById('admin-toggle-data').classList.remove('hidden');
+                // Ricarica calendario in modalità admin
+                renderCalendario();
+                updateDataSelezionataInfo();
+                showAdminToast('✅ Accesso admin riuscito! Puoi modificare le disponibilità.');
+                document.getElementById('admin-password').value = '';
+            } else {
+                adminLoginError.classList.remove('hidden');
+                document.getElementById('admin-password').classList.add('input-error');
+                setTimeout(() => {
+                    document.getElementById('admin-password').classList.remove('input-error');
+                }, 1000);
+            }
+        });
+        
+        // Logout
+        adminLogoutBtn.addEventListener('click', () => {
+            isAdminLoggedIn = false;
+            adminBar.classList.add('hidden');
+            adminLoginBtn.classList.remove('hidden');
+            document.getElementById('admin-toggle-legenda').classList.add('hidden');
+            document.getElementById('admin-toggle-data').classList.add('hidden');
+            selectedDate = null;
+            renderCalendario();
+            updateDataSelezionataInfo();
+            filtraAlloggi();
+            showAdminToast('👋 Uscito dalla modalità admin.');
+        });
+        
+        // Salva tutte le modifiche (persistenza in localStorage)
+        adminSaveAllBtn.addEventListener('click', () => {
+            // Converti Set in array per localStorage
+            const dateArray = Array.from(dateNonDispSet);
+            localStorage.setItem('ecovillaggio_date_non_disponibili', JSON.stringify(dateArray));
+            showAdminToast('💾 Modifiche salvate con successo! Le date sono state aggiornate.');
+        });
+        
+        // Carica date da localStorage se presenti
+        function caricaDateSalvate() {
+            const salvate = localStorage.getItem('ecovillaggio_date_non_disponibili');
+            if (salvate) {
+                try {
+                    const array = JSON.parse(salvate);
+                    dateNonDispSet.clear();
+                    array.forEach(dateStr => dateNonDispSet.add(dateStr));
+                    return true;
+                } catch (e) {
+                    console.error('Errore nel caricamento date salvate:', e);
+                    return false;
+                }
+            }
+            return false;
+        }
+        
+        // Reset date predefinite
+        const adminResetDatesBtn = document.getElementById('admin-reset-dates');
+        if (adminResetDatesBtn) {
+            adminResetDatesBtn.addEventListener('click', () => {
+                if (!isAdminLoggedIn) return;
+                if (confirm('Sei sicuro di voler ripristinare le date predefinite? Questa azione cancellerà tutte le modifiche salvate.')) {
+                    localStorage.removeItem('ecovillaggio_date_non_disponibili');
+                    dateNonDispSet.clear();
+                    // Ricarica le date predefinite
+                    const nuoveDate = generaDateNonDisponibili();
+                    dateNonDispSet = nuoveDate;
+                    selectedDate = null;
+                    renderCalendario();
+                    updateDataSelezionataInfo();
+                    filtraAlloggi();
+                    showAdminToast('🔄 Date ripristinate ai valori predefiniti.');
+                }
+            });
+        }
+        
+        // Toast notification per admin
+        function showAdminToast(message) {
+            // Rimuovi eventuali toast esistenti
+            const existingToast = document.querySelector('.admin-toast');
+            if (existingToast) existingToast.remove();
+            
+            const toast = document.createElement('div');
+            toast.className = 'admin-toast fixed bottom-6 right-6 bg-natura-900 text-white px-5 py-3 rounded-xl shadow-2xl text-sm font-medium z-[9999] animate-fade-in-up border border-natura-700';
+            toast.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            lucide.createIcons();
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+        
+        // Tasto ESC per chiudere modal login
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !adminLoginModal.classList.contains('hidden')) {
+                adminLoginModal.classList.add('hidden');
+                document.getElementById('admin-password').value = '';
+                adminLoginError.classList.add('hidden');
+            }
+        });
+        
+        // Click outside modal per chiudere
+        adminLoginModal.addEventListener('click', (e) => {
+            if (e.target === adminLoginModal) {
+                adminLoginModal.classList.add('hidden');
+                document.getElementById('admin-password').value = '';
+                adminLoginError.classList.add('hidden');
+            }
+        });
+
+        // ===== INIZIALIZZAZIONE =====
+        // Prova a caricare date salvate da localStorage
+        const hasLocalData = caricaDateSalvate();
+        if (hasLocalData) {
+            console.log('📅 Date non disponibili caricate da localStorage:', dateNonDispSet.size, 'date');
+        }
+        renderCalendario();
+        filtraAlloggi();
+    </script>
+</body>
+</html>
