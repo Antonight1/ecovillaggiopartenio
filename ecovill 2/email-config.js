@@ -1,1 +1,0 @@
-// File non più utilizzato — il modulo di contatto utilizza FormSubmit.co (vedi index.html, form con action="https://formsubmit.co/..."). Questo file può essere eliminato.
