@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===== HEADER SCROLL EFFECT =====
-    const header = document.getElementById('main-header');
+    const header = document.querySelector('header');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -60,8 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== ACTIVE NAV LINK ON SCROLL =====
-    // Removed active nav link highlighting on scroll
+    
 
     // ===== CONTACT FORM HANDLING =====
     const contactForm = document.getElementById('contact-form');
