@@ -77,6 +77,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 </head>
 <body class="font-sans text-gray-800 bg-natura-50 min-h-screen">
 
@@ -201,6 +202,33 @@
                         <span class="px-3 py-1.5 bg-amber-500/90 backdrop-blur-sm rounded-full text-sm font-semibold">📍 Località Acqua Fidia</span>
                     </div>
                 </div>
+
+                 <!-- Display images from Cloudinary -->
+                  <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v123/my_photo.jpg" alt="Photo 1">
+                  
+                  <!-- Upload button -->
+                  <button id="upload_widget">Upload New Image</button>
+                  <div id="uploaded-images"></div>
+                
+                  <script>
+                    const myWidget = cloudinary.createUploadWidget(
+                      {
+                        cloudName: 'dfd44st4u',
+                        uploadPreset: 'ecovillaggiopartenio_imp_vid'
+                      },
+                      (error, result) => {
+                        if (!error && result && result.event === "success") {
+                          const imageUrl = result.info.secure_url;
+                          document.getElementById('uploaded-images').innerHTML += 
+                            `<img src="${imageUrl}" alt="Uploaded" style="max-width: 200px; margin: 10px;">`;
+                        }
+                      }
+                    );
+                
+                    document.getElementById("upload_widget").addEventListener("click", function() {
+                      myWidget.open();
+                    });
+                  </script>
 
                 <!-- Tariffe Grid -->
                 <div class="mb-16">
