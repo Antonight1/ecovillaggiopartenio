@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alloggi Ecovillaggio Partenio – Bubble Rooms, Tree Houses, Log Cabins e Hobbit Houses. Verifica disponibilità e prenota il tuo soggiorno eco-sostenibile nel Parco del Partenio.">
+    <meta name="description" content="Alloggi Ecovillaggio Partenio – Bubble Rooms, Tree Houses, Log Cabins e Hobbit Houses. Prenota il tuo soggiorno eco-sostenibile nel Parco del Partenio.">
     <link rel="icon" type="image/png" href="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png">
     <link rel="apple-touch-icon" href="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png">
     <link rel="mask-icon" href="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png" color="#356f33">
@@ -55,11 +55,6 @@
             transform: translateY(-4px);
         }
         
-        .filter-btn.active {
-            background-color: #356f33;
-            color: white;
-        }
-        
         /* Nascondi scrollbar per lo slider */
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
@@ -76,7 +71,7 @@
     <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50" role="banner">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16" aria-label="Navigazione">
             <a href="index.html" class="flex items-center gap-2 group">
-                <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png" alt="Ecovillaggio Partenio Logo" class="h-10 w-10 rounded-full object-cover group-hover:opacity-90 transition-opacity">
+                <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png" alt="Ecovillaggio Partenio Logo" class="h-10 w-10 rounded-full object-cover">
                 <span class="font-display font-bold text-lg text-natura-800 hidden sm:block">
                     Ecovillaggio <span class="text-terra-600">Partenio</span>
                 </span>
@@ -89,8 +84,6 @@
             </div>
         </nav>
     </header>
-
-    
 
     <!-- ===== MAIN CONTENT ===== -->
     <main role="main">
@@ -115,54 +108,6 @@
                 </div>
             </div>
             <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-natura-50 to-transparent"></div>
-        </section>
-
-        
-
-        
-
-        <!-- Barra di Ricerca Personalizzata -->
-        <section class="py-10 bg-natura-50" aria-labelledby="ricerca-personalizzata-heading" id="sezione-ricerca">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white rounded-2xl shadow-md p-6 sm:p-8 border border-natura-100">
-                    <h2 id="ricerca-personalizzata-heading" class="text-xl font-bold text-natura-900 mb-4 flex items-center gap-2">
-                        <i data-lucide="search" class="w-6 h-6 text-terra-500"></i> Personalizza la tua ricerca
-                    </h2>
-                    <p class="text-gray-500 text-sm mb-6">Inserisci le tue preferenze per trovare l'alloggio ideale.</p>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                        <div>
-                            <label for="check-in" class="block text-sm font-semibold text-natura-700 mb-1">Check-in</label>
-                            <input type="date" id="check-in" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none text-sm">
-                        </div>
-                        <div>
-                            <label for="check-out" class="block text-sm font-semibold text-natura-700 mb-1">Check-out</label>
-                            <input type="date" id="check-out" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none text-sm">
-                        </div>
-                        <div>
-                            <label for="adulti" class="block text-sm font-semibold text-natura-700 mb-1">Adulti</label>
-                            <select id="adulti" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none text-sm">
-                                <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="bambini-num" class="block text-sm font-semibold text-natura-700 mb-1">Bambini</label>
-                            <select id="bambini-num" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:border-natura-500 focus:ring-2 focus:ring-natura-200 outline-none text-sm">
-                                <option>0</option><option>1</option><option>2</option><option>3+</option>
-                            </select>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <label class="block text-sm font-semibold text-natura-700">Animali</label>
-                            <label class="inline-flex items-center gap-1 text-sm">
-                                <input type="checkbox" id="animali" class="rounded border-gray-300 text-natura-600 focus:ring-natura-500"> Sì
-                            </label>
-                        </div>
-                        <div class="col-span-full">
-                            <button type="button" id="btn-ricerca-personalizzata" class="w-full py-2.5 bg-terra-500 hover:bg-terra-600 text-white font-semibold rounded-xl transition-colors text-sm">Cerca alloggi</button>
-                            <p id="messaggio-ricerca" class="text-xs text-gray-400 mt-2 text-center">Tutti gli alloggi sono al momento disponibili.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- Galleria Anteprime (Sfoglia foto) -->
@@ -195,9 +140,8 @@
                 <h2 id="griglia-alloggi-heading" class="sr-only">Elenco alloggi disponibili</h2>
                 
                 <!-- Contatore risultati -->
-                <div class="mb-6 flex items-center justify-between">
-                    <p class="text-sm text-gray-500" id="risultati-count">11 alloggi trovati</p>
-                    <p id="nessun-risultato" class="text-sm text-gray-400 hidden">Nessun alloggio corrisponde ai filtri selezionati.</p>
+                <div class="mb-6">
+                    <p class="text-sm text-gray-500" id="risultati-count">11 alloggi disponibili</p>
                 </div>
                 
                 <div id="griglia-alloggi" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -211,7 +155,7 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
                 <h2 id="cta-alloggi-heading" class="text-3xl sm:text-4xl font-display font-bold mb-4">Pronto a Prenotare?</h2>
                 <p class="text-white/90 text-lg mb-8">Hai trovato l'alloggio che fa per te? Contattaci per verificare la disponibilità e bloccare la tua data preferita.</p>
-                <a href="index.html#contatti" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-terra-600 font-bold rounded-full hover:bg-natura-50 transition-all transform hover:scale-105 shadow-xl text-lg">
+                <a href="index.html#contatti" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-terra-600 font-bold rounded-full hover:bg-natura-50 transition-all transform hover:scale-105">
                     Richiedi Prenotazione
                     <i data-lucide="send" class="w-5 h-5"></i>
                 </a>
@@ -364,17 +308,14 @@
             }
         ];
 
-        
-
-        
-
-        // ===== FILTRI ALLOGGI (solo per tipo da URL) =====
-        let filtroAttivo = 'tutti';
-
+        // ===== ELEMENTI DOM =====
         const grigliaAlloggi = document.getElementById('griglia-alloggi');
         const risultatiCount = document.getElementById('risultati-count');
-        const nessunRisultato = document.getElementById('nessun-risultato');
+        const sliderContainer = document.getElementById('slider-container');
+        const sliderPrev = document.getElementById('slider-prev');
+        const sliderNext = document.getElementById('slider-next');
 
+        // ===== FUNZIONI HELPER =====
         function getIconaTipo(tipo) {
             const icone = {
                 'bubble': '<i data-lucide="circle-dot" class="w-4 h-4 text-sky-500"></i>',
@@ -405,39 +346,12 @@
             return nomi[tipo] || tipo;
         }
 
-        function filtraAlloggi() {
-            let filtrati = alloggi;
-            
-            // Filtro per tipo
-            if (filtroAttivo !== 'tutti') {
-                filtrati = filtrati.filter(a => a.tipo === filtroAttivo);
-            }
-            
-            renderAlloggi(filtrati);
-        }
-
-        function renderAlloggi(lista) {
+        // ===== RENDER ALLOGGI =====
+        function renderAlloggi() {
             grigliaAlloggi.innerHTML = '';
+            risultatiCount.textContent = `${alloggi.length} alloggi disponibili`;
             
-            if (lista.length === 0) {
-                nessunRisultato.classList.remove('hidden');
-                risultatiCount.classList.add('hidden');
-                grigliaAlloggi.innerHTML = `
-                    <div class="col-span-full text-center py-12 text-gray-500">
-                        <i data-lucide="search-x" class="w-12 h-12 mx-auto mb-3 text-gray-300"></i>
-                        <p class="text-lg">Nessun alloggio trovato</p>
-                        <p class="text-sm">Prova a modificare la tipologia o ricarica la pagina.</p>
-                    </div>`;
-                lucide.createIcons();
-                return;
-            }
-            
-            nessunRisultato.classList.add('hidden');
-            risultatiCount.classList.remove('hidden');
-            
-            risultatiCount.textContent = `${lista.length} alloggi trovati`;
-            
-            lista.forEach(alloggio => {
+            alloggi.forEach(alloggio => {
                 const card = document.createElement('div');
                 card.className = `alloggio-card bg-white rounded-2xl shadow-lg overflow-hidden border border-natura-100 hover:shadow-xl flex flex-col transition-all`;
                 
@@ -469,7 +383,7 @@
                                 </li>
                             `).join('')}
                         </ul>
-                        <a href="index.html#contatti" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-natura-600 hover:bg-natura-700 text-white font-medium rounded-xl transition-colors text-sm">
+                        <a href="index.html#contatti" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-natura-600 hover:bg-natura-700 text-white font-medium rounded-xl transition-colors">
                             Prenota ora <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
@@ -481,30 +395,10 @@
             lucide.createIcons();
         }
 
-        // ===== GESTIONE URL PARAMETERS (filtro per tipo) =====
-        const urlParams = new URLSearchParams(window.location.search);
-        const tipoDaUrl = urlParams.get('tipo');
-        if (tipoDaUrl && ['bubble', 'tree', 'cabin', 'hobbit'].includes(tipoDaUrl)) {
-            filtroAttivo = tipoDaUrl;
-        }
-
-        // ===== GALLERIA SFOGLIA FOTO =====
-        const sliderContainer = document.getElementById('slider-container');
-        const sliderPrev = document.getElementById('slider-prev');
-        const sliderNext = document.getElementById('slider-next');
-
-        function getGalleriaAlloggi() {
-            let filtrati = alloggi;
-            if (filtroAttivo !== 'tutti') {
-                filtrati = filtrati.filter(a => a.tipo === filtroAttivo);
-            }
-            return filtrati;
-        }
-
+        // ===== RENDER GALLERIA =====
         function renderGalleria() {
-            const lista = getGalleriaAlloggi();
             sliderContainer.innerHTML = '';
-            lista.forEach(alloggio => {
+            alloggi.forEach(alloggio => {
                 const card = document.createElement('div');
                 card.className = 'flex-shrink-0 w-40 snap-start cursor-pointer group';
                 card.innerHTML = `
@@ -519,7 +413,7 @@
                 card.addEventListener('click', () => {
                     // Scorri alla card corrispondente nella griglia
                     const grigliaCards = grigliaAlloggi.querySelectorAll('.alloggio-card');
-                    const idx = lista.indexOf(alloggio);
+                    const idx = alloggi.indexOf(alloggio);
                     if (grigliaCards[idx]) {
                         grigliaCards[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
                         grigliaCards[idx].classList.add('ring-4', 'ring-terra-400');
@@ -531,6 +425,7 @@
             lucide.createIcons();
         }
 
+        // ===== SLIDER CONTROLS =====
         sliderPrev.addEventListener('click', () => {
             sliderContainer.scrollBy({ left: -180, behavior: 'smooth' });
         });
@@ -555,39 +450,8 @@
             sliderContainer.scrollLeft = scrollLeftPos - walk;
         });
 
-        // ===== RICERCA PERSONALIZZATA (collegata ai filtri) =====
-        const btnRicercaPersonalizzata = document.getElementById('btn-ricerca-personalizzata');
-
-        btnRicercaPersonalizzata.addEventListener('click', () => {
-            // Legge i valori dalla barra di ricerca
-            const checkIn = document.getElementById('check-in').value;
-            const checkOut = document.getElementById('check-out').value;
-            const adulti = document.getElementById('adulti').value;
-            const bambiniNum = document.getElementById('bambini-num').value;
-            const animali = document.getElementById('animali').checked;
-
-            // Costruisce il termine di ricerca combinato
-            let terminiExtra = [];
-            if (checkIn) terminiExtra.push(`Check-in: ${checkIn}`);
-            if (checkOut) terminiExtra.push(`Check-out: ${checkOut}`);
-            if (adulti) terminiExtra.push(`Adulti: ${adulti}`);
-            if (bambiniNum && bambiniNum !== '0') terminiExtra.push(`Bambini: ${bambiniNum}`);
-            if (animali) terminiExtra.push('Pet-friendly');
-
-            const msgRicerca = document.getElementById('messaggio-ricerca');
-            if (terminiExtra.length > 0) {
-                const msg = '🔍 Ricerca personalizzata: ' + terminiExtra.join(' | ');
-                msgRicerca.textContent = msg;
-            } else {
-                msgRicerca.textContent = 'Tutti gli alloggi sono al momento disponibili.';
-            }
-            
-            // Scroll alla griglia
-            grigliaAlloggi.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-
         // ===== INIZIALIZZAZIONE =====
-        filtraAlloggi();
+        renderAlloggi();
         renderGalleria();
     </script>
 </body>
