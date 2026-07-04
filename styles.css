@@ -154,27 +154,3 @@ img[loading="lazy"].loaded {
     .text-lg { font-size: 1rem !important; }
 }
 
-/* ===== Calendario interattivo ===== */
-.cal-day {
-    min-height: 42px;
-    border: 1px solid transparent;
-}
-.cal-day:hover {
-    border-color: rgba(255,255,255,0.2);
-}
-.cal-day:focus-visible {
-    outline: 2px solid #d48837;
-    outline-offset: 2px;
-}
-#cal-tooltip {
-    animation: slideDown 0.2s ease-out;
-}
-@media (max-width: 480px) {
-    .cal-day {
-        min-height: 36px;
-        font-size: 0.75rem;
-    }
-    .cal-day span:first-child {
-        font-size: 0.7rem;
-    }
-}

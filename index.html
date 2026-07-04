@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png">
     <link rel="apple-touch-icon" href="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png">
     <link rel="mask-icon" href="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png" color="#356f33">
-    <meta name="msapplication-TileImage" content="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png.png">
+    <meta name="msapplication-TileImage" content="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png">
     <title>Ecovillaggio Partenio – Un Paradiso Sostenibile nelle Montagne 🌿</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -76,8 +76,93 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://ecovillaggiopartenio.com/#organization",
+          "name": "Ecovillaggio Partenio",
+          "alternateName": "Partenio Adventure Dreams S.r.l.",
+          "url": "https://ecovillaggiopartenio.com/",
+          "logo": "https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png",
+          "image": "https://res.cloudinary.com/dfd44st4u/image/upload/v1782908656/panorama_campo_magg_tmb5bl.jpg",
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://ecovillaggiopartenio.com/#website",
+          "name": "Ecovillaggio Partenio",
+          "url": "https://ecovillaggiopartenio.com/",
+          "publisher": { "@id": "https://ecovillaggiopartenio.com/#organization" }
+        },
+        {
+          "@type": "LodgingBusiness",
+          "@id": "https://ecovillaggiopartenio.com/#ecovillaggio",
+          "name": "Ecovillaggio Partenio",
+          "description": "Glamping sostenibile nel Parco Regionale del Partenio: Bubble Rooms, Tree Houses, Log Cabins e Hobbit Houses con tinozza finlandese privata.",
+          "url": "https://ecovillaggiopartenio.com/",
+          "telephone": "+393281163148",
+          "email": "partenioadventuredreams@gmail.com",
+          "image": "https://res.cloudinary.com/dfd44st4u/image/upload/v1782908656/panorama_campo_magg_tmb5bl.jpg",
+          "priceRange": "€€",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Località Vallefonda",
+            "addressLocality": "Mercogliano",
+            "addressRegion": "AV",
+            "postalCode": "83013",
+            "addressCountry": "IT"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "40.9284",
+            "longitude": "14.6979"
+          },
+          "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Bubble Rooms", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Tinozza finlandese privata", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Area picnic", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Escursioni guidate", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Educazione ambientale", "value": true }
+          ]
+        },
+        {
+          "@type": "Event",
+          "@id": "https://ecovillaggiopartenio.com/evento-sensoriale.html#arboria",
+          "name": "ARBORIA – Silviotherapy e Inclusione",
+          "startDate": "2025-06-14T09:00",
+          "endDate": "2025-06-14T13:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Acqua Fidia, Mercogliano (AV)",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Mercogliano",
+              "addressRegion": "AV",
+              "addressCountry": "IT"
+            }
+          },
+          "image": "https://res.cloudinary.com/dfd44st4u/image/upload/v1782908463/Locandina_evento_arboria_joplrv.jpg",
+          "description": "Percorso terapeutico nella natura per bambini e adolescenti con ASD e altre disabilità. Camminate consapevoli, attività sensoriali e ascolto della natura.",
+          "organizer": { "@id": "https://ecovillaggiopartenio.com/#organization" },
+          "offers": {
+            "@type": "Offer",
+            "url": "https://ecovillaggiopartenio.com/evento-sensoriale.html",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="font-sans text-gray-800 bg-natura-50 min-h-screen">
 
@@ -105,9 +190,9 @@
                     <li role="none"><a href="alloggi.html" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Alloggi</a></li>
                     <li role="none"><a href="#attivita" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Attività</a></li>
                     <li role="none"><a href="#educazione" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Educazione</a></li>
-                    <li role="none"><a href="#ecomuseo" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Ecomuseo</a></li>
-                    <li role="none"><a href="#accoglienza" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Accoglienza</a></li>
-                    <li role="none"><a href="#eventi" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Eventi</a></li>
+                    <li role="none"><a href="ecomuseo.html" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Ecomuseo</a></li>
+                    <li role="none"><a href="faq.html" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">FAQ</a></li>
+                    <li role="none"><a href="eventi.html" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Eventi</a></li>
                     <li role="none"><a href="#sostenibilita" role="menuitem" class="nav-link px-3 py-2 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Sostenibilità</a></li>
                     <li role="none"><a href="#contatti" role="menuitem" class="nav-link px-4 py-2 rounded-lg bg-natura-600 text-white hover:bg-natura-700 transition-colors ml-2">Contatti</a></li>
                 </ul>
@@ -126,9 +211,9 @@
                     <li><a href="alloggi.html" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Alloggi</a></li>
                     <li><a href="#attivita" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Attività</a></li>
                     <li><a href="#educazione" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Educazione</a></li>
-                    <li><a href="#ecomuseo" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Ecomuseo</a></li>
-                    <li><a href="#accoglienza" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Accoglienza</a></li>
-                    <li><a href="#eventi" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Eventi</a></li>
+                    <li><a href="ecomuseo.html" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Ecomuseo</a></li>
+                    <li><a href="faq.html" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">FAQ</a></li>
+                    <li><a href="eventi.html" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Eventi</a></li>
                     <li><a href="#sostenibilita" class="mobile-nav-link block px-4 py-3 rounded-lg hover:bg-natura-100 transition-colors text-natura-700">Sostenibilità</a></li>
                     <li><a href="#contatti" class="mobile-nav-link block px-4 py-3 rounded-lg bg-natura-600 text-white hover:bg-natura-700 transition-colors text-center mt-2">Contatti</a></li>
                 </ul>
@@ -205,29 +290,7 @@
 
         
                   
-                  <!-- Upload button -->
-                  <button id="upload_widget">Upload New Image</button>
-                  <div id="uploaded-images"></div>
-                
-                  <script>
-                    const myWidget = cloudinary.createUploadWidget(
-                      {
-                        cloudName: 'dfd44st4u',
-                        uploadPreset: 'ecovillaggiopartenio_imp_vid'
-                      },
-                      (error, result) => {
-                        if (!error && result && result.event === "success") {
-                          const imageUrl = result.info.secure_url;
-                          document.getElementById('uploaded-images').innerHTML += 
-                            `<img src="${imageUrl}" alt="Uploaded" style="max-width: 200px; margin: 10px;">`;
-                        }
-                      }
-                    );
-                
-                    document.getElementById("upload_widget").addEventListener("click", function() {
-                      myWidget.open();
-                    });
-                  </script>
+                  
 
                 <!-- Tariffe Grid -->
                 <div class="mb-16">
@@ -617,16 +680,9 @@
                         <h3 class="text-xl font-bold text-natura-900 mb-3">Ecomuseo Diffuso</h3>
                         <p class="text-gray-600">Museo naturalistico e storico-antropologico distribuito nei rifugi del Parco del Partenio.</p>
                     </a>
-                    <!-- Card: Accoglienza -->
-                    <a href="#accoglienza" class="area-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-natura-200">
-                        <div class="w-14 h-14 bg-natura-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-natura-600 transition-colors">
-                            <i data-lucide="coffee" class="w-7 h-7 text-natura-600 group-hover:text-white transition-colors"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-natura-900 mb-3">Accoglienza Turistica</h3>
-                        <p class="text-gray-600">Ristorante, caffetteria, negozio di prodotti locali e guide esperte.</p>
-                    </a>
+                    
                     <!-- Card: Eventi -->
-                    <a href="#eventi" class="area-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-natura-200">
+                    <a href="eventi.html" class="area-card group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-natura-200">
                         <div class="w-14 h-14 bg-natura-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-natura-600 transition-colors">
                             <i data-lucide="calendar-days" class="w-7 h-7 text-natura-600 group-hover:text-white transition-colors"></i>
                         </div>
@@ -781,7 +837,7 @@
                 <!-- Main Activities Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                     <!-- Escursioni Guidate -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                    <a href="eventi.html?categoria=escursioni" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100 block">
                         <div class="relative overflow-hidden aspect-[16/10]">
                             <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782904960/Salamandra_insieme_ai_bambini_dumw68.jpg" alt="Escursioni guidate nel Parco del Partenio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
@@ -791,9 +847,9 @@
                             <h3 class="font-bold text-natura-900 mb-2 text-lg">Escursioni Guidate</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">Percorsi naturalistici con guida esperta alla scoperta del Parco Regionale del Partenio, adatti a tutti i livelli.</p>
                         </div>
-                    </div>
+                    </a>
                     <!-- Mountain Bike -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                    <a href="eventi.html?categoria=mountain-bike" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100 block">
                         <div class="relative overflow-hidden aspect-[16/10]">
                             <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1783061126/mounbike_noybsg.jpg" alt="Mountain bike sui sentieri del Partenio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
@@ -803,9 +859,9 @@
                             <h3 class="font-bold text-natura-900 mb-2 text-lg">Mountain Bike</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">Percorsi per mountain bike tra i sentieri del Parco, con diversi livelli di difficoltà e noleggio disponibile.</p>
                         </div>
-                    </div>
+                    </a>
                     <!-- Primo Approccio a Cavallo -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                    <a href="eventi.html?categoria=cavallo" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100 block">
                         <div class="relative overflow-hidden aspect-[16/10]">
                             <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1783061434/primappcavall_vnnoeq.jpg" alt="Primo approccio a cavallo nella natura" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
@@ -815,9 +871,9 @@
                             <h3 class="font-bold text-natura-900 mb-2 text-lg">Primo Approccio a Cavallo</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">Esperienza guidata da istruttore equestre qualificato per avvicinarsi al mondo dell'equitazione nella natura.</p>
                         </div>
-                    </div>
+                    </a>
                     <!-- Passeggiate nella Natura -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                    <a href="eventi.html?categoria=passeggiate" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100 block">
                         <div class="relative overflow-hidden aspect-[16/10]">
                             <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782993835/Scolaresca_nel_parco_hiaxyf.jpg" alt="Passeggiate nella natura e aree picnic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
@@ -827,9 +883,9 @@
                             <h3 class="font-bold text-natura-900 mb-2 text-lg">Passeggiate nella Natura</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">Sentieri panoramici, aree picnic e barbecue immersi nel verde per momenti di puro relax in famiglia.</p>
                         </div>
-                    </div>
+                    </a>
                     <!-- Laboratori di Caseificazione -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                    <a href="eventi.html?categoria=workshop" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100 block">
                         <div class="relative overflow-hidden aspect-[16/10]">
                             <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782993863/labcas_a0cgbe.jpg" alt="Laboratorio di caseificazione tradizionale" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
@@ -839,9 +895,9 @@
                             <h3 class="font-bold text-natura-900 mb-2 text-lg">Laboratori di Caseificazione</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">Scopri i segreti della produzione casearia tradizionale irpina con degustazione dei prodotti locali.</p>
                         </div>
-                    </div>
+                    </a>
                     <!-- Turismo Esperienziale -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100">
+                    <a href="eventi.html?categoria=turismo" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group border border-natura-100 block">
                         <div class="relative overflow-hidden aspect-[16/10]">
                             <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908454/esp_9_bda0ph.jpg" alt="Turismo esperienziale nel Partenio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-natura-900/50 to-transparent"></div>
@@ -851,62 +907,63 @@
                             <h3 class="font-bold text-natura-900 mb-2 text-lg">Turismo Esperienziale</h3>
                             <p class="text-gray-600 text-sm leading-relaxed">Esperienze su misura con guide locali e partner selezionati per scoprire il territorio in modo autentico.</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
-                <!-- Cartolina Evento Sensoriale -->
+                <!-- Cartolina Evento ARBORIA -->
                 <div class="mt-12">
-                    <a href="evento-sensoriale.html" class="group block bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-amber-200 hover:border-amber-300 transform hover:-translate-y-1">
+                    <a href="evento-sensoriale.html" class="group block bg-gradient-to-br from-green-50 via-emerald-50 to-natura-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-green-200 hover:border-green-300 transform hover:-translate-y-1">
                         <div class="grid md:grid-cols-5">
                             <!-- Immagine -->
                             <div class="md:col-span-2 relative overflow-hidden aspect-[4/3] md:aspect-auto">
-                                <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908463/Locandina_evento_arboria_joplrv.jpg" alt="Evento sensoriale nel bosco del Partenio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-amber-50/30 md:to-amber-50/80"></div>
-                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-amber-700 px-3 py-1.5 rounded-full text-xs font-bold shadow-md flex items-center gap-1.5">
+                                <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908463/Locandina_evento_arboria_joplrv.jpg" alt="ARBORIA – Percorso di Silviotherapy nel Parco del Partenio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-green-50/30 md:to-green-50/80"></div>
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-green-700 px-3 py-1.5 rounded-full text-xs font-bold shadow-md flex items-center gap-1.5">
                                     <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                                    Evento Passato
+                                    1ª Uscita
                                 </div>
                             </div>
                             <!-- Contenuto -->
                             <div class="md:col-span-3 p-6 sm:p-8 flex flex-col justify-center">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">🌲 Esperienza Sensoriale</span>
-                                    <span class="px-3 py-1 bg-rose-100 text-rose-600 rounded-full text-xs font-semibold">📅 15 Ottobre 2024</span>
+                                <div class="flex flex-wrap items-center gap-2 mb-3">
+                                    <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">🌳 Silviotherapy</span>
+                                    <span class="px-3 py-1 bg-rose-100 text-rose-600 rounded-full text-xs font-semibold">📅 14 Giugno 2025</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-semibold">📍 Acqua Fidia</span>
                                 </div>
-                                <h3 class="text-2xl sm:text-3xl font-display font-bold text-natura-900 mb-3 group-hover:text-terra-700 transition-colors">
-                                    "I Suoni del Bosco" – Immersione Sensoriale nel Partenio
+                                <h3 class="text-2xl sm:text-3xl font-display font-bold text-natura-900 mb-3 group-hover:text-green-700 transition-colors">
+                                    ARBORIA – Percorso di Silviotherapy e Inclusione
                                 </h3>
                                 <p class="text-gray-600 leading-relaxed mb-4">
-                                    Un viaggio sensoriale unico tra i sentieri del Parco: ascolto dei suoni della natura, 
-                                    camminata a piedi nudi, degustazione di erbe selvatiche e meditazione guidata al tramonto. 
-                                    Un'esperienza che ha coinvolto tutti i sensi in un abbraccio con la natura.
+                                    Un percorso terapeutico nella natura per bambini e adolescenti con Disturbo dello Spettro Autistico (ASD) 
+                                    e altre disabilità psico-fisiche. Attività sensoriali guidate, camminate consapevoli tra gli alberi 
+                                    e momenti di ascolto della natura in un ambiente naturale tranquillo e protetto del Parco del Partenio.
                                 </p>
                                 <div class="flex flex-wrap gap-3 mb-5">
                                     <div class="flex items-center gap-1.5 text-sm text-gray-500 bg-white/70 rounded-full px-3 py-1.5 shadow-sm">
-                                        <i data-lucide="ear" class="w-4 h-4 text-amber-600"></i>
-                                        <span>Sound Bath</span>
+                                        <i data-lucide="leaf" class="w-4 h-4 text-green-600"></i>
+                                        <span>Silviotherapy</span>
                                     </div>
                                     <div class="flex items-center gap-1.5 text-sm text-gray-500 bg-white/70 rounded-full px-3 py-1.5 shadow-sm">
-                                        <i data-lucide="footprints" class="w-4 h-4 text-green-600"></i>
-                                        <span>Barefoot Walk</span>
+                                        <i data-lucide="heart-handshake" class="w-4 h-4 text-blue-600"></i>
+                                        <span>Inclusione ASD</span>
                                     </div>
                                     <div class="flex items-center gap-1.5 text-sm text-gray-500 bg-white/70 rounded-full px-3 py-1.5 shadow-sm">
-                                        <i data-lucide="leaf" class="w-4 h-4 text-emerald-600"></i>
-                                        <span>Erbe Selvatiche</span>
+                                        <i data-lucide="footprints" class="w-4 h-4 text-emerald-600"></i>
+                                        <span>Camminate Consapevoli</span>
                                     </div>
                                     <div class="flex items-center gap-1.5 text-sm text-gray-500 bg-white/70 rounded-full px-3 py-1.5 shadow-sm">
-                                        <i data-lucide="sunset" class="w-4 h-4 text-orange-500"></i>
-                                        <span>Meditazione</span>
+                                        <i data-lucide="clock" class="w-4 h-4 text-orange-500"></i>
+                                        <span>9:00 – 13:00</span>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3">
-                                    <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-full transition-all group-hover:shadow-lg group-hover:shadow-amber-500/30 text-sm">
-                                        Vedi Foto e Video dell'Evento
+                                    <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full transition-all group-hover:shadow-lg group-hover:shadow-green-500/30 text-sm">
+                                        Scopri il Progetto ARBORIA
                                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                                     </span>
                                     <span class="text-xs text-gray-400 flex items-center gap-1">
                                         <i data-lucide="users" class="w-3.5 h-3.5"></i>
-                                        30 partecipanti
+                                        Bambini 6–12 anni
                                     </span>
                                 </div>
                             </div>
@@ -917,6 +974,8 @@
                 
             </div>
         </section>
+
+        
 
         <!-- ===== EDUCAZIONE AMBIENTALE ===== -->
         <section id="educazione" class="py-20 lg:py-28 bg-white" aria-labelledby="educazione-heading">
@@ -1083,185 +1142,7 @@
             </div>
         </section>
 
-        <!-- ===== ACCOGLIENZA TURISTICA ===== -->
-        <section id="accoglienza" class="py-20 lg:py-28 bg-terra-50" aria-labelledby="accoglienza-heading">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 space-y-4">
-                    <span class="inline-block px-4 py-1.5 bg-terra-100 text-terra-700 rounded-full text-sm font-semibold tracking-wide">
-                        Ospitalità
-                    </span>
-                    <h2 id="accoglienza-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-natura-900">
-                        Accoglienza Turistica
-                    </h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Sapori autentici, prodotti locali e l'ospitalità calorosa della montagna.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all">
-                        <div class="aspect-[3/2] overflow-hidden">
-                            <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1783060158/panorasm_tofimv.jpg" alt="Centro di accoglienza turistica con ristorazione e prodotti locali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-lg font-bold text-natura-900 mb-2">Centro Accoglienza Turistica</h3>
-                            <p class="text-gray-600 text-sm">Il nostro punto informazioni per scoprire tutti i servizi e le attività disponibili: escursioni, bike, cavallo e laboratori.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all">
-                        <div class="aspect-[3/2] overflow-hidden">
-                            <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1783061985/cestino_vimini_mpxwvw.jpg" alt="Cesto picnic con prodotti tipici irpini" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-lg font-bold text-natura-900 mb-2">Colazione Picnic</h3>
-                            <p class="text-gray-600 text-sm">Cesto in vimini con prodotti tipici irpini a km zero: salumi, formaggi, frutta e dolci artigianali ogni mattina.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all">
-                        <div class="aspect-[3/2] overflow-hidden">
-                            <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782993818/Gioacchino_parla_jhcbkc.jpg" alt="Guide turistiche locali esperte del territorio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-lg font-bold text-natura-900 mb-2">Guide ed Esperienze</h3>
-                            <p class="text-gray-600 text-sm">Accompagnatori qualificati: guida equestre, escursionistica, esperto del territorio e accompagnatore per disabilità.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== EVENTI E INTRATTENIMENTO ===== -->
-        <section id="eventi" class="py-20 lg:py-28 bg-natura-900 text-white" aria-labelledby="eventi-heading">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 space-y-4">
-                    <span class="inline-block px-4 py-1.5 bg-white/20 text-white rounded-full text-sm font-semibold tracking-wide backdrop-blur-sm">
-                        Calendario
-                    </span>
-                    <h2 id="eventi-heading" class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
-                        Eventi & Intrattenimento
-                    </h2>
-                    <p class="text-white/80 max-w-2xl mx-auto">Un calendario ricco di appuntamenti per tutte le stagioni, tra musica, cultura e tradizione.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all text-center">
-                        <div class="w-16 h-16 bg-terra-500 rounded-full flex items-center justify-center mx-auto mb-5">
-                            <i data-lucide="music" class="w-8 h-8 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Festival Stagionali</h3>
-                        <p class="text-white/70 text-sm">Celebrazioni che seguono il ritmo delle stagioni: festa della primavera, solstizio d'estate, raccolto autunnale e magia dell'inverno.</p>
-                        <span class="inline-block mt-4 text-xs font-medium bg-white/20 px-3 py-1 rounded-full">Prossimo: Giugno 2025</span>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all text-center">
-                        <div class="w-16 h-16 bg-cielo-500 rounded-full flex items-center justify-center mx-auto mb-5">
-                            <i data-lucide="star" class="w-8 h-8 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Concerti Sotto le Stelle</h3>
-                        <p class="text-white/70 text-sm">Spettacoli musicali in un anfiteatro naturale, con artisti locali e internazionali che si esibiscono sotto il cielo stellato.</p>
-                        <span class="inline-block mt-4 text-xs font-medium bg-white/20 px-3 py-1 rounded-full">Ogni sabato sera</span>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all text-center">
-                        <div class="w-16 h-16 bg-natura-500 rounded-full flex items-center justify-center mx-auto mb-5">
-                            <i data-lucide="shopping-bag" class="w-8 h-8 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Mercati dell'Artigianato</h3>
-                        <p class="text-white/70 text-sm">Esposizione e vendita di prodotti artigianali locali, con dimostrazioni dal vivo e laboratori creativi per tutte le età.</p>
-                        <span class="inline-block mt-4 text-xs font-medium bg-white/20 px-3 py-1 rounded-full">Prima domenica del mese</span>
-                    </div>
-                </div>
-                <!-- Calendario Interattivo -->
-                <div class="mt-12" id="calendario-container">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20">
-                        <div class="flex items-center justify-between mb-6">
-                            <h3 class="text-2xl font-display font-bold text-white flex items-center gap-2">
-                                <i data-lucide="calendar" class="w-6 h-6 text-terra-400"></i>
- Calendario Eventi
-                            </h3>
-                            <div class="flex items-center gap-2">
-                                <button id="cal-prev" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center" aria-label="Mese precedente">
-                                    <i data-lucide="chevron-left" class="w-5 h-5 text-white"></i>
-                                </button>
-                                <span id="cal-month-year" class="text-white font-semibold min-w-[160px] text-center">Luglio 2025</span>
-                                <button id="cal-next" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center" aria-label="Mese successivo">
-                                    <i data-lucide="chevron-right" class="w-5 h-5 text-white"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Giorni della settimana -->
-                        <div class="grid grid-cols-7 gap-2 mb-3">
-                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Lun</span>
-                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Mar</span>
-                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Mer</span>
-                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Gio</span>
-                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Ven</span>
-                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Sab</span>
-                            <span class="text-center text-white/50 text-xs font-semibold uppercase tracking-wider py-2">Dom</span>
-                        </div>
-                        <!-- Griglia giorni -->
-                        <div id="cal-grid" class="grid grid-cols-7 gap-2">
-                            <!-- Popolato da JS -->
-                        </div>
-                        <!-- Legenda -->
-                        <div class="flex flex-wrap gap-4 mt-6 pt-4 border-t border-white/10">
-                            <div class="flex items-center gap-2 text-xs text-white/70">
-                                <span class="w-4 h-4 rounded-full bg-terra-500"></span> Festival
-                            </div>
-                            <div class="flex items-center gap-2 text-xs text-white/70">
-                                <span class="w-4 h-4 rounded-full bg-cielo-500"></span> Concerti
-                            </div>
-                            <div class="flex items-center gap-2 text-xs text-white/70">
-                                <span class="w-4 h-4 rounded-full bg-purple-500"></span> Mercati
-                            </div>
-                            <div class="flex items-center gap-2 text-xs text-white/70">
-                                <span class="w-4 h-4 rounded-full bg-green-400"></span> Altri Eventi
-                            </div>
-                        </div>
-                        <!-- Tooltip per eventi del giorno -->
-                        <div id="cal-tooltip" class="hidden mt-4 bg-white/15 backdrop-blur-md rounded-xl p-4 border border-white/20 text-white text-sm space-y-2">
-                            <div class="flex items-center justify-between">
-                                <span id="cal-tooltip-date" class="font-bold text-white"></span>
-                                <button id="cal-tooltip-close" class="w-6 h-6 rounded-lg hover:bg-white/10 flex items-center justify-center">
-                                    <i data-lucide="x" class="w-4 h-4"></i>
-                                </button>
-                            </div>
-                            <div id="cal-tooltip-events" class="space-y-2"></div>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Link Evento Sensoriale (innestato) -->
-                <div class="mt-10 text-center">
-                    <a href="evento-sensoriale.html" class="group inline-flex items-center gap-3 bg-white/10 hover:bg-white/15 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all hover:border-amber-400/50">
-                        <div class="w-12 h-12 bg-amber-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="sparkles" class="w-6 h-6 text-amber-300"></i>
-                        </div>
-                        <div class="text-left">
-                            <p class="font-bold text-white text-sm">🌲 Evento Sensoriale – "I Suoni del Bosco"</p>
-                            <p class="text-white/60 text-xs">Guarda foto e video dell'immersione sensoriale nel Partenio →</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Eventi extra -->
-                <div class="mt-12 grid sm:grid-cols-2 gap-6">
-                    <div class="bg-white/5 rounded-2xl p-6 border border-white/10 flex items-start gap-4">
-                        <div class="w-12 h-12 bg-purple-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="palette" class="w-6 h-6 text-purple-300"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white mb-1">Centro Culturale</h3>
-                            <p class="text-white/70 text-sm">Mostre d'arte, lezioni di cultura locale, proiezioni e incontri con autori in uno spazio dedicato alla creatività.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white/5 rounded-2xl p-6 border border-white/10 flex items-start gap-4">
-                        <div class="w-12 h-12 bg-blue-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="moon" class="w-6 h-6 text-blue-300"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white mb-1">Avventura Notturna</h3>
-                            <p class="text-white/70 text-sm">Osservazione astronomica con telescopi, escursioni al chiaro di luna e scoperta della fauna notturna del Parco.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
         <!-- ===== BENEFICI AGGIUNTIVI ===== -->
     <section id="benefici" class="py-20 lg:py-28 bg-natura-50" aria-labelledby="benefici-heading">
@@ -1287,13 +1168,13 @@
                 <!-- Centro Culturale -->
                 <div class="bg-white rounded-2xl p-7 text-center hover:shadow-lg transition-all group border border-natura-100">
                     <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-amber-200 transition-colors">
-                        <i data-lucide="art-gallery" class="w-8 h-8 text-amber-600"></i>
+                        <i data-lucide="palette" class="w-8 h-8 text-amber-600"></i>
                     </div>
                     <h3 class="font-bold text-natura-900 mb-3">Centro Culturale</h3>
                     <p class="text-gray-600 text-sm">Spazio per mostre d'arte, eventi culturali e lezioni sulla cultura e le tradizioni locali.</p>
                 </div>
                 <!-- Avventura Notturna -->
- <div class="bg-white rounded-2-xl p-7 text-center hover:shadow-lg transition-all group border border-natura-100">
+                <div class="bg-white rounded-2xl p-7 text-center hover:shadow-lg transition-all group border border-natura-100">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-blue-200 transition-colors">
                         <i data-lucide="moon" class="w-8 h-8 text-blue-600"></i>
                     </div>
@@ -1421,7 +1302,7 @@
                             <input type="hidden" name="_subject" value="Nuova richiesta da Ecovillaggio Partenio">
                             <input type="hidden" name="_autoresponse" value="Grazie per la tua richiesta! Ti risponderemo entro 24 ore.">
                             <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_next" value="thank-you.html">
+                            <input type="hidden" name="_next" value="https://ecovillaggiopartenio.com/thank-you.html">
                             <input type="hidden" name="_captcha" value="false">
                             <div>
                                 <label for="nome" class="block text-sm font-semibold text-natura-800 mb-1.5">Nome e Cognome *</label>
@@ -1503,7 +1384,7 @@
                 <!-- Brand -->
                 <div class="space-y-4">
                     <div class="flex items-center gap-2">
-                        <img src="https://huggingface.co/spaces/antonite/deepsite-project-hads7/resolve/main/images/Ecovillaggio%20Partenio%20Logo%202.png" alt="Ecovillaggio Partenio Logo" class="h-12 w-12 rounded-full object-cover">
+                        <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png" alt="Ecovillaggio Partenio Logo" class="h-12 w-12 rounded-full object-cover">
                         <span class="font-display font-bold text-xl text-white">Ecovillaggio Partenio</span>
                     </div>
                     <p class="text-white/60 text-sm leading-relaxed">Un progetto di turismo sostenibile nel Parco Regionale del Partenio: glamping, educazione ambientale, ecomuseo diffuso e molto altro. Scopri le nostre esclusive Bubble Rooms con tinozza finlandese privata.</p>
@@ -1517,16 +1398,18 @@
                         <li><a href="#alloggi" class="text-white/60 hover:text-white transition-colors">Alloggi</a></li>
                         <li><a href="#attivita" class="text-white/60 hover:text-white transition-colors">Attività</a></li>
                         <li><a href="#educazione" class="text-white/60 hover:text-white transition-colors">Educazione</a></li>
-                        <li><a href="#eventi" class="text-white/60 hover:text-white transition-colors">Eventi</a></li>
+                        <li><a href="eventi.html" class="text-white/60 hover:text-white transition-colors">Eventi</a></li>
+                        <li><a href="privacy.html" class="text-white/60 hover:text-white transition-colors">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <!-- Altre Sezioni -->
                 <div>
                     <h4 class="font-bold text-white mb-4">Scopri</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#accoglienza" class="text-white/60 hover:text-white transition-colors">Accoglienza</a></li>
+                        
                         <li><a href="#sostenibilita" class="text-white/60 hover:text-white transition-colors">Sostenibilità</a></li>
                         <li><a href="#benefici" class="text-white/60 hover:text-white transition-colors">Benefici Aggiuntivi</a></li>
+                        <li><a href="faq.html" class="text-white/60 hover:text-white transition-colors">Domande Frequenti</a></li>
                         <li><a href="#contatti" class="text-white/60 hover:text-white transition-colors">Contatti</a></li>
                     </ul>
                 </div>
@@ -1556,7 +1439,7 @@
                 </div>
             </div>
             <div class="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/40">
-                <p>&copy; 2025 Ecovillaggio Partenio – Partenio Adventure Dreams S.r.l. Tutti i diritti riservati. – Realizzato con 🌿 per un futuro sostenibile.</p>
+                <p>&copy; 2025 Ecovillaggio Partenio – Partenio Adventure Dreams S.r.l. Tutti i diritti riservati. – Realizzato con 🌿 per un futuro sostenibile. Built with DeepSite.</p>
             </div>
         </div>
     </footer>
@@ -1566,5 +1449,6 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="cookie-banner.js"></script>
  </body>
 </html>

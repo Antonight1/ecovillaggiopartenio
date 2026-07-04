@@ -35,13 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.toggle('hidden');
         mobileMenuBtn.setAttribute('aria-expanded', isOpen);
 
-        // Update icon based on state
-        const icon = mobileMenuBtn.querySelector('i');
-        if (isOpen) {
-            icon.setAttribute('data-lucide', 'x');
-        } else {
-            icon.setAttribute('data-lucide', 'menu');
-        }
+        // Replace icon markup each time (Lucide replaces <i> with <svg>)
+        mobileMenuBtn.innerHTML = isOpen
+            ? '<i data-lucide="x" class="w-6 h-6 text-natura-700"></i>'
+            : '<i data-lucide="menu" class="w-6 h-6 text-natura-700"></i>';
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
@@ -52,8 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.setAttribute('data-lucide', 'menu');
+            mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6 text-natura-700"></i>';
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
@@ -179,25 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (consensoError) consensoError.classList.add('hidden');
     }
 
-    // ===== FORM REDIRECT AFTER SUBMISSION =====
-    // Check if form was submitted successfully (FormSubmit.co redirects back)
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('success')) {
-        // Show success message if redirected from FormSubmit.co
-        const contactForm = document.getElementById('contact-form');
-        const successMessage = document.getElementById('success-message');
-        if (contactForm && successMessage) {
-            contactForm.classList.add('hidden');
-            successMessage.classList.remove('hidden');
-            successMessage.classList.add('animate-fade-in-up');
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Re-initialize icons
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        }
-    }
+    
 
     // ===== LAZY LOAD IMAGES =====
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
@@ -243,162 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== CALENDARIO INTERATTIVO =====
-    const calGrid = document.getElementById('cal-grid');
-    const calMonthYear = document.getElementById('cal-month-year');
-    const calPrev = document.getElementById('cal-prev');
-    const calNext = document.getElementById('cal-next');
-    const calTooltip = document.getElementById('cal-tooltip');
-    const calTooltipDate = document.getElementById('cal-tooltip-date');
-    const calTooltipEvents = document.getElementById('cal-tooltip-events');
-    const calTooltipClose = document.getElementById('cal-tooltip-close');
     
-
-    let currentDate = new Date(); // Oggi
-    let selectedDay = null; // Giorno selezionato per il tooltip
-
-    // Eventi predefiniti (statici per demo) - formato: 'YYYY-MM-DD' => [{ titolo, tipo }]
-    const eventiPredefiniti = {
-        '2025-06-21': [{ titolo: 'Festa del Solstizio d\'Estate 🌞', tipo: 'festival' }],
-        '2025-06-22': [{ titolo: 'Laboratorio Artigianale', tipo: 'mercato' }],
-        '2025-07-05': [{ titolo: 'Concerto sotto le Stelle 🎵', tipo: 'concerto' }],
-        '2025-07-06': [{ titolo: 'Mercato dell\'Artigianato', tipo: 'mercato' }],
-        '2025-07-12': [{ titolo: 'Concerto sotto le Stelle', tipo: 'concerto' }],
-        '2025-07-19': [{ titolo: 'Concerto sotto le Stelle', tipo: 'concerto' }],
-        '2025-07-26': [{ titolo: 'Concerto sotto le Stelle', tipo: 'concerto' }],
-        '2025-08-02': [{ titolo: 'Concerto sotto le Stelle', tipo: 'concerto' }],
-        '2025-08-03': [{ titolo: 'Mercato dell\'Artigianato', tipo: 'mercato' }],
-        '2025-08-10': [{ titolo: 'Festa di Mezza Estate 🌻', tipo: 'festival' }],
-        '2025-08-15': [{ titolo: 'Ferragosto in Musica', tipo: 'concerto' }],
-        '2025-09-07': [{ titolo: 'Mercato dell\'Artigianato', tipo: 'mercato' }],
-        '2025-09-21': [{ titolo: 'Festa del Raccolto Autunnale 🍇', tipo: 'festival' }],
-        '2025-10-05': [{ titolo: 'Mercato dell\'Artigianato', tipo: 'mercato' }],
-        '2025-12-21': [{ titolo: 'Festa del Solstizio d\'Inverno ❄️', tipo: 'festival' }],
-    };
-
-    function getEventiGiorno(dateStr) {
-        return eventiPredefiniti[dateStr] || [];
-    }
-
-    function getTipoColore(tipo) {
-        switch (tipo) {
-            case 'festival': return 'bg-terra-500';
-            case 'concerto': return 'bg-cielo-500';
-            case 'mercato': return 'bg-purple-500';
-            default: return 'bg-green-400';
-        }
-    }
-
-    function renderCalendario(date) {
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        const firstDay = new Date(year, month, 1);
-        // Lunedì come primo giorno (getDay: 0=domenica, 1=lunedì...)
-        let startDay = firstDay.getDay() - 1;
-        if (startDay < 0) startDay = 6; // Domenica diventa 6
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        calMonthYear.textContent = date.toLocaleString('it-IT', { month: 'long', year: 'numeric' }).replace(/^\w/, c => c.toUpperCase());
-
-        let html = '';
-        // Giorni vuoti prima del primo giorno
-        for (let i = 0; i < startDay; i++) {
-            html += '<div></div>';
-        }
-        // Giorni del mese
-        for (let d = 1; d <= daysInMonth; d++) {
-            const cellDate = new Date(year, month, d);
-            const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-            const isToday = cellDate.getTime() === today.getTime();
-            const eventi = getEventiGiorno(dateStr);
-            const hasEventi = eventi.length > 0;
-            let dotHtml = '';
-            if (hasEventi) {
-                // Mostra fino a 3 pallini, poi un "+"
-                const maxDots = 3;
-                const tipi = [...new Set(eventi.map(e => e.tipo))];
-                const dots = tipi.slice(0, maxDots);
-                dotHtml = dots.map(tipo => `<span class="w-2 h-2 rounded-full ${getTipoColore(tipo)} inline-block ml-0.5 first:ml-0"></span>`).join('');
-                if (tipi.length > maxDots) dotHtml += '<span class="text-[10px] leading-none text-white/80 ml-0.5">+</span>';
-            }
-            html += `
-                <button 
-                    class="cal-day relative w-full aspect-square rounded-xl flex flex-col items-center justify-center transition-all
-                    ${isToday ? 'bg-white/20 ring-2 ring-terra-400' : 'bg-white/5 hover:bg-white/15'}
-                    ${hasEventi ? 'cursor-pointer font-semibold' : 'cursor-pointer'}"
-                    data-date="${dateStr}"
-                    aria-label="${d} ${date.toLocaleString('it-IT', { month: 'long' })}${hasEventi ? ', ci sono eventi' : ''}"
-                >
-                    <span class="text-sm ${isToday ? 'text-white font-bold' : 'text-white/90'}">${d}</span>
-                    ${dotHtml ? `<div class="flex items-center mt-1">${dotHtml}</div>` : ''}
-                </button>`;
-        }
-        calGrid.innerHTML = html;
-
-        // Riassegna event listener ai giorni
-        calGrid.querySelectorAll('.cal-day').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const dateStr = btn.getAttribute('data-date');
-                mostraEventiGiorno(dateStr, btn);
-            });
-        });
-
-        // Re-inizializza icone Lucide se necessario
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
-    }
-
-    function mostraEventiGiorno(dateStr, btnElement) {
-        selectedDay = dateStr;
-        const [y, m, d] = dateStr.split('-');
-        const dataFormattata = new Date(y, m - 1, d).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
-        calTooltipDate.textContent = dataFormattata;
-        const eventi = getEventiGiorno(dateStr);
-        let eventiHtml = '';
-        if (eventi.length > 0) {
-            eventiHtml = eventi.map(e => `
-                <div class="flex items-start gap-2 text-sm">
-                    <span class="w-2 h-2 mt-1.5 rounded-full flex-shrink-0 ${getTipoColore(e.tipo)}"></span>
-                    <span class="text-white/90">${e.titolo}</span>
-                </div>
-            `).join('');
-        } else {
-            eventiHtml = '<p class="text-white/60 text-sm">Nessun evento in programma per questa data.</p>';
-        }
-        calTooltipEvents.innerHTML = eventiHtml;
-        calTooltip.classList.remove('hidden');
-        calTooltip.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-
-    function nascondiTooltip() {
-        calTooltip.classList.add('hidden');
-        selectedDay = null;
-    }
-
-    // Navigazione mesi
-    calPrev.addEventListener('click', () => {
-        currentDate.setMonth(currentDate.getMonth() - 1);
-        renderCalendario(currentDate);
-        nascondiTooltip();
-    });
-    calNext.addEventListener('click', () => {
-        currentDate.setMonth(currentDate.getMonth() + 1);
-        renderCalendario(currentDate);
-        nascondiTooltip();
-    });
-
-    // Chiudi tooltip
-    calTooltipClose.addEventListener('click', nascondiTooltip);
-
-    
-
-    // Inizializza calendario
-    if (calGrid) {
-        renderCalendario(currentDate);
-    }
 
     // ===== BACK TO TOP BUTTON =====
     const backToTopBtn = document.getElementById('back-to-top');
