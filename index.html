@@ -1374,7 +1374,6 @@
                             <input type="hidden" name="_subject" value="Nuova richiesta da Ecovillaggio Partenio">
                             <input type="hidden" name="_autoresponse" value="Grazie per la tua richiesta! Ti risponderemo entro 24 ore.">
                             <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_next" value="https://ecovillaggiopartenio.com/thank-you.html">
                             <input type="hidden" name="_captcha" value="false">
                             <div>
                                 <label for="nome" class="block text-sm font-semibold text-natura-800 mb-1.5">Nome e Cognome *</label>
@@ -1430,6 +1429,7 @@
                                 <span>Invia Richiesta</span>
                                 <i data-lucide="send" class="w-5 h-5"></i>
                             </button>
+                            <p class="text-red-500 text-sm hidden" id="submit-error"></p>
                         </form>
                         <!-- Success Message -->
                         <div id="success-message" class="hidden text-center py-8 space-y-4">

@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
             // Clear previous errors
             clearFormErrors();
 
@@ -73,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const isValid = validateForm();
 
             if (!isValid) {
-                e.preventDefault();
                 return;
             }
 
@@ -88,8 +89,42 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             submitBtn.disabled = true;
 
-            // Form will submit normally to FormSubmit.co
-            // No need for AJAX or simulation
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch('https://formsubmit.co/ajax/partenioadventuredreams@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                    },
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    throw new Error('FormSubmit request failed');
+                }
+
+                const result = await response.json();
+                if (result.success !== 'true' && result.success !== true) {
+                    throw new Error('FormSubmit returned an unexpected response');
+                }
+
+                contactForm.reset();
+                contactForm.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } catch (error) {
+                const submitError = document.getElementById('submit-error');
+                if (submitError) {
+                    submitError.textContent = 'Invio non riuscito. Riprova tra qualche minuto oppure contattaci via email.';
+                    submitError.classList.remove('hidden');
+                }
+            } finally {
+                submitBtn.innerHTML = originalBtnContent;
+                submitBtn.disabled = false;
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            }
         });
     }
 
