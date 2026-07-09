@@ -55,7 +55,7 @@ const eventi = [
         luogo: 'Anfiteatro Naturale, Parco del Partenio',
         descrizione: 'Celebrazione del solstizio con musica, falò rituali e osservazione astronomica delle stelle.',
         img: 'http://static.photos/nature/640x360/55',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Festival'
     },
     {
@@ -66,7 +66,7 @@ const eventi = [
         luogo: 'Sentiero 210, Parco del Partenio',
         descrizione: 'Percorso naturalistico con guida esperta alla scoperta della biodiversità del Partenio. Adatto a tutti i livelli.',
         img: 'https://res.cloudinary.com/dfd44st4u/image/upload/v1782904960/Salamandra_insieme_ai_bambini_dumw68.jpg',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Escursioni'
     },
     {
@@ -77,7 +77,7 @@ const eventi = [
         luogo: 'Anfiteatro Naturale, Parco del Partenio',
         descrizione: 'Spettacolo musicale all\'aperto con artisti locali e internazionali sotto il cielo stellato del Partenio.',
         img: 'http://static.photos/nature/640x360/99',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Concerto'
     },
     {
@@ -88,7 +88,7 @@ const eventi = [
         luogo: 'Tracciato Monte Partenio',
         descrizione: 'Percorso guidato per mountain bike con diversi livelli di difficoltà. Noleggio bici disponibile su prenotazione.',
         img: 'https://res.cloudinary.com/dfd44st4u/image/upload/v1783061126/mounbike_noybsg.jpg',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Sport'
     },
     {
@@ -99,7 +99,7 @@ const eventi = [
         luogo: 'Maneggio Ecovillaggio, Parco del Partenio',
         descrizione: 'Esperienza guidata da istruttore equestre qualificato, ideale per principianti e famiglie.',
         img: 'https://res.cloudinary.com/dfd44st4u/image/upload/v1783061434/primappcavall_vnnoeq.jpg',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Sport'
     },
     {
@@ -110,7 +110,7 @@ const eventi = [
         luogo: 'Sentiero Panoramico, Parco del Partenio',
         descrizione: 'Passeggiata al tramonto con area picnic finale. Un momento di relax in famiglia immersi nel verde.',
         img: 'https://res.cloudinary.com/dfd44st4u/image/upload/v1782993835/Scolaresca_nel_parco_hiaxyf.jpg',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Passeggiate'
     },
     {
@@ -121,7 +121,7 @@ const eventi = [
         luogo: 'Piazzale Acqua Fidia, Parco del Partenio',
         descrizione: 'Esposizione e vendita di prodotti artigianali locali con dimostrazioni dal vivo e laboratori creativi.',
         img: 'http://static.photos/nature/640x360/82',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Mercato'
     },
     {
@@ -132,7 +132,7 @@ const eventi = [
         luogo: 'Rifugio del Bosco, Parco del Partenio',
         descrizione: 'Scopri i segreti della produzione casearia tradizionale irpina con degustazione dei prodotti locali.',
         img: 'https://res.cloudinary.com/dfd44st4u/image/upload/v1782993863/labcas_a0cgbe.jpg',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Workshop'
     },
     {
@@ -143,7 +143,7 @@ const eventi = [
         luogo: 'Campo Maggiore, Parco del Partenio',
         descrizione: 'Musica, danze tradizionali e cena sotto le stelle a base di prodotti tipici del territorio.',
         img: 'http://static.photos/nature/640x360/78',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Festival'
     },
     {
@@ -154,7 +154,7 @@ const eventi = [
         luogo: 'Campo Maggiore, Parco del Partenio',
         descrizione: 'Celebrazione del raccolto con mercato agricolo, degustazione di vini e prodotti stagionali, laboratori per bambini.',
         img: 'http://static.photos/food/640x360/12',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Festival'
     },
     {
@@ -165,7 +165,7 @@ const eventi = [
         luogo: 'Rifugio della Montagna, Parco del Partenio',
         descrizione: 'Falò, cioccolata calda, storie attorno al fuoco e osservazione astronomica invernale.',
         img: 'http://static.photos/nature/640x360/33',
-        stato: 'futuro',
+        stato: 'passato',
         categoria: 'Festival'
     }
 ];
