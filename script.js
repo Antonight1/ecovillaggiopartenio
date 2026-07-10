@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submit-btn');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
+        contactForm.addEventListener('submit', (e) => {
             // Clear previous errors
             clearFormErrors();
 
@@ -78,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Show loading state
-            const originalBtnContent = submitBtn.innerHTML;
             submitBtn.innerHTML = `
                 <svg class="animate-spin w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -86,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </svg>
                 <span>Invio in corso...</span>
             `;
-            submitBtn.disabled = true;
+            submitBtn.classList.add('pointer-events-none', 'opacity-80');
 
             // Form will submit normally to FormSubmit.co
             // No need for AJAX or simulation
