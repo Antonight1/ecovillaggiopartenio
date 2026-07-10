@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenuBtn.addEventListener('click', () => {
         const isOpen = mobileMenu.classList.contains('hidden');
         mobileMenu.classList.toggle('hidden');
-        mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+        mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
 
         // Replace icon markup each time (Lucide replaces <i> with <svg>)
         mobileMenuBtn.innerHTML = isOpen
@@ -165,14 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function clearFormErrors() {
         document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
-        document.querySelectorAll('[id$="-error"]').forEach(el => {
-            if (el.id !== 'consenso-error' || !el.classList.contains('hidden')) {
-                el.classList.add('hidden');
-            }
-        });
-        // Clear consenso error specifically
-        const consensoError = document.getElementById('consenso-error');
-        if (consensoError) consensoError.classList.add('hidden');
+        document.querySelectorAll('[id$="-error"]').forEach(el => el.classList.add('hidden'));
     }
 
     
