@@ -63,11 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const successMessage = document.getElementById('success-message');
     const resetFormBtn = document.getElementById('reset-form-btn');
     const submitBtn = document.getElementById('submit-btn');
+    const formStatus = document.getElementById('form-status');
+    const defaultSubmitBtnContent = submitBtn ? submitBtn.innerHTML : '';
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             // Clear previous errors
             clearFormErrors();
+            hideFormStatus();
 
             // Validate form
             const isValid = validateForm();
@@ -77,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Show loading state
-            const originalBtnContent = submitBtn.innerHTML;
+            e.preventDefault();
+
             submitBtn.innerHTML = `
                 <svg class="animate-spin w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -88,8 +91,31 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             submitBtn.disabled = true;
 
-            // Form will submit normally to FormSubmit.co
-            // No need for AJAX or simulation
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { Accept: 'application/json' }
+                });
+                const result = await response.json();
+
+                if (!response.ok || !result.success) {
+                    throw new Error(result.message || 'Invio non riuscito.');
+                }
+
+                contactForm.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } catch (error) {
+                showFormStatus(error.message || 'Errore durante l\'invio. Riprova tra poco.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = defaultSubmitBtnContent;
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            }
         });
     }
 
@@ -99,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
             contactForm.classList.remove('hidden');
             successMessage.classList.add('hidden');
+            hideFormStatus();
             clearFormErrors();
             contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
@@ -166,6 +193,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function clearFormErrors() {
         document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
         document.querySelectorAll('[id$="-error"]').forEach(el => el.classList.add('hidden'));
+    }
+
+    function showFormStatus(message) {
+        if (!formStatus) return;
+        formStatus.textContent = message;
+        formStatus.classList.remove('hidden');
+    }
+
+    function hideFormStatus() {
+        if (!formStatus) return;
+        formStatus.textContent = '';
+        formStatus.classList.add('hidden');
     }
 
     
