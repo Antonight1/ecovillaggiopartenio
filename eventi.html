@@ -12,9 +12,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Eventi – Ecovillaggio Partenio. Tutti gli eventi futuri e passati nel Parco del Partenio: ARBORIA, festival, escursioni, concerti e workshop.">
+    <meta name="description" content="Eventi – Ecovillaggio Partenio. Scopri gli aggiornamenti dai canali social ufficiali e gli eventi passati in evidenza.">
     <meta property="og:title" content="Eventi – Ecovillaggio Partenio 📅">
-    <meta property="og:description" content="Scopri tutti gli eventi futuri e passati nel Parco del Partenio: festival, escursioni, concerti, workshop e ARBORIA.">
+    <meta property="og:description" content="Scopri gli aggiornamenti dai canali social ufficiali e gli eventi passati in evidenza dell'Ecovillaggio Partenio.">
     <meta property="og:image" content="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908918/Ecovillaggio_Partenio_Logo_2_mmrgsx.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -95,59 +95,132 @@
                         Eventi nel Parco del Partenio
                     </h1>
                     <p class="text-lg sm:text-xl text-white/80 leading-relaxed">
-                        Scopri gli appuntamenti futuri e rivivi quelli passati: esperienze, festival, escursioni e workshop immersi nella natura.
+                        Segui in tempo reale gli aggiornamenti social e scopri gli eventi passati in evidenza.
                     </p>
                 </div>
             </div>
             <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-natura-50 to-transparent"></div>
         </section>
 
-        <!-- Filtri per Categoria -->
-        <section class="py-8 lg:py-10 bg-white border-b border-natura-100" aria-labelledby="filtri-heading">
+        <!-- Anteprime Social -->
+        <section class="py-10 lg:py-12 bg-white border-b border-natura-100" aria-labelledby="social-feed-heading">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-4">
-                    <h2 id="filtri-heading" class="text-lg font-semibold text-natura-800">Filtra per Categoria</h2>
+                <div class="text-center mb-6 space-y-2">
+                    <span class="inline-block px-4 py-1.5 bg-natura-100 text-natura-700 rounded-full text-sm font-semibold">📱 Social Feed</span>
+                    <h2 id="social-feed-heading" class="text-2xl sm:text-3xl font-display font-bold text-natura-900">Eventi dai Social</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">
+                        Qui trovi gli ultimi aggiornamenti pubblicati sui nostri canali social.
+                    </p>
                 </div>
-                <div id="filtri-eventi" class="flex flex-wrap justify-center gap-2">
-                    <!-- Popolato da JS -->
+
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <div class="bg-natura-50 border border-natura-100 rounded-2xl p-3 sm:p-5 shadow-sm">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold text-natura-900">Facebook</h3>
+                            <a href="https://www.facebook.com/profile.php?id=61592147300128" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-700 hover:text-blue-800 font-medium inline-flex items-center gap-1">
+                                Apri
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                        <div class="w-full overflow-hidden rounded-xl bg-white border border-natura-100">
+                            <iframe
+                                title="Anteprima Facebook Eco Villaggio Partenio"
+                                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61592147300128&tabs=timeline&width=500&height=680&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false"
+                                width="500"
+                                height="680"
+                                style="border:none;overflow:hidden;width:100%;max-width:100%;"
+                                scrolling="no"
+                                frameborder="0"
+                                allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="bg-natura-50 border border-natura-100 rounded-2xl p-3 sm:p-5 shadow-sm">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-semibold text-natura-900">Instagram</h3>
+                            <a href="https://www.instagram.com/ecovillaggiopartenio" target="_blank" rel="noopener noreferrer" class="text-sm text-pink-700 hover:text-pink-800 font-medium inline-flex items-center gap-1">
+                                Apri
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                        <div class="w-full overflow-hidden rounded-xl bg-white border border-natura-100">
+                            <iframe
+                                title="Anteprima Instagram Ecovillaggio Partenio"
+                                src="https://www.instagram.com/ecovillaggiopartenio/embed"
+                                width="500"
+                                height="680"
+                                style="border:none;overflow:hidden;width:100%;max-width:100%;"
+                                scrolling="no"
+                                frameborder="0">
+                            </iframe>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-3">
+                            Se la preview Instagram non compare su alcuni browser/dispositivi, apri il profilo con il link qui sopra.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Prossimi Eventi -->
-        <section class="py-14 lg:py-20 bg-white" aria-labelledby="futuri-heading">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12 space-y-3">
-                    <span class="inline-block px-4 py-1.5 bg-green-100 text-green-700 rounded-full text-sm font-semibold">🔔 In Arrivo</span>
-                    <h2 id="futuri-heading" class="text-3xl sm:text-4xl font-display font-bold text-natura-900">Prossimi Eventi</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Partecipa ai prossimi appuntamenti in programma all'Ecovillaggio Partenio.</p>
-                </div>
-
-                <div id="griglia-futuri" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Popolato da JS -->
-                </div>
-                <div id="no-futuri" class="hidden text-center py-12 text-gray-400">
-                    <i data-lucide="calendar-x" class="w-12 h-12 mx-auto mb-3 opacity-50"></i>
-                    <p>Non ci sono eventi futuri in programma.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Eventi Passati -->
+        <!-- Eventi Passati in Evidenza -->
         <section class="py-14 lg:py-20 bg-natura-50" aria-labelledby="passati-heading">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 space-y-3">
                     <span class="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold">📸 Archivio</span>
-                    <h2 id="passati-heading" class="text-3xl sm:text-4xl font-display font-bold text-natura-900">Eventi Passati</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Rivivi i momenti più belli degli eventi già ospitati nel Parco del Partenio.</p>
+                    <h2 id="passati-heading" class="text-3xl sm:text-4xl font-display font-bold text-natura-900">Eventi Passati in Evidenza</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Una selezione di eventi storici del progetto, insieme agli aggiornamenti live dei social.</p>
                 </div>
 
-                <div id="griglia-passati" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Popolato da JS -->
-                </div>
-                <div id="no-passati" class="hidden text-center py-12 text-gray-400">
-                    <i data-lucide="images" class="w-12 h-12 mx-auto mb-3 opacity-50"></i>
-                    <p>Non ci sono eventi passati da mostrare.</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border border-natura-100 flex flex-col h-full">
+                        <div class="relative overflow-hidden aspect-[16/10]">
+                            <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1782908463/Locandina_evento_arboria_joplrv.jpg" alt="ARBORIA - Silviotherapy e Inclusione" class="w-full h-full object-cover transition-transform duration-500" loading="lazy">
+                            <div class="absolute top-3 left-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-natura-700 shadow-sm backdrop-blur-sm">
+                                    Inclusione
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="font-bold text-natura-900 mb-2 text-lg leading-snug">ARBORIA - Silviotherapy e Inclusione</h3>
+                            <div class="space-y-1.5 mb-3 text-sm text-gray-500">
+                                <p class="flex items-center gap-2"><i data-lucide="calendar-clock" class="w-4 h-4 text-natura-500"></i> 14 giugno 2025</p>
+                                <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-natura-500"></i> Acqua Fidia, Mercogliano (AV)</p>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">Percorso terapeutico nella natura per bambini e adolescenti con ASD e altre disabilita, tra camminate consapevoli, attivita sensoriali e ascolto della natura.</p>
+                            <div class="mt-auto pt-4">
+                                <a href="evento-sensoriale.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-xl transition-colors text-sm">
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i> Pagina Evento
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border border-natura-100 flex flex-col h-full">
+                        <div class="relative overflow-hidden aspect-[16/10]">
+                            <img src="https://res.cloudinary.com/dfd44st4u/image/upload/v1784183534/partheniumcalling_jubsjj.jpg" alt="Parthenium Calling Festival" class="w-full h-full object-cover transition-transform duration-500" loading="lazy">
+                            <div class="absolute top-3 left-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-natura-700 shadow-sm backdrop-blur-sm">
+                                    Festival
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="font-bold text-natura-900 mb-2 text-lg leading-snug">Parthenium Calling</h3>
+                            <div class="space-y-1.5 mb-3 text-sm text-gray-500">
+                                <p class="flex items-center gap-2"><i data-lucide="calendar-clock" class="w-4 h-4 text-natura-500"></i> Evento passato</p>
+                                <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-natura-500"></i> Parco del Partenio</p>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">Festival realizzato negli anni passati, nato per valorizzare il territorio del Partenio attraverso musica, cultura, arte e condivisione comunitaria.</p>
+                            <div class="mt-auto pt-4">
+                                <a href="https://www.facebook.com/partheniumcalling" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-xl transition-colors text-sm">
+                                    <i data-lucide="external-link" class="w-4 h-4"></i> Pagina Festival
+                                </a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -197,239 +270,10 @@
         </div>
     </footer>
 
-    <!-- ===== LOCANDINA MODAL ===== -->
-    <div id="locandina-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 transition-opacity duration-300">
-        <button id="modal-close" class="absolute top-4 right-4 text-white text-4xl leading-none hover:text-terra-300 transition-colors" aria-label="Chiudi">
-            &times;
-        </button>
-        <img id="locandina-img" src="" alt="" class="max-w-[90vw] max-h-[90vh] rounded-xl shadow-2xl object-contain animate-fade-in-up">
-    </div>
-
     <!-- ===== SCRIPTS ===== -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="cookie-banner.js"></script>
     <script>
-        // ===== DATI EVENTI =====
-        const eventi = [
-            // --- PASSATI ---
-            {
-                id: 'arboria',
-                titolo: 'ARBORIA – Silviotherapy e Inclusione',
-                data: '2025-06-14',
-                orario: '9:00 – 13:00',
-                luogo: 'Acqua Fidia, Mercogliano (AV)',
-                descrizione: 'Percorso terapeutico nella natura per bambini e adolescenti con ASD e altre disabilità. Camminate consapevoli, attività sensoriali e ascolto della natura.',
-                img: 'https://res.cloudinary.com/dfd44st4u/image/upload/v1782908463/Locandina_evento_arboria_joplrv.jpg',
-                stato: 'passato',
-                categoria: 'Inclusione',
-                link: 'evento-sensoriale.html',
-                gallery: [
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023849/bambfontacquafid_ach2or.jpg',
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023842/bambescur_eioixc.jpg',
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023842/altalenbambi_ud3esh.jpg',
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023840/bambamap_u8h7os.jpg',
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023837/escurs2_izaoho.jpg',
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023836/bambamapp2_mzp3x7.jpg'
-                ],
-            },
-            
-            {
-                id: 'Acqua_Fidia',
-                titolo: 'Sapori Irpini in Transumanza',
-                data: '2026-07-12',
-                orario: '12:00 – 20:00',
-                luogo: 'Località Acqua Fidia, Parco del Partenio',
-                descrizione: 'Giornata da passare con la famiglia al fresco nella splendida località di Acqua Fidia con il supporto del Foodtruck de I Santi',
-                img: 'https://res.cloudinary.com/dfd44st4u/image/upload/v1783625859/locev12lugli_p1kq55.jpg',
-                stato: 'passato',
-                categoria: 'domeniche',
-                gallery: [
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023862/12luglpalc_nwgq1v.jpg',
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023861/buratt12lug_sq8pcp.jpg',
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023860/event12lugfoodtruck_kpuloz.jpg',
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023859/12lugl_bdz9ij.jpg',
-                    'https://res.cloudinary.com/dfd44st4u/image/upload/v1784023858/sedpubb_yughyt.jpg'
-                ]
-            }
-            //-- Futuri --
-        ];
-
-        // ===== HELPER DATE =====
-        function formattaData(dataStr) {
-            const [y, m, d] = dataStr.split('-');
-            const date = new Date(y, m - 1, d);
-            return {
-                giorno: d,
-                mese: date.toLocaleDateString('it-IT', { month: 'short' }).replace('.', ''),
-                completa: date.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })
-            };
-        }
-
-        function cardEvento(e) {
-            const data = formattaData(e.data);
-            const futuro = e.stato === 'futuro';
-            const azione = futuro
-                ? `<a href="index.html#contatti" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-natura-600 hover:bg-natura-700 text-white font-semibold rounded-xl transition-colors text-sm">
-                     <i data-lucide="user-plus" class="w-4 h-4"></i> Partecipa
-                   </a>`
-                : e.link
-                    ? `<a href="${e.link}" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-xl transition-colors text-sm">
-                         <i data-lucide="arrow-right" class="w-4 h-4"></i> Pagina Evento
-                       </a>`
-                    : `<span class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-gray-100 text-gray-500 font-semibold rounded-xl text-sm cursor-default">
-                         <i data-lucide="check" class="w-4 h-4"></i> Evento Concluso
-                       </span>`;
-
-            let galleryHtml = '';
-            if (!futuro && e.gallery && e.gallery.length > 0) {
-                galleryHtml = `
-                    <div class="grid grid-cols-3 gap-2 mt-3">
-                        ${e.gallery.map(src => `<div class="aspect-square rounded-lg overflow-hidden"><img src="${src}" alt="" class="w-full h-full object-cover hover:opacity-90 transition-opacity" loading="lazy"></div>`).join('')}
-                    </div>
-                `;
-            }
-
-            return `
-                <article class="evento-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] hover:z-10 transition-all duration-300 border border-natura-100 flex flex-col h-full relative" data-categoria="${e.categoria}">
-                    <div class="locandina-trigger relative overflow-hidden aspect-[16/10] cursor-zoom-in" data-img="${e.img}" data-title="${e.titolo}">
-                        <img src="${e.img}" alt="${e.titolo}" class="w-full h-full object-cover transition-transform duration-500" loading="lazy">
-                        <div class="absolute top-3 left-3">
-                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-natura-700 shadow-sm backdrop-blur-sm">
-                                ${e.categoria}
-                            </span>
-                        </div>
-                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-xl px-3 py-1.5 text-center shadow-md min-w-[60px]">
-                            <p class="text-lg font-bold text-natura-900 leading-none">${data.giorno}</p>
-                            <p class="text-xs text-gray-500 uppercase">${data.mese}</p>
-                        </div>
-                        <div class="absolute bottom-3 right-3 w-9 h-9 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md hover:bg-white transition-colors" title="Visualizza locandina">
-                            <i data-lucide="maximize-2" class="w-4 h-4 text-natura-700"></i>
-                        </div>
-                    </div>
-                    <div class="p-5 flex flex-col flex-grow">
-                        <h3 class="font-bold text-natura-900 mb-2 text-lg leading-snug">${e.titolo}</h3>
-                        <div class="space-y-1.5 mb-3 text-sm text-gray-500">
-                            <p class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-natura-500"></i> ${e.orario}</p>
-                            <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-natura-500"></i> ${e.luogo}</p>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">${e.descrizione}</p>
-                        ${galleryHtml}
-                        <div class="mt-auto pt-4">${azione}</div>
-                    </div>
-                </article>
-            `;
-        }
-
-        // ===== RENDER =====
-        const futuri = eventi.filter(e => e.stato === 'futuro').sort((a, b) => new Date(a.data) - new Date(b.data));
-        const passati = eventi.filter(e => e.stato === 'passato').sort((a, b) => new Date(b.data) - new Date(a.data));
-
-        const gridFuturi = document.getElementById('griglia-futuri');
-        const gridPassati = document.getElementById('griglia-passati');
-
-        if (futuri.length) {
-            gridFuturi.innerHTML = futuri.map(cardEvento).join('');
-        } else {
-            gridFuturi.classList.add('hidden');
-            document.getElementById('no-futuri').classList.remove('hidden');
-        }
-
-        if (passati.length) {
-            gridPassati.innerHTML = passati.map(cardEvento).join('');
-        } else {
-            gridPassati.classList.add('hidden');
-            document.getElementById('no-passati').classList.remove('hidden');
-        }
-
-        // ===== FILTRI PER CATEGORIA =====
-        function renderFiltri() {
-            const filtriContainer = document.getElementById('filtri-eventi');
-            const categorie = ['Tutti', ...new Set(eventi.map(e => e.categoria).filter(Boolean))];
-            
-            filtriContainer.innerHTML = categorie.map(cat => `
-                <button class="filtro-btn px-4 py-2 rounded-full text-sm font-semibold transition-all border ${cat === 'Tutti' ? 'bg-natura-600 text-white border-natura-600' : 'bg-white text-natura-700 border-natura-200 hover:bg-natura-50'}" data-categoria="${cat}">
-                    ${cat}
-                </button>
-            `).join('');
-
-            filtriContainer.querySelectorAll('.filtro-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const categoria = btn.getAttribute('data-categoria');
-                    filtraEventi(categoria);
-                    aggiornaStatoFiltri(btn);
-                });
-            });
-        }
-
-        function aggiornaStatoFiltri(activeBtn) {
-            document.querySelectorAll('.filtro-btn').forEach(btn => {
-                btn.className = 'filtro-btn px-4 py-2 rounded-full text-sm font-semibold transition-all border bg-white text-natura-700 border-natura-200 hover:bg-natura-50';
-            });
-            activeBtn.className = 'filtro-btn px-4 py-2 rounded-full text-sm font-semibold transition-all border bg-natura-600 text-white border-natura-600';
-        }
-
-        function filtraEventi(categoria) {
-            const tutteCards = document.querySelectorAll('.evento-card');
-            let visibiliFuturi = 0;
-            let visibiliPassati = 0;
-
-            tutteCards.forEach(card => {
-                const cardCategoria = card.getAttribute('data-categoria');
-                const mostra = categoria === 'Tutti' || cardCategoria === categoria;
-                card.style.display = mostra ? '' : 'none';
-                
-                if (mostra) {
-                    if (gridFuturi.contains(card)) visibiliFuturi++;
-                    if (gridPassati.contains(card)) visibiliPassati++;
-                }
-            });
-
-            gridFuturi.classList.toggle('hidden', visibiliFuturi === 0);
-            document.getElementById('no-futuri').classList.toggle('hidden', visibiliFuturi > 0);
-
-            gridPassati.classList.toggle('hidden', visibiliPassati === 0);
-            document.getElementById('no-passati').classList.toggle('hidden', visibiliPassati > 0);
-        }
-
-        renderFiltri();
-
-        // ===== MODAL LOCANDINA =====
-        const locandinaModal = document.getElementById('locandina-modal');
-        const locandinaImg = document.getElementById('locandina-img');
-        const modalClose = document.getElementById('modal-close');
-
-        function openLocandina(imgSrc, title) {
-            locandinaImg.src = imgSrc;
-            locandinaImg.alt = title;
-            locandinaModal.classList.remove('hidden');
-            locandinaModal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLocandina() {
-            locandinaModal.classList.add('hidden');
-            locandinaModal.classList.remove('flex');
-            locandinaImg.src = '';
-            document.body.style.overflow = '';
-        }
-
-        document.querySelectorAll('.locandina-trigger').forEach(trigger => {
-            trigger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const imgSrc = trigger.getAttribute('data-img');
-                const title = trigger.getAttribute('data-title');
-                openLocandina(imgSrc, title);
-            });
-        });
-
-        modalClose.addEventListener('click', closeLocandina);
-        locandinaModal.addEventListener('click', (e) => {
-            if (e.target === locandinaModal) closeLocandina();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !locandinaModal.classList.contains('hidden')) closeLocandina();
-        });
-
         // ===== ICONE =====
         lucide.createIcons();
     </script>
